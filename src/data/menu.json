@@ -1,0 +1,736 @@
+{
+  "checked": "2026-09-26",
+  "checkedLabel": "September 26, 2026",
+  "source": "https://alibialeworks.com/incline-public-house/alibi-incline-menu/",
+  "menuNote": "This selection was recorded on September 26, 2026. Check Alibi’s menu for current dishes and prices.",
+  "dietary": "Food allergies or dietary needs? Tell your server before ordering. Ingredients and preparation can change.",
+  "food": [
+    {
+      "id": "snacks",
+      "nav": "Snacks",
+      "title": "Snacks",
+      "intro": "",
+      "image": {
+        "key": "food-bao",
+        "alt": "Three pork belly bao with pickled onion and peppers on a dark plate"
+      },
+      "items": [
+        {
+          "name": "Mustache Pretzel",
+          "desc": "Mustache-shaped soft pretzel, with beer mustard or beer cheese",
+          "diet": [
+            "V"
+          ]
+        },
+        {
+          "name": "Pork Belly Bao",
+          "desc": "Three bao with smoked pork belly, gochujang aioli, pickled red onion and Fresno peppers, scallion, sesame, and scallion vinaigrette.",
+          "marks": [
+            "spicy"
+          ]
+        },
+        {
+          "name": "Gojo Brussels",
+          "desc": "Fried Brussels sprouts, Gojo sauce, toasted furikake",
+          "diet": [
+            "GF",
+            "VG"
+          ]
+        },
+        {
+          "name": "Wings",
+          "desc": "Six party wings: Alibi Buffalo, BBQ, Orange Chili or Lemon Pepper dry rub. Blue cheese or ranch, celery + carrots",
+          "marks": [
+            "favorite"
+          ],
+          "diet": [
+            "GF"
+          ]
+        },
+        {
+          "name": "Belly Up Sliders",
+          "desc": "Three Wagyu sliders, pork belly, fried onions, pepper jack, arugula, sriracha aioli"
+        },
+        {
+          "name": "Blackened Shrimp Tacos",
+          "desc": "Three corn tortillas, spicy shrimp, slaw, cilantro, Cajun aioli",
+          "marks": [
+            "spicy"
+          ],
+          "diet": [
+            "GF"
+          ]
+        },
+        {
+          "name": "Fries",
+          "desc": "Seasoned and crispy",
+          "diet": [
+            "GF",
+            "VG"
+          ]
+        },
+        {
+          "name": "Garlic Fries",
+          "desc": "Garlic, parmesan, parsley",
+          "diet": [
+            "GF",
+            "V"
+          ]
+        },
+        {
+          "name": "Beer Cheese Fries",
+          "desc": "Fries under Alibi beer cheese"
+        },
+        {
+          "name": "Bison Chili Beer Cheese Fries",
+          "desc": "Beer cheese, bison chili, extra cheese"
+        }
+      ]
+    },
+    {
+      "id": "pizza",
+      "nav": "Pizza",
+      "title": "Pizza",
+      "intro": "Thin-crust sourdough pizza, baked in an Italian stone oven.",
+      "image": {
+        "key": "pizza",
+        "alt": "Close-up of a pepperoni pizza with a blistered sourdough crust"
+      },
+      "items": [
+        {
+          "name": "The Classic Cheese",
+          "desc": "House marinara, mozzarella blend",
+          "note": "Add pepperoni, sausage or chicken",
+          "diet": [
+            "V"
+          ]
+        },
+        {
+          "name": "Pepperoni Pizza",
+          "desc": "House marinara, mozzarella blend, pepperoni"
+        },
+        {
+          "name": "The Margherita",
+          "desc": "Marinara, fresh mozzarella, fresh basil",
+          "diet": [
+            "V"
+          ]
+        },
+        {
+          "name": "The Garden Pizza",
+          "desc": "Marinara, bell peppers, red onion, mushrooms, kalamata olives, arugula, pepperoncini, mozzarella",
+          "diet": [
+            "V"
+          ]
+        },
+        {
+          "name": "The Perfect Pear",
+          "desc": "Olive oil base, brie, poached pears, Black Forest ham, fried sage, balsamic honey"
+        },
+        {
+          "name": "The Hacienda",
+          "desc": "Tomatillo sauce, mozzarella, pinto beans, chorizo, jalapeños, crema, cilantro"
+        },
+        {
+          "name": "The BBQ Chicken",
+          "desc": "BBQ sauce, grilled chicken, mozzarella + smoked mozzarella, red onion, corn, bell pepper, sriracha aioli"
+        },
+        {
+          "name": "The Carnivore",
+          "desc": "Marinara, sausage, pepperoni, bacon, caramelized onion, smoked mozzarella, parmesan, chives"
+        },
+        {
+          "name": "Three Little Hott Pigs",
+          "desc": "Pork belly, bacon, sausage, mozzarella, red onion, honey + sriracha drizzle, green onion",
+          "marks": [
+            "spicy"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "mains",
+      "nav": "Mains",
+      "title": "Mains",
+      "intro": "Burgers are served medium rare on brioche with fries. Ask about a black bean patty or gluten-free bun.",
+      "image": {
+        "key": "food-sandwich",
+        "alt": "Chicken sandwich on a brioche bun with a pile of fries"
+      },
+      "items": [
+        {
+          "name": "Wagyu Burger",
+          "desc": "Grass-fed Wagyu, cheddar, lettuce, tomato, onion, Alibi burger sauce",
+          "marks": [
+            "favorite"
+          ]
+        },
+        {
+          "name": "BBQ Burger",
+          "desc": "Grass-fed Wagyu, pepper jack, bacon, crispy onions, lettuce, BBQ sauce"
+        },
+        {
+          "name": "The 4B's Burger",
+          "desc": "Grass-fed Wagyu, blue cheese, bacon, black garlic aioli, tomato, onion, arugula"
+        },
+        {
+          "name": "Mojo Chicken Sandwich",
+          "desc": "Mojo chicken thighs, pepper jack, honey mustard, lettuce, tomato, onion, brioche"
+        },
+        {
+          "name": "Crispy Trout Sandwich",
+          "desc": "Panko-fried rainbow trout on sourdough, dill-caper aioli, lettuce, tomato, pickled red onion"
+        },
+        {
+          "name": "Perfect Pear Grilled Cheese",
+          "desc": "Sourdough, brie, cheddar, poached pears, balsamic glaze, fried sage, with fries",
+          "diet": [
+            "V"
+          ]
+        },
+        {
+          "name": "Steak Frites",
+          "desc": "Sliced 8 oz sirloin, medium rare, house chimichurri, over garlic fries"
+        }
+      ]
+    },
+    {
+      "id": "greens",
+      "nav": "Greens & bowls",
+      "title": "Greens & bowls",
+      "intro": "",
+      "image": {
+        "key": "food-salad",
+        "alt": "Garden salad with watermelon radish, cherry tomatoes and shaved carrot"
+      },
+      "items": [
+        {
+          "name": "Garden Salad",
+          "desc": "Superfood mix, cherry tomato, carrot, watermelon radish, lemon champagne vinaigrette",
+          "diet": [
+            "GF",
+            "VG"
+          ]
+        },
+        {
+          "name": "Caesar Salad",
+          "desc": "Romaine + kale, parmesan, croutons, lemon, house Caesar dressing (contains anchovies)"
+        },
+        {
+          "name": "Watermelon Salad",
+          "desc": "Grilled watermelon, jicama, arugula, lavender goat cheese, pepitas, lime vinaigrette",
+          "diet": [
+            "GF"
+          ]
+        },
+        {
+          "name": "Summer Harvest Bowl",
+          "desc": "Roasted corn, edamame, red pepper, onion, cherry tomatoes, purple quinoa + rice, lemon basil dressing, crispy chickpeas",
+          "diet": [
+            "GF",
+            "VG"
+          ]
+        },
+        {
+          "name": "Pollo a la Brasa Bowl",
+          "desc": "Grilled chicken, cilantro-lime rice, roasted corn pico de gallo, avocado, jalapeño-cilantro crema",
+          "diet": [
+            "GF"
+          ]
+        },
+        {
+          "name": "Wild Game Chili",
+          "desc": "Bison + wild boar chili, pinto beans, smoked mozzarella, crema, serrano, with cornbread"
+        }
+      ]
+    },
+    {
+      "id": "kids",
+      "nav": "Kids",
+      "title": "Kids",
+      "intro": "All kids’ meals come with fries.",
+      "items": [
+        {
+          "name": "Cheeseburger Sliders",
+          "desc": "Two sliders"
+        },
+        {
+          "name": "Chicken Tenders",
+          "desc": "With ranch",
+          "diet": [
+            "GF"
+          ]
+        },
+        {
+          "name": "Lil' Glizzy",
+          "desc": "All-beef hot dog"
+        },
+        {
+          "name": "Grilled Cheese",
+          "desc": "The classic"
+        }
+      ]
+    },
+    {
+      "id": "sweets",
+      "nav": "Sweets",
+      "title": "Sweets",
+      "intro": "Save room. Or share a spoon.",
+      "items": [
+        {
+          "name": "Chai Mustache Pretzel",
+          "desc": "Chai-dusted hot pretzel, mascarpone, caramel drizzle",
+          "diet": [
+            "V"
+          ]
+        },
+        {
+          "name": "Chocolate S'more Lava Cake",
+          "desc": "Graham cracker cake, chocolate ganache, toasted marshmallow, chocolate + caramel"
+        },
+        {
+          "name": "Mango Panna Cotta",
+          "desc": "Orange curd, toasted coconut crumble"
+        }
+      ]
+    }
+  ],
+  "happyHour": {
+    "id": "happy-hour",
+    "nav": "Happy hour",
+    "title": "Happy hour",
+    "when": "Monday to Friday, 3–5pm. Excludes holiday periods.",
+    "snacks": [
+      {
+        "name": "Mustache Pretzel",
+        "desc": "Beer mustard or beer cheese",
+        "diet": [
+          "V"
+        ]
+      },
+      {
+        "name": "Caesar Salad",
+        "desc": "House Caesar dressing contains anchovies. Ask about extra anchovies."
+      },
+      {
+        "name": "Cheese Pizza",
+        "desc": "House marinara, mozzarella blend",
+        "diet": [
+          "V"
+        ]
+      }
+    ],
+    "drinks": [
+      {
+        "name": "Happy Rita",
+        "desc": "Tequila, Cointreau, fresh lime, agave"
+      },
+      {
+        "name": "Paloma",
+        "desc": "Tequila, grapefruit, soda, lime; salted rim on request"
+      },
+      {
+        "name": "Vodka soda (with lime) or vodka tonic",
+        "desc": ""
+      },
+      {
+        "name": "Salty Dog",
+        "desc": ""
+      }
+    ],
+    "beers": "Happy-hour pours include Pale Ale, Alibi IPA, Kölsch, a lager-and-lemon-soda radler and a weekly rotating beer."
+  },
+  "brunch": {
+    "id": "brunch",
+    "nav": "Brunch",
+    "title": "Sunday brunch",
+    "when": "Sundays, 10am–3pm during football season. Seating is first come, first served.",
+    "note": "Burgers, wings, salads, chili and most pizzas are also available.",
+    "items": [
+      {
+        "name": "Breakfast Burger",
+        "desc": "Wagyu, cheddar, sunny egg, bacon, lettuce, tomato, onion, burger sauce, toasted brioche"
+      },
+      {
+        "name": "Hangover Fries",
+        "desc": "Fries, queso, chorizo, pickled onion, runny egg, cilantro-lime crema"
+      },
+      {
+        "name": "French Toast",
+        "desc": "Thick-cut griddled sourdough, butter, powdered sugar"
+      },
+      {
+        "name": "All American Breakfast",
+        "desc": "Eggs your way, bacon or sausage, potatoes, toast"
+      },
+      {
+        "name": "Morning Meatfest",
+        "desc": "Steak, eggs, fries, chimichurri"
+      },
+      {
+        "name": "B.E.L.T.",
+        "desc": "Bacon, hash browns, runny egg, lettuce, tomato, herb mayo, thick-cut sourdough"
+      },
+      {
+        "name": "Huevos Rancheros on a Pizza?",
+        "desc": "Ranchero sauce, cheese, beans, chorizo, red onion, corn, eggs, cotija"
+      }
+    ],
+    "drinks": "Tahoe Mary (a loaded Bloody Mary with pork belly bites), espresso martini and mimosas."
+  },
+  "drinks": [
+    {
+      "id": "on-tap",
+      "nav": "On tap",
+      "title": "On tap",
+      "intro": "A selection from the house menu. Ask what's pouring today.",
+      "image": {
+        "key": "tap-pour",
+        "alt": "A bartender pulls a pale beer from a chrome tap into an Alibi pint glass"
+      },
+      "feature": {
+        "name": "Flight of Four",
+        "desc": "Four 4oz pours of your choice. You can include kombucha or cider.",
+        "marks": [
+          "favorite"
+        ]
+      },
+      "items": [
+        {
+          "name": "Kölsch",
+          "style": "German-style blonde ale",
+          "notes": "crisp, bright, quenching"
+        },
+        {
+          "name": "Alibi Lager",
+          "style": "Helles lager",
+          "notes": "crisp, refreshing"
+        },
+        {
+          "name": "Bohemian Trail",
+          "style": "Czech pale lager",
+          "abv": "5%",
+          "notes": "wildflowers, lemon zest, fresh bread"
+        },
+        {
+          "name": "Pale Ale",
+          "style": "West Coast pale ale",
+          "abv": "5%",
+          "notes": "citrus, tropical, refreshing"
+        },
+        {
+          "name": "Alibi IPA",
+          "style": "West Coast IPA",
+          "abv": "6.2%",
+          "notes": "melon, pine, passionfruit"
+        },
+        {
+          "name": "Chance of Clouds",
+          "style": "Hazy IPA",
+          "abv": "6.2%",
+          "notes": "mango, passionfruit"
+        },
+        {
+          "name": "Chance of Crowds",
+          "style": "Hazy IPA",
+          "abv": "6.2%",
+          "notes": "mango, orange, coconut"
+        },
+        {
+          "name": "Local's Summer IPA",
+          "style": "West Coast IPA",
+          "abv": "6.7%",
+          "notes": "tangerine, grapefruit, piña colada"
+        },
+        {
+          "name": "Anonymous DIPAA",
+          "style": "Double IPA, an Alibi Anonymous collab",
+          "abv": "8.4%",
+          "notes": "citrus peel, sticky dank, stone fruit"
+        },
+        {
+          "name": "Lone Eagle Legacy",
+          "style": "Tropical blonde",
+          "abv": "5%",
+          "notes": "crisp, fruity"
+        },
+        {
+          "name": "Get Rad!",
+          "style": "Blood orange radler",
+          "abv": "3.2%",
+          "notes": "bright, citrusy, crushable"
+        },
+        {
+          "name": "Chance of Klaus",
+          "style": "Hefeweizen",
+          "abv": "5%",
+          "notes": "ripe banana, baking spice"
+        },
+        {
+          "name": "Fantasy Island",
+          "style": "Fruited sour",
+          "abv": "5%",
+          "notes": "guava, mango, pineapple"
+        },
+        {
+          "name": "Nocturno",
+          "style": "Mexican amber lager",
+          "abv": "5.4%",
+          "notes": "hazelnut, milk chocolate, clean finish",
+          "styleChecked": "2026-09-28"
+        },
+        {
+          "name": "Porter",
+          "style": "English-style porter",
+          "notes": "chocolate, roast, toffee"
+        },
+        {
+          "name": "Contradiction",
+          "style": "Golden mocha stout",
+          "abv": "6%",
+          "notes": "chocolate, coffee, sweet",
+          "qualification": "Contains lactose",
+          "qualificationChecked": "2026-09-28"
+        },
+        {
+          "name": "Dark Saison",
+          "style": "Belgian dark ale",
+          "abv": "8%",
+          "notes": "raisin, poached pear, Belgian spice"
+        },
+        {
+          "name": "Apple Cider",
+          "style": "Apple cider, rotating maker",
+          "abv": "",
+          "notes": ""
+        },
+        {
+          "name": "Rotating Cider",
+          "style": "Seasonal cider, rotating",
+          "abv": "",
+          "notes": ""
+        }
+      ],
+      "gluten": "Alibi describes its beer as gluten-reduced, not gluten-free, and does not recommend it for people with celiac disease."
+    },
+    {
+      "id": "non-alcoholic",
+      "nav": "Non-alcoholic",
+      "title": "Non-alcoholic",
+      "intro": "Hop water, mocktails, kombucha and soft drinks.",
+      "items": [
+        {
+          "name": "Hoppy Hour hop water",
+          "desc": "Alibi’s sparkling hop water. Ask about today’s flavors."
+        },
+        {
+          "name": "Lavender Daisy",
+          "desc": "Mocktail: lavender syrup, citrus green tea, soda + Starry, orange"
+        },
+        {
+          "name": "Watermelon Crusher",
+          "desc": "Mocktail: watermelon juice, fresh basil, soda + Starry"
+        },
+        {
+          "name": "Folk kombucha",
+          "desc": "Non-alcoholic, rotating flavors; 4oz, 10oz or 16oz"
+        },
+        {
+          "name": "House lemonade · iced tea · Arnold Palmer",
+          "desc": ""
+        },
+        {
+          "name": "Sodas",
+          "desc": "Pepsi, Diet Pepsi, Starry, Crush, Dr Pepper, Mug Root Beer"
+        },
+        {
+          "name": "Shirley Temple · Roy Rogers",
+          "desc": ""
+        },
+        {
+          "name": "Hot chocolate · hot tea",
+          "desc": "Swiss Miss with whipped cream; assorted Rituals teas"
+        }
+      ]
+    },
+    {
+      "id": "cocktails",
+      "nav": "Cocktails",
+      "title": "Cocktails",
+      "intro": "",
+      "items": [
+        {
+          "name": "Alibi Rita",
+          "desc": "Casamigos blanco, Cointreau, fresh lime, agave. Ask for it spicy."
+        },
+        {
+          "name": "Jewel of the Sierras Old Fashioned",
+          "desc": "Frey Ranch bourbon, blueberry syrup, orange bitters"
+        },
+        {
+          "name": "Poison Petal",
+          "desc": "Tahoe Blue vodka, lavender, citrus green tea, soda, Sprite"
+        },
+        {
+          "name": "A Prickly Melon",
+          "desc": "Spicy tequila, watermelon, lime, ginger beer"
+        },
+        {
+          "name": "El Loro",
+          "desc": "Spicy tequila, guava-pineapple-coconut rum, guava, lime, soda"
+        },
+        {
+          "name": "Summer of '75",
+          "desc": "Gin, watermelon, fresh basil, prosecco, soda"
+        },
+        {
+          "name": "L'Oasi Spritz",
+          "desc": "St-Germain, tropical rum, guava, prosecco, soda"
+        },
+        {
+          "name": "Royal Velvet Spritz",
+          "desc": "Limoncello, lavender, prosecco, soda"
+        },
+        {
+          "name": "Espresso Martini",
+          "desc": "Vodka, Mr. Coffee, cold brew, simple syrup"
+        },
+        {
+          "name": "Tahoe Mary",
+          "desc": "A loaded Bloody Mary, pork belly bites included"
+        },
+        {
+          "name": "The classics",
+          "desc": "Old Fashioned, Aperol Spritz, Moscow Mule"
+        }
+      ]
+    },
+    {
+      "id": "wine",
+      "nav": "Wine",
+      "title": "Wine",
+      "intro": "Ask which wines are available by the glass or bottle.",
+      "groups": [
+        {
+          "label": "Sparkling & rosé",
+          "items": [
+            "François Montand sparkling · France",
+            "Mirabeau Forever Rosé · Provence"
+          ]
+        },
+        {
+          "label": "White",
+          "items": [
+            "Pinot Grigio · Italy",
+            "Hahn Chardonnay · Monterey",
+            "Frank Family Chardonnay · Carneros",
+            "Selbach Riesling · Germany",
+            "Kim Crawford Sauvignon Blanc · New Zealand"
+          ]
+        },
+        {
+          "label": "Red",
+          "items": [
+            "Sean Minor Cabernet Sauvignon · North Coast",
+            "The Prisoner Cabernet Sauvignon · Napa",
+            "Sokol Blosser Pinot Noir · Willamette Valley",
+            "Altesino Rosso di Toscana · Tuscany",
+            "Madrona Zinfandel · Camino",
+            "Decoy Red Blend · Paso Robles"
+          ]
+        }
+      ],
+      "unresolvedEntries": [
+        {
+          "name": "Rombauer Sauvignon Blanc",
+          "reason": "Official heading says Rombauer; its description says Kim Crawford, New Zealand. Omitted from the public selection until clarified.",
+          "checked": "2026-09-28"
+        }
+      ]
+    },
+    {
+      "id": "bottles",
+      "nav": "Bottles",
+      "title": "Bottles",
+      "intro": "Alibi beers by the bottle, including barrel-aged releases.",
+      "items": [
+        {
+          "name": "Abstract Truth",
+          "style": "Dark saison blend aged in red wine barrels",
+          "abv": "9%",
+          "notes": "oak, round, complex"
+        },
+        {
+          "name": "Giant Steps",
+          "style": "Bourbon barrel-aged barley wine",
+          "abv": "10%",
+          "notes": "warm spice, caramel"
+        },
+        {
+          "name": "Bockel Vision",
+          "style": "Dark doppelbock",
+          "abv": "8%",
+          "notes": "raisin bread, fig, smooth"
+        }
+      ]
+    }
+  ],
+  "cans": {
+    "id": "cans",
+    "nav": "Cans to go",
+    "title": "Cans to go",
+    "intro": "A little Alibi for later. Ask which cans are available today.",
+    "note": "Take-home selection recorded September 26, 2026.",
+    "items": [
+      {
+        "key": "can-kolsch",
+        "name": "Kölsch",
+        "alt": "Kölsch can with orange and sand-colored mountains"
+      },
+      {
+        "key": "can-lager",
+        "name": "Lager",
+        "alt": "Lager can with a gold sun setting over water"
+      },
+      {
+        "key": "can-pale-ale",
+        "name": "Pale Ale",
+        "abv": "5%",
+        "alt": "Pale Ale can with teal mountains"
+      },
+      {
+        "key": "can-ipa",
+        "name": "Alibi IPA",
+        "abv": "6.2%",
+        "alt": "IPA can with sky-blue mountains"
+      },
+      {
+        "key": "can-clouds",
+        "name": "Chance of Clouds",
+        "abv": "6.2%",
+        "alt": "Chance of Clouds hazy IPA can with blue and violet cloud shapes"
+      },
+      {
+        "key": "can-porter",
+        "name": "Porter",
+        "alt": "Porter can with purple night-sky mountains"
+      },
+      {
+        "key": "can-contradiction",
+        "name": "Contradiction",
+        "abv": "6%",
+        "alt": "Contradiction can with a coffee cup and golden sun rays"
+      }
+    ],
+    "more": "Ask the pub about current take-home options."
+  },
+  "kitchen": "Pizza and pub favorites, with a menu that changes with the seasons.",
+  "toGo": "Choose an available pickup time when you order.",
+  "dietLegend": "V vegetarian · VG vegan · GF gluten-free, as marked on Alibi's menu.",
+  "drinksNote": "Alibi beer on draft, in bottles and in cans, plus cider, cocktails, wine and non-alcoholic drinks.",
+  "featured": {
+    "pizza": "Pepperoni Pizza",
+    "pizzaDetail": "Sourdough thin crust",
+    "beer": "Chance of Clouds"
+  }
+}

@@ -1,0 +1,143 @@
+/* The existing mobile stylesheet is deliberately untouched. This entire layer
+   belongs to the desktop composition, including all shared-route treatments. */
+@media screen and (min-width: 1000px) {
+  :root {
+    /* Warm paper and foliage, derived from the existing illustration palette. */
+    --desktop-linen: #EDE3CB;
+    --desktop-sage: #D8DFCC;
+    --desktop-timber: #DEAE78;
+    --desktop-shadow: rgb(23 43 39 / .17);
+    --desktop-ease: cubic-bezier(.22, .65, .3, 1);
+  }
+
+  body { background: var(--desktop-linen); }
+  ::selection { background: var(--gold); color: var(--ink); }
+  .site-header { background: var(--desktop-linen); border-color: var(--ink); }
+  #site-nav .nav-order { background: var(--ink); color: var(--paper); }
+  .container { max-width: 1600px; }
+
+  /* Printed pines connect the food/table chapter to the actual Beer Forest. */
+  .home-spaces { position: relative; padding-block: 130px 108px; }
+  .home-spaces::before,
+  .house-spaces::before {
+    content: '';
+    position: absolute;
+    inset: -57px 0 auto;
+    height: 60px;
+    background: var(--pine);
+    mask: url('/assets/svg/pine-band-back.svg') center bottom / auto 100% repeat-x;
+    pointer-events: none;
+  }
+  .seat-layout { grid-template-columns: .8fr 1.25fr; gap: clamp(55px, 7vw, 115px); }
+  .seat-copy h2 { font-size: clamp(52px, 5vw, 80px); }
+  .seat-panels { padding-top: 32px; }
+  .seat-panel > picture {
+    padding: 12px;
+    background: var(--desktop-linen);
+    transform: rotate(2deg);
+    box-shadow: 12px 16px 0 var(--ink);
+  }
+  .seat-panel img { aspect-ratio: 5 / 4; }
+  .seat-panel figcaption { padding-top: 35px; }
+  .seat-controls button { min-height: 76px; font-size: 31px; }
+
+  .home-events {
+    background: var(--desktop-timber);
+    padding-block: 144px 126px;
+    position: relative;
+  }
+  .event-layout { gap: clamp(60px, 7vw, 116px); }
+  .event-copy h2 { font-size: clamp(52px, 4.7vw, 76px); }
+  .company-photo { transform: rotate(-3deg); transform-origin: 50% 35%; }
+  .company-photo > picture { background: var(--desktop-linen); padding: 13px 13px 0; }
+  .company-photo img { aspect-ratio: 4 / 3; }
+  .company-photo figcaption { padding: 17px 18px 22px; background: var(--desktop-linen); color: var(--ink); }
+  .string-lights { top: -76px; width: calc(100% + 60px); left: -30px; }
+  .mini-event, .closure-heads { border-color: var(--ink); }
+  .mini-event { padding-block: 22px; }
+  .mini-title { font-size: 28px; }
+  .home-beer { display: none; }
+
+  .home-visit { position: relative; background: var(--desktop-sage); padding-block: 115px; }
+  .home-visit h2 { font-size: clamp(64px, 6.3vw, 100px); }
+  .final-layout { grid-template-columns: 1fr 1.15fr; }
+  .closing-art { max-height: 560px; }
+  .site-footer { padding-top: 82px; }
+  .footer-top { gap: 70px; padding-bottom: 74px; }
+  .footer-logo img { width: 270px; height: 170px; }
+
+  /* Route-specific colors continue the house identity into the useful pages. */
+  .route-hero { background: var(--desktop-sage); overflow: clip; }
+  .route-hero-grid { padding-block: 76px 85px; gap: 76px; }
+  .route-hero h1 { font-size: clamp(76px, 7.6vw, 118px); }
+  .route-hero-copy .eyebrow-mark { display: block; width: 26px; height: 26px; }
+  .route-hero-copy > p:not(.eyebrow) { max-width: 440px; }
+  .route-hero-media { position: relative; transform: rotate(2deg); }
+  .route-hero-media > picture { padding: 12px; background: var(--desktop-linen); border: 1px solid var(--ink); }
+  .route-hero-media img:not(.route-detail) { aspect-ratio: 5 / 4; max-height: 490px; }
+  .route-hero-media > figcaption { color: inherit; padding-top: 18px; }
+  .route-detail { width: 156px; height: 112px; right: 12px; bottom: -80px; }
+  .menu-hero { background: var(--gold); }
+  .menu-hero .btn-primary { background: var(--ink); color: var(--paper); }
+  .menu-nav { background: var(--desktop-linen); border-color: var(--ink); }
+  .menu-food { background: var(--desktop-linen); }
+  .menu-food .menu-cat { border-color: var(--ink); }
+  .menu-cat-head h3 { font-size: 40px; }
+  .menu-cat-head { position: sticky; top: 112px; align-self: start; }
+  .menu-food-pair { gap: 54px; margin-block: 70px; }
+  .menu-food-pair figure:first-child { transform: rotate(-2deg); }
+  .menu-food-pair figure:last-child { transform: rotate(2deg); }
+  .menu-food-pair picture { padding: 11px; border: 1px solid var(--ink); background: var(--gold); }
+  .menu-hh, .menu-brunch { background: var(--desktop-sage); padding-inline: 30px; }
+  .menu-drinks .menu-group-head { max-width: 920px; }
+  .menu-drinks .section-title { font-size: clamp(62px, 6vw, 94px); }
+  .pickup-strip { background: var(--desktop-timber); }
+
+  .events-hero { background: var(--pine); color: var(--paper); }
+  .events-hero .btn-secondary { border-color: var(--paper); }
+  .events-hero :focus-visible { outline-color: var(--gold); box-shadow: 0 0 0 3px var(--pine); }
+  .events-hero .route-detail { background: var(--gold); padding: 12px; transform: rotate(-9deg); }
+  .calendar { background: var(--desktop-linen); }
+  .calendar-inner { max-width: 1350px; }
+  .calendar-heading { max-width: 870px; }
+  .calendar-heading h2 { font-size: 76px; }
+  .event { border-color: var(--ink); padding-block: 34px; }
+  .event-date { padding: 13px 6px; border: 1px solid var(--ink); background: var(--gold); align-self: start; }
+  .event-title { font-size: 34px; }
+  .month-title { margin-top: 55px; }
+
+  .visit-hero { background: var(--desktop-sage); }
+  .visit-hero .route-hero-grid { align-items: start; }
+  .visit-hero .route-hero-copy { padding-top: 38px; }
+  .visit-house-detail { width: 210px; margin-top: 0; }
+  .route-hero-media .visit-house-detail img { aspect-ratio: auto; max-height: none; }
+  .visit-details { background: var(--desktop-linen); }
+  .arrival-block { padding: 42px; background: var(--gold); }
+  .arrival-block .btn { background: var(--ink); color: var(--paper); }
+  .arrival-photo { max-width: none; }
+  .house-spaces { position: relative; margin-top: 0; }
+  .space-gallery { gap: 45px; }
+  .space-gallery .space-reference:nth-child(2) { padding-top: 50px; }
+  .space-gallery picture { padding: 9px; background: var(--desktop-linen); }
+  .space-gallery img { aspect-ratio: 4 / 3; }
+  .house-spaces + .gathering-section { background: var(--desktop-timber); color: var(--ink); }
+  .house-spaces + .gathering-section figcaption { color: var(--ink); }
+  .house-spaces + .gathering-section .btn-secondary { border-color: var(--ink); }
+  .gather-photo > picture { padding: 12px; background: var(--desktop-linen); transform: rotate(-2deg); }
+  .gather-photo figcaption { margin-top: 15px; }
+
+  @media (max-width: 1199px) {
+    .seat-layout, .event-layout { gap: 45px; }
+    .route-hero-grid { gap: 44px; }
+    .route-hero h1 { font-size: 77px; }
+    .route-hero-copy .actions { gap: 16px; }
+    .footer-top { gap: 35px; }
+  }
+
+  @media (min-width: 1700px) {
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .food-detail, .company-photo, .route-hero-media { transform: none; }
+  }
+}

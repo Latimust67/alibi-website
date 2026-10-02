@@ -1,0 +1,161 @@
+{
+  "checked": "2026-09-26",
+  "checkedLabel": "September 26, 2026",
+  "name": "Alibi Ale Works",
+  "location": "Incline Public House",
+  "address": {
+    "street": "931 Tahoe Blvd.",
+    "city": "Incline Village",
+    "region": "NV",
+    "postal": "89451",
+    "landmark": "Across from Raley's shopping center",
+    "landmarkLong": "Across from Raley’s, with parking on site and nearby."
+  },
+  "phone": {
+    "display": "(775) 831-8300",
+    "tel": "+17758318300"
+  },
+  "hours": [
+    {
+      "days": "Monday",
+      "short": "Mon",
+      "open": "11am",
+      "close": "9pm"
+    },
+    {
+      "days": "Tuesday",
+      "short": "Tue",
+      "open": "11am",
+      "close": "9pm"
+    },
+    {
+      "days": "Wednesday",
+      "short": "Wed",
+      "open": "11am",
+      "close": "9pm"
+    },
+    {
+      "days": "Thursday",
+      "short": "Thu",
+      "open": "11am",
+      "close": "9pm"
+    },
+    {
+      "days": "Friday",
+      "short": "Fri",
+      "open": "11am",
+      "close": "10pm"
+    },
+    {
+      "days": "Saturday",
+      "short": "Sat",
+      "open": "11am",
+      "close": "9pm"
+    },
+    {
+      "days": "Sunday",
+      "short": "Sun",
+      "open": "10am",
+      "close": "9pm"
+    }
+  ],
+  "hoursSummary": "Mon–Thu & Sat 11am–9pm · Fri 11am–10pm · Sun 10am–9pm",
+  "kitchen": "Kitchen open until 9pm daily",
+  "happyHour": "Weekday happy hour, Mon–Fri 3–5pm (excludes holiday periods)",
+  "brunch": "Sunday brunch 10am–3pm during football season",
+  "policies": [
+    {
+      "id": "families",
+      "label": "Families welcome",
+      "text": "Kids are welcome at Alibi."
+    },
+    {
+      "id": "dogs",
+      "label": "Bringing a dog",
+      "text": "Leashed dogs are welcome in the Beer Forest and on the lower patio, but not indoors."
+    },
+    {
+      "id": "outdoor",
+      "label": "Outdoor seating",
+      "text": "The heated deck is available when weather allows. The Beer Forest is seasonal."
+    },
+    {
+      "id": "parking",
+      "label": "Parking",
+      "text": "45 spaces on site, with more parking nearby."
+    },
+    {
+      "id": "togo",
+      "label": "To go",
+      "text": "Pizza and food for pickup, plus crowlers, growlers, cans, bottles, merch and gift cards."
+    }
+  ],
+  "gatherings": {
+    "capacity": "For groups of up to 200. Depending on your group size, you may need to book the whole pub.",
+    "features": [
+      "An indoor stage with house sound and a video projector",
+      "An outdoor stage in the Biergarten",
+      "Open floor plan: no private banquet rooms",
+      "Live bands and a cocktail bar on request",
+      "Beer, wine, cider, soft drinks, kombucha and cocktails on draft"
+    ],
+    "url": "https://alibialeworks.com/book-an-event/",
+    "checked": "2026-09-28"
+  },
+  "facts": {
+    "since": "Alibi Ale Works was founded in Incline Village in 2014",
+    "awards": "Voted Best Brewery in Truckee & North Lake Tahoe 11 times in the Sierra Sun's Best Of contest",
+    "founded": 2014,
+    "awardCount": 11,
+    "awardsShort": "Voted Best Brewery 11 times",
+    "epa": "A 2024 EPA Pollution Prevention Recognition Award, for brewing methods that save about 2,600 lbs of CO₂ a year",
+    "glutenReduced": "Brewed gluten-reduced, though not recommended for anyone with celiac disease",
+    "community": "In 2025, Alibi supported 94 non-profits and community groups across 106 events.",
+    "open": "Open seven days"
+  },
+  "links": {
+    "officialVenue": "https://alibialeworks.com/incline-public-house/",
+    "officialMenu": "https://alibialeworks.com/incline-public-house/alibi-incline-menu/",
+    "order": "https://order.toasttab.com/online/incline-public-house",
+    "directions": "https://g.page/alibiincline?share",
+    "events": "https://alibialeworks.com/events/",
+    "bookEvent": "https://alibialeworks.com/book-an-event/",
+    "beers": "https://alibialeworks.com/beers/",
+    "giftCards": "https://order.toasttab.com/egiftcards/incline-public-house",
+    "app": "https://manager.tapwyse.com/DownloadApp/60337/Alibi-Ale-Works",
+    "anonymous": "https://alibialeworks.com/alibi-anonymous/",
+    "careers": "https://alibialeworks.com/careers/",
+    "newsletter": "https://alibialeworks.com/email-signup/",
+    "truckee": "https://alibialeworks.com/truckee-public-house/",
+    "awards": "https://alibialeworks.com/best-of-tahoe-truckee/",
+    "glutenReduced": "https://alibialeworks.com/2023/04/18/glutenreducedbeer/",
+    "hoppyHour": "https://drinkhoppyhour.com",
+    "tunesOnTap": "https://alibialeworks.com/tunes-on-tap/",
+    "blog": "https://alibialeworks.com/blog/",
+    "home": "https://alibialeworks.com/",
+    "instagram": "https://www.instagram.com/alibialeworks/",
+    "facebook": "https://www.facebook.com/alibiincline/",
+    "beerFinder": "https://alibialeworks.com/beers/#alibi-beer-finder-visible",
+    "shop": "https://shop.drinkhoppyhour.com",
+    "sellBeer": "mailto:zach@alibi.beer",
+    "youtube": "https://www.youtube.com/channel/UCKravtBPBZ9k3jniHsR5m9w",
+    "x": "https://twitter.com/alibialeworks",
+    "pinterest": "https://www.pinterest.com/alibialeworks/",
+    "truckeeMenu": "https://alibialeworks.com/truckee-public-house/alibi-truckee-menu/",
+    "truckeeEvents": "https://alibialeworks.com/locations/alibi-ale-works-truckee-public-house/"
+  },
+  "anonymous": "Alibi Anonymous members ($15 a month or $150 a year) get $2 off 16oz beers, $1 off 10oz beers, and 10% off food, cans, fills and merch.",
+  "credits": [
+    "Photos and can artwork were sourced from Alibi’s website for this private concept. Public-use permissions and complete photo credits still need confirmation.",
+    "The illustrations are artistic interpretations of Alibi, not exact views of the venue."
+  ],
+  "toGo": "Last to-go order 8:45pm; online pickup slots show at checkout",
+  "appLine": "Beer, bites + merch deals",
+  "newsletterLine": "New beers, food and events, first.",
+  "kitchenShort": "Kitchen until 9pm",
+  "happyHourShort": "Happy hour Mon–Fri, 3–5pm",
+  "hoursChecked": "2026-09-28",
+  "practicalChecked": "2026-09-28",
+  "hoursCheckedLabel": "September 28, 2026",
+  "practicalCheckedLabel": "September 28, 2026"
+}

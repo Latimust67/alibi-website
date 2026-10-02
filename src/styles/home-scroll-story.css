@@ -1,0 +1,159 @@
+/* The selected table composition and its middle chapters. Beer and rope retain
+   their own controller, geometry and motion. All colors derive from the artwork. */
+:root { --table-paper: #fbf1da; --table-ink: #103c34; --table-line: #b8ad90; }
+body[data-page="home"] { background: var(--table-paper); }
+body[data-page="home"] .site-header { margin-bottom: -76px; height: 76px; background: transparent; border: 0; padding-left: 13%; padding-right: 7%; transition: background .2s; }
+body[data-page="home"] .site-header.is-scrolled { height: 76px; background: var(--table-paper); border-bottom: 1px solid var(--table-line); }
+.brand-type { flex-direction: column; gap: 0; color: var(--table-ink); }
+.brand-type strong { font: 750 56px/.85 var(--font); letter-spacing: -.075em; }
+.brand-type span { border: 0; padding: 7px 0 0; font-size: 9px; letter-spacing: .3em; white-space: nowrap; }
+body[data-page="home"] #site-nav { font: 500 18px/1.2 var(--font); gap: 35px; }
+body[data-page="home"] #site-nav > a[href="/"] { display: none; }
+body[data-page="home"] #site-nav .nav-order { border: 2px solid var(--table-ink); border-radius: 40px; background: transparent; color: var(--table-ink); padding: 12px 28px; margin-left: 0; }
+body[data-page="home"] #site-nav .nav-order .icon { display: none; }
+.at-table { position: relative; isolation: isolate; min-height: 700px; height: max(740px, 56.28vw); max-height: 1180px; overflow: hidden; background: var(--table-paper); color: var(--table-ink); }
+.at-table-art { position: absolute; inset: 0; z-index: -1; transform-origin: 65% 75%; }
+.at-table-art picture, .at-table-art img { width: 100%; height: 100%; }
+.at-table-art img { object-fit: cover; object-position: center center; }
+.at-table-copy { position: relative; padding-top: clamp(120px, 8.7vw, 166px); margin-left: 6.7%; width: 45%; }
+.at-table h1 { font-size: clamp(74px, 7.2vw, 123px); font-weight: 600; line-height: 1.06; letter-spacing: -.064em; white-space: nowrap; margin-bottom: 12px; }
+.at-table-lead { font-family: Georgia, var(--font); font-weight: 400; font-size: clamp(18px, 1.42vw, 25px); line-height: 1.35; letter-spacing: -.03em; max-width: 100%; margin-bottom: 0; }
+.at-table .actions { margin-top: 18px; gap: 16px; }
+.at-table .btn { border-radius: 40px; min-width: 180px; padding: 12px 26px; border: 2px solid var(--table-ink); font: 550 clamp(17px, 1.35vw, 23px)/1.35 var(--font); min-height: 50px; }
+.at-table .btn-primary { background: var(--table-ink); color: var(--table-paper); }
+.at-table .btn-secondary { background: transparent; color: var(--table-ink); }
+.at-table-address { margin: 5px 0 0; font: 450 clamp(16px, 1.15vw, 20px)/1.5 var(--font); }
+.at-table-address a { text-decoration: none; display: inline-flex; align-items: center; min-height: 36px; }
+.at-table-cue { position: absolute; right: 27px; bottom: 18px; padding: 9px 16px; background: var(--table-paper); color: var(--ink); border-radius: 30px; font-size: 12px; text-decoration: none; }
+.at-table-cue span { margin-left: 12px; }
+.kitchen-story { background: var(--table-paper); position: relative; padding-bottom: 100px; }
+.kitchen-stage { padding: 88px 0 45px; background: var(--table-paper); }
+.kitchen-layout { display: grid; grid-template-columns: 1.4fr 1fr; gap: 6vw; align-items: center; }
+.kitchen-figure { min-width: 0; }
+.kitchen-window { position: relative; aspect-ratio: 1.38; overflow: visible; }
+.kitchen-photo { position: absolute; inset: 0; overflow: hidden; }
+.kitchen-photo picture, .kitchen-photo img { width: 100%; height: 100%; object-fit: cover; }
+.kitchen-photo img { object-position: 45% center; }
+.kitchen-figure figcaption { font-size: 13px; margin-top: 7px; }
+.plate-rim { width: 195px; height: 195px; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); display: none; overflow: visible; pointer-events: none; color: var(--table-ink); }
+.plate-turn { transform-origin: 200px 200px; }
+.plate-trace { stroke: currentColor; stroke-width: 4; stroke-linecap: round; }
+.plate-inner { stroke: currentColor; stroke-width: 1; }
+.plate-dash { stroke: currentColor; stroke-width: 2; stroke-dasharray: 1 5; }
+.plate-sprig { stroke: currentColor; stroke-width: 3; stroke-linecap: round; }
+.kitchen-copy h2 { font-size: clamp(48px, 4.8vw, 79px); }
+.kitchen-copy > p:not(.eyebrow) { max-width: 340px; font-size: 18px; }
+.kitchen-copy .btn { background: var(--ink); color: var(--table-paper); }
+.kitchen-copy .actions { gap: 15px; }
+.kitchen-copy .pizza-story { font-size: 13px!important; max-width: none!important; margin-top: 26px; margin-bottom: 0; }
+.kitchen-details { display: grid; grid-template-columns: .75fr 1fr 1fr; gap: 42px; align-items: center; padding-top: 38px; max-width: 1250px; }
+.kitchen-aside { font: 450 clamp(27px, 2.4vw, 38px)/1.15 var(--font); letter-spacing: -.03em; margin: 0; }
+.kitchen-detail { display: block; text-decoration: none; }
+.kitchen-detail picture { padding: 7px; border: 1px solid var(--table-line); }
+.kitchen-detail img { width: 100%; aspect-ratio: 1.5; object-fit: cover; }
+.kitchen-detail > span { display: flex; align-items: center; justify-content: space-between; padding: 10px 2px; font-size: 14px; }
+.kitchen-detail b { font-weight: 400; font-size: 20px; }
+.kitchen-detail:focus-visible { outline-offset: 7px; }
+.corner-draw { display: none; }
+.seat-controls { display: none; }
+.seats-enhanced .seat-controls { display: block; }
+.rope-drag-note { display: none; }
+.company-hero:has(.desktop-prints.is-live) .rope-drag-note { display: block; }
+.home-visit .sf-practical-line > span[aria-hidden] { display: none; }
+@media (min-width: 1000px) {
+  .scroll-story-active .kitchen-stage { min-height: calc(100svh - 76px); display: flex; align-items: center; padding-block: 40px; }
+  .scroll-story-active .plate-rim { display: block; }
+  .corner-experience { padding-top: 72px; }
+  .corner-experience .corner-scene-header { padding-bottom: 42px; gap: 6vw; grid-template-columns: 1fr 1fr; }
+  .corner-scene-header h2, .deck-scene-header h2 { font-size: clamp(58px, 5.6vw, 88px); }
+  .seats-enhanced .corner-scene-choices .seat-controls { display: flex; }
+  .corner-reveal { overflow: hidden; }
+  .corner-scene-stage { transform-origin: center 40%; }
+  .corner-scene-panels figure > picture { height: clamp(440px, 38vw, 620px); }
+  .corner-scene-panels figcaption { padding-block: 18px; }
+  .corner-draw { display: block; position: absolute; z-index: 3; inset: 0 1.3%; width: 97.4%; height: calc(100% - 74px); pointer-events: none; stroke: var(--table-paper); stroke-width: 1.5; fill: none; }
+  .corner-draw rect { vector-effect: non-scaling-stroke; }
+  .deck-experience { padding-top: 68px; }
+  .deck-scene-header { padding-bottom: 30px; }
+  .deck-scene-stage { height: clamp(410px, 35vw, 590px); }
+  .deck-scene-art { transform-origin: center 70%; }
+  .deck-scene-stage::after { content: ''; position: absolute; inset: 0; background: var(--gold); opacity: var(--deck-warmth, 0); pointer-events: none; mix-blend-mode: soft-light; }
+  .deck-scene-caption { z-index: 2; }
+  .deck-experience ~ .desktop-drinks .desktop-drinks-intro { padding-top: 75px; }
+}
+@media (min-width: 1000px) and (max-width: 1250px) {
+  body[data-page="home"] .site-header { padding-inline: 9%; }
+  .at-table { min-height: 660px; height: 61vw; }
+  .at-table-copy { padding-top: 115px; margin-left: 5%; width: 47%; }
+  .at-table h1 { font-size: 6.7vw; }
+  .at-table .btn { min-width: 150px; padding-inline: 22px; }
+  .at-table-lead { max-width: none; }
+  .kitchen-layout { gap: 42px; }
+  .kitchen-copy h2 { font-size: 52px; }
+  .kitchen-copy .actions { align-items: flex-start; flex-direction: column; margin-top: 20px; gap: 7px; }
+}
+@media (max-width: 999px) {
+  body[data-page="home"] .site-header, body[data-page="home"] .site-header.is-scrolled { height: 76px; margin-bottom: 0; padding-inline: var(--gutter); background: var(--table-paper); border-bottom: 1px solid var(--table-line); }
+  .brand-type strong { font-size: 42px; }
+  .brand-type span { font-size: 7px; padding-top: 5px; }
+  .at-table { min-height: 0; height: auto; max-height: none; display: flex; flex-direction: column; overflow: hidden; }
+  .at-table-copy { width: auto; margin: 0; padding: 44px var(--gutter) 14px; }
+  .at-table h1 { font-size: clamp(57px, 8.5vw, 85px); white-space: normal; margin-bottom: 19px; }
+  .at-table-lead { font-size: 22px; max-width: 520px; line-height: 1.45; letter-spacing: -.03em; }
+  .at-table-art { position: relative; order: 2; width: 100%; aspect-ratio: 1.75; z-index: 0; overflow: hidden; }
+  .at-table-art picture { position: absolute; width: 127%; height: auto; bottom: 0; right: 0; }
+  .at-table-art img { width: 100%; height: auto; object-fit: initial; }
+  .at-table .actions { gap: 12px; margin-top: 21px; }
+  .at-table .btn { min-width: 150px; font-size: 18px; padding: 11px 20px; }
+  .at-table-address { font-size: 15px; margin-top: 16px; }
+  .at-table-cue { display: none; }
+  .kitchen-story { padding-bottom: 58px; }
+  .kitchen-stage { padding: 55px 0 22px; }
+  .kitchen-layout { display: flex; flex-direction: column; gap: 30px; align-items: stretch; }
+  .kitchen-window { aspect-ratio: 1.45; }
+  .kitchen-copy h2 { font-size: 48px; }
+  .kitchen-copy h2 br { display: none; }
+  .kitchen-copy > p:not(.eyebrow) { max-width: 450px; }
+  .kitchen-copy .eyebrow { margin-bottom: 16px; }
+  .kitchen-copy .actions { margin-top: 22px; }
+  .kitchen-details { grid-template-columns: 1fr 1fr; gap: 18px; padding-top: 20px; }
+  .kitchen-aside { grid-column: 1/-1; font-size: 29px; margin-bottom: 5px; }
+  .kitchen-aside br { display: none; }
+  .kitchen-detail picture { padding: 4px; }
+  .kitchen-detail > span { font-size: 13px; gap: 4px; }
+}
+@media (max-width: 700px) {
+  body[data-page="home"] #site-nav { top: 76px; background: var(--table-paper); font-family: DM, sans-serif; font-size: 19px; gap: 0; }
+  body[data-page="home"] #site-nav > a[href="/"] { display: flex; }
+  body[data-page="home"] #site-nav .nav-order { margin-top: 16px; justify-content: center; }
+  .at-table-copy { padding-top: 34px; }
+  .at-table h1 { font-size: clamp(53px, 13.5vw, 74px); line-height: 1.02; letter-spacing: -.067em; }
+  .at-table-lead { font-size: 20px; max-width: 340px; }
+  .at-table .btn { min-width: 0; flex: 1; padding-inline: 14px; }
+  .at-table-art { aspect-ratio: 1.57; }
+  .at-table-art picture { width: 128%; }
+  .kitchen-copy h2 { font-size: 45px; }
+  .kitchen-copy .actions { gap: 14px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .at-table-cue, .desktop-drinks-cue, .rope-drag-note { display: none!important; }
+  .at-table-art, .kitchen-photo, .kitchen-detail, .corner-scene-stage, .deck-scene-art { transform: none!important; }
+  .corner-draw { display: none; }
+}
+
+/* Current hours and exceptions sit on paper, never over engraved scenery. */
+.table-practical { width: 100%; padding-block: 16px; background: var(--table-paper); border-bottom: 1px solid var(--table-line); }
+.table-practical .sf-today { display: flex; justify-content: space-between; align-items: center; gap: 12px 36px; max-width: none; margin: 0; }
+.table-practical .sf-practical-line { flex: none; gap: 0 22px; font-size: 13px; }
+.table-practical .sf-notice { display: flex; align-items: center; gap: 10px; margin: 0; max-width: 600px; font-size: 12px; }
+.table-practical .sf-notice .icon { width: 16px; height: 16px; }
+@media (max-width: 999px) {
+  .table-practical .sf-today { flex-direction: column; align-items: flex-start; gap: 4px; }
+  .table-practical .sf-practical-line { font-size: 13px; gap: 0 15px; }
+  .table-practical .sf-notice { font-size: 12px; line-height: 1.55; align-items: flex-start; }
+  .table-practical .sf-notice .icon { margin-top: 2px; }
+}
+
+@media (min-width: 1000px) {
+  body[data-page="home"] #site-nav { background: var(--table-paper); padding-inline: 14px; margin-right: -14px; }
+}

@@ -1,0 +1,37 @@
+{
+  "coordinateSpace": {
+    "width": 1800,
+    "height": 1200
+  },
+  "invitation": {
+    "x": 1000,
+    "y": 770,
+    "width": 480,
+    "height": 320,
+    "leftHinge": [
+      1000,
+      930
+    ],
+    "rightHinge": [
+      1480,
+      930
+    ]
+  },
+  "chair": {
+    "x": 690,
+    "y": 830,
+    "width": 260,
+    "height": 355,
+    "pivot": [
+      820,
+      1140
+    ]
+  },
+  "phone": {
+    "width": 900,
+    "height": 1100,
+    "invitationBaked": true,
+    "chairBaked": true
+  },
+  "paper": "#F6F2E8"
+}

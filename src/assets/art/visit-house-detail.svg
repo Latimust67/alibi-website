@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="340" viewBox="0 0 600 340" fill="none">
+  <g stroke-linecap="round" stroke-linejoin="round">
+    <!-- An illustrated detail of the actual charcoal house and raised deck. -->
+    <path d="M182 124 229 107 459 116 491 133 480 142 185 137Z" fill="#172B27" stroke="#172B27" stroke-width="4"/>
+    <path d="M193 139 480 144 476 239 198 248Z" fill="#173E35" stroke="#172B27" stroke-width="3.5"/>
+    <path d="M218 164 450 170 448 211 216 207Z" fill="#172B27" stroke="#F6F2E8" stroke-width="2"/>
+    <path d="M224 181 442 185M225 192 441 196M233 170 232 203M398 175 397 207" stroke="#F6F2E8" stroke-width="1.5"/>
+    <path d="M210 206 Q305 202 455 214L468 223Q328 215 209 217Z" fill="#C56834" stroke="#172B27" stroke-width="2.5"/>
+    <path d="M193 247 476 235 527 270 222 289 173 269Z" fill="#F6F2E8" stroke="#172B27" stroke-width="3.5"/>
+    <path d="M212 252 248 285M251 249 284 282M288 247 323 280M328 245 363 278M367 243 405 276M407 241 444 273M446 240 486 270" stroke="#C56834" stroke-width="2"/>
+    <!-- Thin steel supports and the two recognizable shade sails. -->
+    <path d="M168 81 171 259M356 68 355 240M512 103 510 258M166 83 356 69 513 104" stroke="#172B27" stroke-width="4"/>
+    <path d="M91 70Q191 92 345 69Q276 91 227 150Q177 102 91 70Z" fill="#F6F2E8" stroke="#172B27" stroke-width="3"/>
+    <path d="M235 150Q365 117 510 104Q437 91 359 67Q330 108 235 150Z" fill="#C56834" stroke="#172B27" stroke-width="3"/>
+    <path d="M110 77Q188 99 222 137M259 142Q359 117 491 106M363 76 350 98M375 80 363 102M387 84 375 106" stroke="#173E35" stroke-width="1.8"/>
+    <!-- Timber rails leave an opening for the garden steps. -->
+    <path d="M168 220 274 247M349 250 511 227" stroke="#172B27" stroke-width="9"/>
+    <path d="M168 218 274 245M349 248 511 225" stroke="#C56834" stroke-width="5"/>
+    <path d="M174 223 176 268M197 229 199 274M220 235 222 280M245 241 246 283M270 247 271 285M352 251 352 281M381 247 381 280M410 242 410 278M440 238 440 277M471 233 471 274M507 229 509 270" stroke="#172B27" stroke-width="3.5"/>
+    <path d="M276 246 346 251 360 310 255 310Z" fill="#C56834" stroke="#172B27" stroke-width="3"/>
+    <path d="M273 258 348 262M269 271 351 274M265 284 354 287M260 297 357 299" stroke="#F6F2E8" stroke-width="3"/>
+    <path d="M271 254 257 303M349 258 360 304" stroke="#172B27" stroke-width="2"/>
+    <!-- Irregular pine branches frame the house, without an invented horizon. -->
+    <path d="M108 30 95 308M111 75 138 55M106 107 68 88M104 142 145 117M101 176 55 151M100 209 146 184M98 246 65 227" stroke="#172B27" stroke-width="5"/>
+    <path d="M112 18Q101 45 86 58L104 54Q86 77 69 86L98 78Q80 106 53 117L92 109Q78 134 42 145L95 137Q72 161 47 174L94 164Q71 192 47 203L98 193Q119 213 146 214L121 192 155 198 123 174 155 176 123 150 160 155 126 128 157 130 124 101 147 107 125 82 140 83 122 58 135 58Z" fill="#173E35" stroke="#172B27" stroke-width="2.5"/>
+    <path d="M111 37 105 83 99 124 101 177M102 96 80 107M101 126 125 142M100 155 72 169M106 66 120 73" stroke="#F6F2E8" stroke-width="2"/>
+    <path d="M548 69 545 300M548 100 568 87M547 143 527 122M547 180 579 157M546 217 519 200" stroke="#172B27" stroke-width="4"/>
+    <path d="M550 50 531 92 544 86 519 118 541 113 513 146 541 139 511 175 541 166 514 204 544 192 577 214 558 184 587 192 562 159 587 166 564 136 583 141 562 111 577 115Z" fill="#173E35" stroke="#172B27" stroke-width="2.5"/>
+    <path d="M549 78 548 120 546 173M546 133 530 145M547 157 566 168" stroke="#F6F2E8" stroke-width="2"/>
+    <!-- Granite and planted edges echo the Beer Forest reference. -->
+    <path d="M47 305 59 285 86 279 105 299 101 311 47 314ZM117 304 136 280 165 285 174 310ZM394 308 415 284 440 281 459 300 452 313Z" fill="#F6F2E8" stroke="#172B27" stroke-width="3"/>
+    <path d="M60 302 74 288 88 293M132 300 143 289 160 294M410 306 425 288 443 299M185 306 186 283M186 299 175 291M188 294 200 284M469 305 480 287M478 298 492 294M477 295 471 282" stroke="#173E35" stroke-width="2"/>
+    <path d="M34 319Q113 310 229 319M371 320Q475 309 574 318M85 325 157 327M443 325 510 326" stroke="#172B27" stroke-width="2"/>
+  </g>
+</svg>

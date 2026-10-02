@@ -1,0 +1,884 @@
+{
+  "pizza-and-pints": {
+    "width": 1920,
+    "height": 1277,
+    "alpha": false,
+    "color": "rgb(127 105 81)",
+    "avif": [
+      [
+        640,
+        "img/pizza-and-pints-640.avif",
+        16406
+      ],
+      [
+        960,
+        "img/pizza-and-pints-960.avif",
+        28289
+      ],
+      [
+        1400,
+        "img/pizza-and-pints-1400.avif",
+        45862
+      ]
+    ],
+    "webp": [
+      [
+        640,
+        "img/pizza-and-pints-640.webp",
+        22606
+      ],
+      [
+        960,
+        "img/pizza-and-pints-960.webp",
+        39154
+      ],
+      [
+        1400,
+        "img/pizza-and-pints-1400.webp",
+        65306
+      ]
+    ],
+    "jpg": [
+      [
+        640,
+        "img/pizza-and-pints-640.jpg",
+        30144
+      ],
+      [
+        960,
+        "img/pizza-and-pints-960.jpg",
+        54438
+      ],
+      [
+        1400,
+        "img/pizza-and-pints-1400.jpg",
+        95267
+      ]
+    ]
+  },
+  "dining-hall": {
+    "width": 1920,
+    "height": 1277,
+    "alpha": false,
+    "color": "rgb(118 93 66)",
+    "avif": [
+      [
+        480,
+        "img/dining-hall-480.avif",
+        19478
+      ],
+      [
+        800,
+        "img/dining-hall-800.avif",
+        42571
+      ],
+      [
+        1200,
+        "img/dining-hall-1200.avif",
+        79293
+      ]
+    ],
+    "webp": [
+      [
+        480,
+        "img/dining-hall-480.webp",
+        29162
+      ],
+      [
+        800,
+        "img/dining-hall-800.webp",
+        63280
+      ],
+      [
+        1200,
+        "img/dining-hall-1200.webp",
+        117144
+      ]
+    ],
+    "jpg": [
+      [
+        480,
+        "img/dining-hall-480.jpg",
+        32988
+      ],
+      [
+        800,
+        "img/dining-hall-800.jpg",
+        76854
+      ],
+      [
+        1200,
+        "img/dining-hall-1200.jpg",
+        147179
+      ]
+    ]
+  },
+  "deck": {
+    "width": 4032,
+    "height": 3024,
+    "alpha": false,
+    "color": "rgb(122 118 100)",
+    "avif": [
+      [
+        480,
+        "img/deck-480.avif",
+        22549
+      ],
+      [
+        800,
+        "img/deck-800.avif",
+        56328
+      ],
+      [
+        1200,
+        "img/deck-1200.avif",
+        120430
+      ]
+    ],
+    "webp": [
+      [
+        480,
+        "img/deck-480.webp",
+        37362
+      ],
+      [
+        800,
+        "img/deck-800.webp",
+        93800
+      ],
+      [
+        1200,
+        "img/deck-1200.webp",
+        200380
+      ]
+    ],
+    "jpg": [
+      [
+        480,
+        "img/deck-480.jpg",
+        38344
+      ],
+      [
+        800,
+        "img/deck-800.jpg",
+        97299
+      ],
+      [
+        1200,
+        "img/deck-1200.jpg",
+        208430
+      ]
+    ]
+  },
+  "forest-guests": {
+    "width": 1920,
+    "height": 1280,
+    "alpha": false,
+    "color": "rgb(103 114 82)",
+    "avif": [
+      [
+        480,
+        "img/forest-guests-480.avif",
+        21423
+      ],
+      [
+        800,
+        "img/forest-guests-800.avif",
+        54729
+      ],
+      [
+        1200,
+        "img/forest-guests-1200.avif",
+        107798
+      ]
+    ],
+    "webp": [
+      [
+        480,
+        "img/forest-guests-480.webp",
+        43458
+      ],
+      [
+        800,
+        "img/forest-guests-800.webp",
+        111690
+      ],
+      [
+        1200,
+        "img/forest-guests-1200.webp",
+        219950
+      ]
+    ],
+    "jpg": [
+      [
+        480,
+        "img/forest-guests-480.jpg",
+        37795
+      ],
+      [
+        800,
+        "img/forest-guests-800.jpg",
+        99184
+      ],
+      [
+        1200,
+        "img/forest-guests-1200.jpg",
+        204190
+      ]
+    ]
+  },
+  "friends-dining": {
+    "width": 1920,
+    "height": 1277,
+    "alpha": false,
+    "color": "rgb(131 112 93)",
+    "avif": [
+      [
+        480,
+        "img/friends-dining-480.avif",
+        18947
+      ],
+      [
+        800,
+        "img/friends-dining-800.avif",
+        41080
+      ]
+    ],
+    "webp": [
+      [
+        480,
+        "img/friends-dining-480.webp",
+        28958
+      ],
+      [
+        800,
+        "img/friends-dining-800.webp",
+        61514
+      ]
+    ],
+    "jpg": [
+      [
+        480,
+        "img/friends-dining-480.jpg",
+        31715
+      ],
+      [
+        800,
+        "img/friends-dining-800.jpg",
+        73265
+      ]
+    ]
+  },
+  "can-kolsch": {
+    "width": 740,
+    "height": 1834,
+    "alpha": true,
+    "color": "rgb(197 180 162)",
+    "avif": [
+      [
+        160,
+        "img/can-kolsch-160.avif",
+        7477
+      ],
+      [
+        240,
+        "img/can-kolsch-240.avif",
+        12762
+      ],
+      [
+        360,
+        "img/can-kolsch-360.avif",
+        21586
+      ],
+      [
+        480,
+        "img/can-kolsch-480.avif",
+        30805
+      ],
+      [
+        640,
+        "img/can-kolsch-640.avif",
+        42140
+      ],
+      [
+        740,
+        "img/can-kolsch-740.avif",
+        45884
+      ]
+    ],
+    "webp": [
+      [
+        160,
+        "img/can-kolsch-160.webp",
+        10274
+      ],
+      [
+        240,
+        "img/can-kolsch-240.webp",
+        17806
+      ],
+      [
+        360,
+        "img/can-kolsch-360.webp",
+        30528
+      ],
+      [
+        480,
+        "img/can-kolsch-480.webp",
+        42012
+      ],
+      [
+        640,
+        "img/can-kolsch-640.webp",
+        59344
+      ],
+      [
+        740,
+        "img/can-kolsch-740.webp",
+        62222
+      ]
+    ],
+    "jpg": []
+  },
+  "can-ipa": {
+    "width": 740,
+    "height": 1834,
+    "alpha": true,
+    "color": "rgb(140 181 192)",
+    "avif": [
+      [
+        160,
+        "img/can-ipa-160.avif",
+        6868
+      ],
+      [
+        240,
+        "img/can-ipa-240.avif",
+        12184
+      ],
+      [
+        360,
+        "img/can-ipa-360.avif",
+        20022
+      ],
+      [
+        480,
+        "img/can-ipa-480.avif",
+        28732
+      ],
+      [
+        640,
+        "img/can-ipa-640.avif",
+        37898
+      ],
+      [
+        740,
+        "img/can-ipa-740.avif",
+        41611
+      ]
+    ],
+    "webp": [
+      [
+        160,
+        "img/can-ipa-160.webp",
+        9426
+      ],
+      [
+        240,
+        "img/can-ipa-240.webp",
+        16302
+      ],
+      [
+        360,
+        "img/can-ipa-360.webp",
+        27348
+      ],
+      [
+        480,
+        "img/can-ipa-480.webp",
+        37866
+      ],
+      [
+        640,
+        "img/can-ipa-640.webp",
+        52590
+      ],
+      [
+        740,
+        "img/can-ipa-740.webp",
+        53450
+      ]
+    ],
+    "jpg": []
+  },
+  "can-porter": {
+    "width": 740,
+    "height": 1834,
+    "alpha": true,
+    "color": "rgb(119 99 118)",
+    "avif": [
+      [
+        160,
+        "img/can-porter-160.avif",
+        7135
+      ],
+      [
+        240,
+        "img/can-porter-240.avif",
+        12254
+      ],
+      [
+        360,
+        "img/can-porter-360.avif",
+        20168
+      ],
+      [
+        480,
+        "img/can-porter-480.avif",
+        28124
+      ],
+      [
+        640,
+        "img/can-porter-640.avif",
+        39127
+      ],
+      [
+        740,
+        "img/can-porter-740.avif",
+        41995
+      ]
+    ],
+    "webp": [
+      [
+        160,
+        "img/can-porter-160.webp",
+        10392
+      ],
+      [
+        240,
+        "img/can-porter-240.webp",
+        17372
+      ],
+      [
+        360,
+        "img/can-porter-360.webp",
+        28612
+      ],
+      [
+        480,
+        "img/can-porter-480.webp",
+        39520
+      ],
+      [
+        640,
+        "img/can-porter-640.webp",
+        54088
+      ],
+      [
+        740,
+        "img/can-porter-740.webp",
+        56288
+      ]
+    ],
+    "jpg": []
+  },
+  "pizza": {
+    "width": 1024,
+    "height": 682,
+    "alpha": false,
+    "color": "rgb(148 120 77)",
+    "avif": [
+      [
+        480,
+        "img/pizza-480.avif",
+        16129
+      ],
+      [
+        768,
+        "img/pizza-768.avif",
+        30844
+      ],
+      [
+        1024,
+        "img/pizza-1024.avif",
+        45989
+      ]
+    ],
+    "webp": [
+      [
+        480,
+        "img/pizza-480.webp",
+        27246
+      ],
+      [
+        768,
+        "img/pizza-768.webp",
+        51980
+      ],
+      [
+        1024,
+        "img/pizza-1024.webp",
+        75048
+      ]
+    ],
+    "jpg": [
+      [
+        480,
+        "img/pizza-480.jpg",
+        29566
+      ],
+      [
+        768,
+        "img/pizza-768.jpg",
+        60455
+      ],
+      [
+        1024,
+        "img/pizza-1024.jpg",
+        91859
+      ]
+    ]
+  },
+  "tap-pour": {
+    "width": 2129,
+    "height": 3200,
+    "alpha": false,
+    "color": "rgb(98 67 48)",
+    "avif": [
+      [
+        480,
+        "img/tap-pour-480.avif",
+        22601
+      ],
+      [
+        800,
+        "img/tap-pour-800.avif",
+        48793
+      ],
+      [
+        1200,
+        "img/tap-pour-1200.avif",
+        90939
+      ]
+    ],
+    "webp": [
+      [
+        480,
+        "img/tap-pour-480.webp",
+        29828
+      ],
+      [
+        800,
+        "img/tap-pour-800.webp",
+        67018
+      ],
+      [
+        1200,
+        "img/tap-pour-1200.webp",
+        129376
+      ]
+    ],
+    "jpg": [
+      [
+        480,
+        "img/tap-pour-480.jpg",
+        39561
+      ],
+      [
+        800,
+        "img/tap-pour-800.jpg",
+        90836
+      ],
+      [
+        1200,
+        "img/tap-pour-1200.jpg",
+        180717
+      ]
+    ]
+  },
+  "music-night": {
+    "width": 1920,
+    "height": 1278,
+    "alpha": false,
+    "color": "rgb(54 46 28)",
+    "avif": [
+      [
+        640,
+        "img/music-night-640.avif",
+        30283
+      ],
+      [
+        960,
+        "img/music-night-960.avif",
+        58656
+      ],
+      [
+        1400,
+        "img/music-night-1400.avif",
+        107828
+      ]
+    ],
+    "webp": [
+      [
+        640,
+        "img/music-night-640.webp",
+        42754
+      ],
+      [
+        960,
+        "img/music-night-960.webp",
+        82074
+      ],
+      [
+        1400,
+        "img/music-night-1400.webp",
+        148340
+      ]
+    ],
+    "jpg": [
+      [
+        640,
+        "img/music-night-640.jpg",
+        46635
+      ],
+      [
+        960,
+        "img/music-night-960.jpg",
+        93177
+      ],
+      [
+        1400,
+        "img/music-night-1400.jpg",
+        176948
+      ]
+    ]
+  },
+  "event-hall": {
+    "width": 3200,
+    "height": 2129,
+    "alpha": false,
+    "color": "rgb(106 68 48)",
+    "avif": [
+      [
+        640,
+        "img/event-hall-640.avif",
+        24623
+      ],
+      [
+        960,
+        "img/event-hall-960.avif",
+        47907
+      ],
+      [
+        1400,
+        "img/event-hall-1400.avif",
+        92219
+      ]
+    ],
+    "webp": [
+      [
+        640,
+        "img/event-hall-640.webp",
+        33586
+      ],
+      [
+        960,
+        "img/event-hall-960.webp",
+        64624
+      ],
+      [
+        1400,
+        "img/event-hall-1400.webp",
+        128520
+      ]
+    ],
+    "jpg": [
+      [
+        640,
+        "img/event-hall-640.jpg",
+        42647
+      ],
+      [
+        960,
+        "img/event-hall-960.jpg",
+        83949
+      ],
+      [
+        1400,
+        "img/event-hall-1400.jpg",
+        161988
+      ]
+    ]
+  },
+  "sign-snow": {
+    "width": 1920,
+    "height": 1440,
+    "alpha": false,
+    "color": "rgb(103 140 145)",
+    "avif": [
+      [
+        480,
+        "img/sign-snow-480.avif",
+        19880
+      ],
+      [
+        800,
+        "img/sign-snow-800.avif",
+        47336
+      ],
+      [
+        1200,
+        "img/sign-snow-1200.avif",
+        88606
+      ]
+    ],
+    "webp": [
+      [
+        480,
+        "img/sign-snow-480.webp",
+        38474
+      ],
+      [
+        800,
+        "img/sign-snow-800.webp",
+        90856
+      ],
+      [
+        1200,
+        "img/sign-snow-1200.webp",
+        167816
+      ]
+    ],
+    "jpg": [
+      [
+        480,
+        "img/sign-snow-480.jpg",
+        35671
+      ],
+      [
+        800,
+        "img/sign-snow-800.jpg",
+        87708
+      ],
+      [
+        1200,
+        "img/sign-snow-1200.jpg",
+        174055
+      ]
+    ]
+  },
+  "food-bao": {
+    "width": 1600,
+    "height": 900,
+    "alpha": false,
+    "color": "rgb(113 77 42)",
+    "avif": [
+      [
+        480,
+        "img/food-bao-480.avif",
+        7405
+      ],
+      [
+        800,
+        "img/food-bao-800.avif",
+        14136
+      ],
+      [
+        1200,
+        "img/food-bao-1200.avif",
+        23187
+      ]
+    ],
+    "webp": [
+      [
+        480,
+        "img/food-bao-480.webp",
+        9628
+      ],
+      [
+        800,
+        "img/food-bao-800.webp",
+        18216
+      ],
+      [
+        1200,
+        "img/food-bao-1200.webp",
+        29542
+      ]
+    ],
+    "jpg": [
+      [
+        480,
+        "img/food-bao-480.jpg",
+        13887
+      ],
+      [
+        800,
+        "img/food-bao-800.jpg",
+        28739
+      ],
+      [
+        1200,
+        "img/food-bao-1200.jpg",
+        49807
+      ]
+    ]
+  },
+  "food-salad": {
+    "width": 1600,
+    "height": 900,
+    "alpha": false,
+    "color": "rgb(108 76 39)",
+    "avif": [
+      [
+        480,
+        "img/food-salad-480.avif",
+        15210
+      ],
+      [
+        800,
+        "img/food-salad-800.avif",
+        30547
+      ],
+      [
+        1200,
+        "img/food-salad-1200.avif",
+        51410
+      ]
+    ],
+    "webp": [
+      [
+        480,
+        "img/food-salad-480.webp",
+        20868
+      ],
+      [
+        800,
+        "img/food-salad-800.webp",
+        41082
+      ],
+      [
+        1200,
+        "img/food-salad-1200.webp",
+        67236
+      ]
+    ],
+    "jpg": [
+      [
+        480,
+        "img/food-salad-480.jpg",
+        24968
+      ],
+      [
+        800,
+        "img/food-salad-800.jpg",
+        53463
+      ],
+      [
+        1200,
+        "img/food-salad-1200.jpg",
+        95011
+      ]
+    ]
+  }
+}

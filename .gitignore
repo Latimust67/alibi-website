@@ -1,0 +1,13 @@
+node_modules/
+dist/
+.DS_Store
+*.log
+.env
+.env.*
+!.env.example
+.vercel/
+.netlify/
+
+# Local review captures and unused hero explorations.
+review/
+hero-concepts/

@@ -1,0 +1,92 @@
+/* These recovered experiences never change the phone/tablet composition. */
+.desktop-experience { display: none; }
+
+@media (min-width: 1000px) {
+  .desktop-experience { display: block; }
+  .desktop-drinks { --desktop-header-height: 76px; background: var(--pine); color: var(--paper); }
+  .desktop-drinks-intro { display: grid; grid-template-columns: 1.6fr 1fr; align-items: end; gap: 64px; padding-block: clamp(80px, 9vw, 136px) 76px; }
+  .desktop-drinks-intro h2 { font-size: clamp(64px, 6.7vw, 104px); margin: 0; }
+  .desktop-drinks-intro h2 em { color: var(--gold); }
+  .desktop-drinks-lead { max-width: 350px; justify-self: end; padding-bottom: 5px; }
+  .desktop-drinks-lead > p { font-size: 23px; line-height: 1.5; margin-bottom: 17px; }
+  .desktop-drinks-cue { display: flex; align-items: center; gap: 17px; margin-top: 35px; text-transform: uppercase; letter-spacing: .12em; font-size: 11px; }
+  .desktop-drinks-cue .icon { color: var(--gold); }
+  .desktop-worlds { margin: 0; padding: 0; }
+  .desktop-world {
+    --world-ink: #392916; --world-paper: #f1dcb5; --world-accent: #be591c;
+    --world-pad: clamp(36px, 6vh, 72px);
+    position: sticky; top: min(var(--desktop-header-height), calc(100svh - var(--world-height, 0px)));
+    min-height: calc(100svh - var(--desktop-header-height)); isolation: isolate; overflow: hidden;
+    display: grid; grid-template-columns: 1fr 1fr; align-items: center; gap: 7vw;
+    padding: var(--world-pad) max(var(--gutter), calc((100vw - 1400px) / 2 + 72px));
+    color: var(--world-ink); background: var(--world-paper); border-top: 1px solid rgb(23 43 39 / .45);
+  }
+  .desktop-world-ipa { --world-ink: #123c4b; --world-paper: #d2e3df; --world-accent: #397a92; }
+  .desktop-world-lager { --world-ink: #473711; --world-paper: #eddfa4; --world-accent: #947724; }
+  .desktop-world-pale-ale { --world-ink: #164538; --world-paper: #d0dfc4; --world-accent: #9c6a26; }
+  .desktop-world-contradiction { --world-ink: #452b17; --world-paper: #edd2ab; --world-accent: #ad601d; }
+  .desktop-world-porter { --world-ink: #37233d; --world-paper: #dbc6d2; --world-accent: #804f79; }
+  .desktop-world-art { position: absolute; inset: 0; z-index: -1; }
+  .desktop-world-art picture, .desktop-world-art img { width: 100%; height: 100%; }
+  .desktop-world-art img { object-fit: cover; }
+  .desktop-world-kolsch .desktop-world-art img { object-position: 50% 12%; }
+  .desktop-world-copy { width: 100%; max-width: 490px; position: relative; padding: clamp(27px, 3vw, 46px); background: var(--world-paper); border: 1px solid var(--world-ink); box-shadow: 8px 8px 0 var(--world-ink); container-type: inline-size; }
+  .desktop-world-copy::before { content: ''; position: absolute; inset: 6px; border: 1px solid currentColor; opacity: .3; pointer-events: none; }
+  .desktop-world-count { font-size: 27px; line-height: 1; margin-bottom: 34px; }
+  .desktop-world-count span { font-size: 10px; font-weight: 650; letter-spacing: .13em; margin-left: 9px; }
+  .desktop-world-copy h3 { font-size: min(84px, calc(100cqi / (var(--name-length) * .52))); line-height: .98; margin: 0 0 23px; letter-spacing: -.055em; font-weight: 550; }
+  .desktop-world-notes { display: flex; flex-wrap: wrap; gap: 7px 15px; margin: 0 0 23px; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .1em; }
+  .desktop-world-notes li + li::before { content: '·'; margin-right: 15px; }
+  .desktop-world-line { font-family: var(--font); font-style: italic; font-size: clamp(21px, 1.8vw, 27px); line-height: 1.4; max-width: 26ch; margin-bottom: 19px; }
+  .desktop-world-abv { font-size: 12px; font-weight: 650; letter-spacing: .06em; margin-bottom: 24px; }
+  .desktop-world-copy .btn { background: var(--world-ink); color: var(--world-paper); border-color: var(--world-ink); margin-top: 6px; }
+  .desktop-world-can { width: min(23vw, 300px, calc((100svh - var(--desktop-header-height) - 110px) * .403)); justify-self: center; position: relative; transform: rotate(-4deg); }
+  .desktop-world-can::after { content: ''; position: absolute; z-index: -1; left: -10%; right: -10%; bottom: -3%; height: 7%; border-radius: 50%; background: radial-gradient(ellipse, rgb(20 23 26 / .55), transparent 67%); }
+  .desktop-world-can img { width: 100%; filter: drop-shadow(18px 28px 20px rgb(20 23 26 / .33)); }
+  .desktop-world.is-inview .desktop-world-can { animation: desktop-can-arrive 1.6s cubic-bezier(.2,.7,.2,1) both; }
+  @keyframes desktop-can-arrive { from { transform: translateY(32px) rotate(1deg); } to { transform: translateY(0) rotate(-4deg); } }
+  .desktop-world-footnote { position: absolute; bottom: 20px; left: var(--gutter); margin: 0; font-size: 9px; font-weight: 650; letter-spacing: .16em; background: var(--world-paper); padding: 5px 8px; }
+  .desktop-drinks-outro { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px 30px; padding-block: 39px; }
+  .desktop-drinks-outro p { flex: 1 1 330px; font-family: var(--font); font-size: 24px; line-height: 1.35; margin: 0; }
+  .desktop-drinks :focus-visible { outline-color: var(--gold); box-shadow: 0 0 0 3px var(--pine); }
+  .desktop-world :focus-visible { outline-color: var(--world-ink); box-shadow: 0 0 0 3px var(--world-paper); }
+
+  .desktop-prints { --wire-y: 20px; --rope-top: 64px; --sag: clamp(52px, 7vw, 130px); position: relative; margin-top: 42px; overflow-x: auto; overflow-y: hidden; padding-block: 20px 35px; overscroll-behavior-x: contain; }
+  .desktop-prints:focus-visible { outline-offset: -5px; }
+  .desktop-prints-controls { display: none; position: absolute; z-index: 5; right: var(--gutter); top: 0; gap: 9px; }
+  .desktop-prints-controls button { min-width: 44px; height: 44px; padding: 8px 13px; display: flex; align-items: center; justify-content: center; gap: 8px; font: 500 13px/1 DM,Arial,sans-serif; border: 1px solid rgb(246 242 232 / .6); color: var(--paper); background: var(--pine); }
+  .desktop-prints-controls button:hover { background: var(--gold); color: var(--ink); border-color: var(--gold); }
+  .desktop-prints-controls .icon { width: 15px; height: 15px; }
+  .desktop-prints-track { display: flex; width: max-content; }
+  .desktop-prints-row { --wire-height: clamp(20px, 2.4vw, 38px); --print-width: clamp(180px, 17vw, 250px); position: relative; list-style: none; margin: 0; padding: 0 calc(var(--print-width) * .1); display: flex; align-items: flex-start; gap: calc(var(--print-width) * .2); }
+  .desktop-prints-row::before { content: ''; position: absolute; top: var(--wire-y); left: 0; right: 0; height: 2px; background: var(--rope-ink); }
+  .desktop-prints-row[aria-hidden=true] { display: none; }
+  .desktop-prints-bulbs { position: absolute; inset: var(--wire-y) 0 auto; height: 0; pointer-events: none; }
+  .desktop-bulb { position: absolute; left: calc(var(--bulb-x) * 100%); top: 0; width: 9px; height: 13px; margin: 3px 0 0 -4.5px; border-radius: 45% 45% 50% 50%; background: var(--bulb-light); box-shadow: 0 0 10px 3px var(--bulb-glow), 0 0 26px 8px var(--bulb-halo); }
+  .desktop-bulb::before { content: ''; position: absolute; left: 2px; right: 2px; top: -4px; height: 5px; background: var(--rope-ink); }
+  .desktop-print { --cord: calc(14px + var(--drop) * var(--wire-height)); position: relative; flex: none; width: var(--print-width); margin-top: calc(var(--wire-y) + var(--cord)); transform: rotate(var(--rotation)); transform-origin: 50% calc(-1 * var(--cord)); }
+  .desktop-print figure { margin: 0; padding: 8px 8px 12px; color: var(--ink); background: var(--print-mat); box-shadow: 0 16px 26px var(--print-shadow); }
+  .desktop-print img { width: 100%; aspect-ratio: 4/5; height: auto; object-fit: cover; }
+  .desktop-print figcaption { color: var(--ink); padding-top: 11px; font: italic 450 16px/1.2 var(--font); text-align: center; }
+  .desktop-print::before { content: ''; position: absolute; left: 50%; bottom: 100%; height: var(--cord); width: 1px; background: var(--rope-ink); }
+  .desktop-print-peg { position: absolute; left: 50%; top: -14px; z-index: 2; width: 9px; height: 25px; margin-left: -4.5px; background: linear-gradient(90deg,var(--peg-light),var(--peg-dark)); box-shadow: 1px 2px 3px rgb(0 0 0 / .3); }
+  .desktop-prints-rope { display: none; }
+  .desktop-prints-rope path { fill: none; stroke: var(--rope-ink); stroke-width: 2; vector-effect: non-scaling-stroke; }
+  .desktop-prints.is-live { overflow: hidden; padding: 0; cursor: grab; user-select: none; -webkit-user-select: none; touch-action: pan-y pinch-zoom; }
+  .desktop-prints.is-dragging { cursor: grabbing; }
+  .desktop-prints.is-live .desktop-prints-controls { display: flex; }
+  .desktop-prints.is-live .desktop-prints-rope { display: block; position: absolute; z-index: 1; top: var(--rope-top); left: 0; width: 100%; height: var(--sag); overflow: visible; pointer-events: none; }
+  .desktop-prints.is-live .desktop-prints-track { display: block; position: absolute; inset: 0; z-index: 2; width: auto; }
+  .desktop-prints.is-live .desktop-prints-row { display: block; position: absolute; inset: 0; padding: 0; }
+  .desktop-prints.is-live .desktop-prints-row::before { display: none; }
+  .desktop-prints.is-live .desktop-prints-bulbs { inset: 0; height: auto; }
+  .desktop-prints.is-live .desktop-bulb { left: 0; top: 0; }
+  .desktop-prints.is-live .desktop-print { position: absolute; left: calc(var(--print-width) / -2); top: var(--cord); margin: 0; transform: none; rotate: var(--rotation); }
+  .desktop-prints.is-live img { -webkit-user-drag: none; pointer-events: none; }
+}
+
+@media (min-width: 1000px) and (prefers-reduced-motion: reduce) {
+  .desktop-world { position: relative; top: auto; }
+  .desktop-world.is-inview .desktop-world-can { animation: none; }
+  .desktop-prints-controls [data-prints-toggle] { display: none; }
+}

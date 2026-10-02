@@ -1,0 +1,75 @@
+/* Desktop only: the approved phone sections remain in their original flow. */
+@media screen and (min-width: 1000px) {
+  .corner-experience ~ .home-spaces { display: none; }
+  .corner-experience ~ .home-events { display: none; }
+  .corner-experience { position: relative; background: var(--pine); color: var(--paper); padding-top: 96px; }
+  .corner-experience::before { content: ''; position: absolute; top: -57px; left: 0; width: 100%; height: 60px; background: var(--pine); mask: url('/assets/svg/pine-band-back.svg') center bottom / auto 100% repeat-x; }
+  .corner-scene-header { display: grid; grid-template-columns: 1.2fr 1fr; gap: 9vw; padding-bottom: 58px; align-items: end; }
+  .corner-scene-header h2, .deck-scene-header h2 { font-size: clamp(58px, 6.5vw, 98px); margin: 0; }
+  .corner-scene-header h2 em { color: var(--gold); }
+  .corner-scene-choices > p { font-size: 19px; }
+  .corner-scene-choices .seat-controls { margin-block: 20px 8px; display: flex; gap: 20px; }
+  .corner-scene-choices .seat-controls button { font-size: 22px; min-height: 60px; border-bottom: 1px solid var(--softline); gap: 12px; flex: 1; white-space: nowrap; }
+  .corner-scene-choices .seat-controls button b { display: none; }
+  .corner-scene-choices .seat-controls button span { font-size: 10px; }
+  .corner-scene-choices .seat-controls button[aria-pressed="true"] { border-bottom: 3px solid var(--gold); }
+  .corner-experience :focus-visible { outline-color: var(--gold); box-shadow: 0 0 0 3px var(--pine); }
+  .corner-scene-stage { position: relative; }
+  .corner-scene-panels figure { margin: 0; }
+  .corner-scene-panels figure > picture { width: 100%; height: clamp(540px, 44vw, 700px); overflow: hidden; }
+  .corner-scene-panels figure > picture img { width: 100%; height: 100%; object-fit: cover; object-position: center 56%; }
+  .corner-scene-panels figcaption { display: flex; align-items: baseline; gap: 28px; background: var(--pine); color: var(--paper); padding: 25px var(--gutter) 29px; font-size: 15px; }
+  .corner-scene-panels figcaption strong { font-family: var(--font); font-size: 25px; font-weight: 500; }
+  .corner-scene-panels figcaption small { margin-left: auto; font-size: 12px; }
+
+  .deck-experience { background: var(--desktop-timber); color: var(--ink); padding-top: 90px; }
+  .deck-scene-header { display: grid; grid-template-columns: 1.1fr 1fr; gap: 8vw; padding-bottom: 66px; align-items: start; }
+  .deck-scene-copy > p:not(.eyebrow) { margin-top: 28px; font-size: 19px; }
+  .deck-scene-copy .actions { gap: 34px; }
+  .deck-scene-agenda { padding-top: 5px; }
+  .deck-scene-agenda .closure-heads { margin-top: 0; border-color: var(--ink); }
+  .deck-scene-agenda .mini-title { font-size: 27px; }
+  .deck-scene-agenda .mini-event { padding-block: 18px; }
+  .deck-scene-stage { height: clamp(590px, 48vw, 760px); position: relative; overflow: hidden; }
+  .deck-scene-art, .deck-scene-art img { width: 100%; height: 100%; }
+  .deck-scene-art img { object-fit: cover; object-position: center 52%; }
+  .deck-scene-caption { position: absolute; bottom: 0; left: 0; right: 0; display: flex; align-items: center; gap: 24px; padding: 17px var(--gutter); background: var(--pine); color: var(--paper); font-size: 14px; }
+  .deck-scene-caption > span:first-child { font-size: 11px; font-weight: 650; letter-spacing: .13em; }
+  .deck-scene-caption small { margin-left: auto; font-size: 12px; }
+  .deck-experience ~ .desktop-drinks .desktop-drinks-intro { padding-top: 30px; }
+
+  .company-hero {
+    --rope-ink: #b89b60; --print-mat: #f0e8d6;
+    --peg-light: #cfa86d; --peg-dark: #8b6039; --print-shadow: rgb(0 0 0 / .28);
+    --bulb-light: #f3cc77; --bulb-glow: rgb(239 187 84 / .22); --bulb-halo: rgb(239 187 84 / .07);
+    display: flex; flex-direction: column; min-height: calc(100svh - 76px);
+    padding-top: clamp(64px, 6vw, 96px); overflow: hidden;
+    background: var(--pine); color: var(--paper); border-top: 1px solid rgb(246 242 232 / .22);
+    scroll-margin-top: 76px;
+  }
+  .company-hero-header { display: grid; grid-template-columns: 1.6fr 1fr; align-items: end; gap: 64px; padding-bottom: 32px; }
+  .company-hero-header h2 { font-size: clamp(68px, 6.5vw, 104px); line-height: .98; margin: 0; }
+  .company-hero-header h2 em { color: var(--gold); }
+  .company-hero-copy { justify-self: end; padding-bottom: 8px; }
+  .company-hero-copy p { font-size: 20px; line-height: 1.55; margin-bottom: 24px; }
+  .company-hero .desktop-prints { --rope-top: 60px; --sag: clamp(60px, 6vw, 96px); width: 100%; margin: 0; }
+  .company-hero .desktop-prints-row { --print-width: clamp(180px, 16vw, 250px); --wire-height: 28px; --print-spacing: 1.35; }
+  .company-hero .desktop-print { animation: none; }
+  .company-hero .desktop-print figure { padding: 8px 8px 13px; }
+  .company-hero .desktop-prints-rope path { stroke-width: 2.5px; }
+  .company-hero .desktop-prints-rope .desktop-prints-rope-highlight { stroke: #e4c78a; stroke-width: .75px; }
+  .company-hero .desktop-prints-controls { top: 0; gap: 0; border: 1px solid rgb(246 242 232 / .35); }
+  .company-hero .desktop-prints-controls button { border: 0; background: transparent; color: var(--paper); }
+  .company-hero .desktop-prints-controls button + button { border-left: 1px solid rgb(246 242 232 / .35); }
+  .company-hero .desktop-prints-controls button:hover { color: var(--ink); background: var(--gold); }
+  .company-hero-footer { display: flex; align-items: center; justify-content: space-between; gap: 24px; margin-top: auto; padding-block: 15px 32px; border-top: 1px solid rgb(246 242 232 / .22); }
+  .company-hero-footer > span { font-size: 11px; letter-spacing: .14em; }
+  .company-hero-footer p { margin: 0; font-family: var(--font); font-size: 19px; font-style: italic; }
+  .company-hero :focus-visible { outline-color: var(--gold); box-shadow: 0 0 0 3px var(--pine); }
+  @media (max-width: 1199px) {
+    .corner-scene-header, .deck-scene-header { gap: 48px; }
+    .corner-scene-choices .seat-controls { gap: 13px; }
+    .corner-scene-choices .seat-controls button { font-size: 19px; gap: 7px; }
+    .deck-scene-agenda .mini-title { font-size: 23px; }
+  }
+}

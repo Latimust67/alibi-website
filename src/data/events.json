@@ -1,0 +1,264 @@
+{
+  "checked": "2026-09-26",
+  "checkedLabel": "September 26, 2026",
+  "staleAfterDays": 14,
+  "source": "https://alibialeworks.com/events/",
+  "resolution": "Incline Public House listings only. Where Alibi's calendar lists both a closure and a regular event on the same day, the closure wins.",
+  "weekly": [
+    {
+      "day": "Sundays",
+      "title": "Hut…Hut…Brunch!",
+      "time": "10am–3pm",
+      "detail": "Brunch with NFL games on up to three screens, during football season."
+    },
+    {
+      "day": "Fridays",
+      "title": "Country Fridays",
+      "time": "From 9pm",
+      "detail": "Line dancing on the Incline dance floor."
+    },
+    {
+      "day": "Weekdays",
+      "title": "Happy hour",
+      "time": "3–5pm",
+      "detail": "Monday to Friday, excluding holiday periods."
+    },
+    {
+      "day": "Game days",
+      "title": "Football on the screens",
+      "time": "All day",
+      "detail": "NFL games on Sundays, Mondays and Thursdays. Pub events take priority over games."
+    }
+  ],
+  "seasonal": {
+    "title": "Tunes on Tap",
+    "detail": "Free Thursday-evening concerts at the Alibi Amphitheater in the Beer Forest, July to August. The 2026 season has wrapped.",
+    "url": "https://alibialeworks.com/tunes-on-tap/"
+  },
+  "events": [
+    {
+      "date": "2026-09-27",
+      "title": "Hut…Hut…Brunch!",
+      "time": "10am–3pm",
+      "kind": "brunch",
+      "recurring": true,
+      "detail": "Sunday brunch with football on the screens.",
+      "url": "https://alibialeworks.com/events/hut-hut-brunch-2026-09-27/",
+      "checked": "2026-09-26"
+    },
+    {
+      "date": "2026-09-29",
+      "title": "Tessa's Trivia Turn Up",
+      "subtitle": "with tacos, taps + tequila",
+      "time": "7–9pm",
+      "kind": "trivia",
+      "recurring": true,
+      "detail": "Team trivia with Tessa at Incline Public House.",
+      "url": "https://alibialeworks.com/events/trivia-2026-09-29/",
+      "checked": "2026-09-28"
+    },
+    {
+      "date": "2026-09-30",
+      "title": "Tahoe Taproom Talks: Walking & Drawing Tahoe",
+      "time": "5–6pm",
+      "kind": "talk",
+      "special": true,
+      "detail": "Kelly Chorpening joins UNR’s Tahoe Institute for Global Sustainability for a talk about exploring the Tahoe Basin through walking and drawing.",
+      "url": "https://alibialeworks.com/events/tahoe-taproom-talks-walking-drawing-tahoe/",
+      "checked": "2026-09-28"
+    },
+    {
+      "date": "2026-10-02",
+      "title": "Country Fridays",
+      "time": "From 9pm",
+      "kind": "music",
+      "recurring": true,
+      "detail": "Line dancing at Incline Public House.",
+      "url": "https://alibialeworks.com/events/country-monday-2026-10-02/",
+      "checked": "2026-09-28"
+    },
+    {
+      "date": "2026-10-04",
+      "title": "Incline Oktoberfest",
+      "time": "12–4pm",
+      "kind": "party",
+      "special": true,
+      "detail": "Alibi's Oktoberfest beer release (cans to go), German food, stein holding, pretzel eating, relay races and prizes.",
+      "url": "https://alibialeworks.com/events/incline-oktoberfest/",
+      "checked": "2026-09-28"
+    },
+    {
+      "date": "2026-10-04",
+      "title": "Hut…Hut…Brunch!",
+      "time": "10am–3pm",
+      "kind": "brunch",
+      "recurring": true,
+      "detail": "Sunday brunch with football on the screens.",
+      "url": "https://alibialeworks.com/events/hut-hut-brunch-2026-10-04/",
+      "checked": "2026-09-28"
+    },
+    {
+      "date": "2026-10-05",
+      "endDate": "2026-10-06",
+      "title": "Both pubs closed",
+      "time": "All day",
+      "kind": "closure",
+      "status": "closure",
+      "detail": "Both Alibi pubs are closed for a staff trip. Reopening Wednesday, October 7.",
+      "url": "https://alibialeworks.com/events/alibi-pubs-closed/",
+      "closedNote": "Closed October 5–6 for a staff trip. Reopening Wednesday, October 7.",
+      "miniTitle": "Closed for a staff trip",
+      "checked": "2026-09-28",
+      "reason": "a staff trip",
+      "reopens": "2026-10-07",
+      "reopeningChecked": "2026-09-28"
+    },
+    {
+      "date": "2026-10-09",
+      "title": "Country Fridays",
+      "time": "From 9pm",
+      "kind": "music",
+      "recurring": true,
+      "detail": "Line dancing at Incline Public House.",
+      "url": "https://alibialeworks.com/events/country-monday-2026-10-09/",
+      "checked": "2026-09-28"
+    },
+    {
+      "date": "2026-10-11",
+      "title": "Hut…Hut…Brunch!",
+      "time": "10am–3pm",
+      "kind": "brunch",
+      "recurring": true,
+      "detail": "Sunday brunch with football on the screens.",
+      "url": "https://alibialeworks.com/events/hut-hut-brunch-2026-10-11/",
+      "checked": "2026-09-28"
+    },
+    {
+      "date": "2026-10-13",
+      "title": "Tessa's Trivia Turn Up",
+      "subtitle": "with tacos, taps + tequila",
+      "time": "7–9pm",
+      "kind": "trivia",
+      "recurring": true,
+      "detail": "Team trivia with Tessa at Incline Public House.",
+      "url": "https://alibialeworks.com/events/trivia-2026-10-13/",
+      "checked": "2026-09-28"
+    },
+    {
+      "date": "2026-10-16",
+      "title": "Country Fridays",
+      "time": "From 9pm",
+      "kind": "music",
+      "recurring": true,
+      "detail": "Line dancing at Incline Public House.",
+      "url": "https://alibialeworks.com/events/country-monday-2026-10-16/",
+      "checked": "2026-09-28"
+    },
+    {
+      "date": "2026-10-18",
+      "title": "Hut…Hut…Brunch!",
+      "time": "10am–3pm",
+      "kind": "brunch",
+      "recurring": true,
+      "detail": "Sunday brunch with football on the screens.",
+      "url": "https://alibialeworks.com/events/hut-hut-brunch-2026-10-18/",
+      "checked": "2026-09-28"
+    },
+    {
+      "date": "2026-10-23",
+      "title": "Country Fridays",
+      "time": "From 9pm",
+      "kind": "music",
+      "recurring": true,
+      "detail": "Line dancing at Incline Public House.",
+      "url": "https://alibialeworks.com/events/country-monday-2026-10-23/",
+      "checked": "2026-09-28"
+    },
+    {
+      "date": "2026-10-25",
+      "title": "Hut…Hut…Brunch!",
+      "time": "10am–3pm",
+      "kind": "brunch",
+      "recurring": true,
+      "detail": "Sunday brunch with football on the screens.",
+      "url": "https://alibialeworks.com/events/hut-hut-brunch-2026-10-25/",
+      "checked": "2026-09-26"
+    },
+    {
+      "date": "2026-10-30",
+      "title": "Country Fridays",
+      "time": "From 9pm",
+      "kind": "music",
+      "status": "cancelled",
+      "recurring": true,
+      "detail": "Country Fridays is cancelled on October 30. This cancellation applies to line dancing only.",
+      "url": "https://alibialeworks.com/events/country-monday-2026-10-30/",
+      "checked": "2026-09-28"
+    },
+    {
+      "date": "2026-11-01",
+      "title": "Hut…Hut…Brunch!",
+      "time": "10am–3pm",
+      "kind": "brunch",
+      "recurring": true,
+      "detail": "Sunday brunch with football on the screens.",
+      "url": "https://alibialeworks.com/events/hut-hut-brunch-2026-11-01/",
+      "checked": "2026-09-26"
+    },
+    {
+      "date": "2026-11-06",
+      "title": "Country Fridays",
+      "time": "From 9pm",
+      "kind": "music",
+      "recurring": true,
+      "detail": "Line dancing at Incline Public House.",
+      "url": "https://alibialeworks.com/events/country-monday-2026-11-06/",
+      "checked": "2026-09-26"
+    },
+    {
+      "date": "2026-11-08",
+      "title": "Hut…Hut…Brunch!",
+      "time": "10am–3pm",
+      "kind": "brunch",
+      "recurring": true,
+      "detail": "Sunday brunch with football on the screens.",
+      "url": "https://alibialeworks.com/events/hut-hut-brunch-2026-11-08/",
+      "checked": "2026-09-26"
+    },
+    {
+      "date": "2026-11-13",
+      "title": "Pray 4 Snow Party",
+      "time": "6–10pm",
+      "kind": "party",
+      "special": true,
+      "detail": "A pre-winter gathering with Diamond Peak and Village Ski Loft. See Alibi’s listing for confirmed activities.",
+      "url": "https://alibialeworks.com/events/pray-4-snow-party/",
+      "checked": "2026-09-28"
+    },
+    {
+      "date": "2026-11-13",
+      "title": "Country Fridays",
+      "time": "From 9pm",
+      "kind": "music",
+      "recurring": true,
+      "detail": "Line dancing at Incline Public House.",
+      "url": "https://alibialeworks.com/events/country-monday-2026-11-13/",
+      "checked": "2026-09-26"
+    },
+    {
+      "date": "2026-11-15",
+      "title": "Hut…Hut…Brunch!",
+      "time": "10am–3pm",
+      "kind": "brunch",
+      "recurring": true,
+      "detail": "Sunday brunch with football on the screens.",
+      "url": "https://alibialeworks.com/events/hut-hut-brunch-2026-11-15/",
+      "checked": "2026-09-26"
+    }
+  ],
+  "emptyNote": "Check Alibi’s calendar for upcoming events.",
+  "windowLabel": "September 29 to November 15, 2026",
+  "exceptionsChecked": "2026-09-28",
+  "verificationNote": "Near-term Incline listings and the October closure/cancellation rechecked September 28; later finite-series entries retain their September 26 snapshot.",
+  "snapshotNote": "Event details were recorded September 26–28, 2026. Open a listing for the latest information."
+}
