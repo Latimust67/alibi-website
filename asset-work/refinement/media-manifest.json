@@ -1,0 +1,440 @@
+[
+  {
+    "name": "mobile-world-kolsch-480.avif",
+    "source": "/Users/larsen/Desktop/Alibis wesbite/incline-demo/source-assets/generated/scene-kolsch-wide.png",
+    "crop": {
+      "left": 0,
+      "top": 0,
+      "width": 1536,
+      "height": 747
+    },
+    "width": 480,
+    "height": 233,
+    "bytes": 9440
+  },
+  {
+    "name": "mobile-world-kolsch-480.webp",
+    "source": "/Users/larsen/Desktop/Alibis wesbite/incline-demo/source-assets/generated/scene-kolsch-wide.png",
+    "crop": {
+      "left": 0,
+      "top": 0,
+      "width": 1536,
+      "height": 747
+    },
+    "width": 480,
+    "height": 233,
+    "bytes": 14562
+  },
+  {
+    "name": "mobile-world-kolsch-720.avif",
+    "source": "/Users/larsen/Desktop/Alibis wesbite/incline-demo/source-assets/generated/scene-kolsch-wide.png",
+    "crop": {
+      "left": 0,
+      "top": 0,
+      "width": 1536,
+      "height": 747
+    },
+    "width": 720,
+    "height": 350,
+    "bytes": 17743
+  },
+  {
+    "name": "mobile-world-kolsch-720.webp",
+    "source": "/Users/larsen/Desktop/Alibis wesbite/incline-demo/source-assets/generated/scene-kolsch-wide.png",
+    "crop": {
+      "left": 0,
+      "top": 0,
+      "width": 1536,
+      "height": 747
+    },
+    "width": 720,
+    "height": 350,
+    "bytes": 27254
+  },
+  {
+    "name": "mobile-can-kolsch-180.avif",
+    "source": "/Users/larsen/Documents/Codex/2026-10-03/task/alibi-sign-proof/src/assets/img/desktop-can-kolsch-360.webp",
+    "width": 180,
+    "height": 446,
+    "bytes": 12168
+  },
+  {
+    "name": "mobile-can-kolsch-180.webp",
+    "source": "/Users/larsen/Documents/Codex/2026-10-03/task/alibi-sign-proof/src/assets/img/desktop-can-kolsch-360.webp",
+    "width": 180,
+    "height": 446,
+    "bytes": 14550
+  },
+  {
+    "name": "mobile-world-ipa-480.avif",
+    "source": "/Users/larsen/Desktop/Alibis wesbite/incline-demo/source-assets/generated/scene-ipa-wide.png",
+    "crop": {
+      "left": 0,
+      "top": 100,
+      "width": 1536,
+      "height": 747
+    },
+    "width": 480,
+    "height": 233,
+    "bytes": 12114
+  },
+  {
+    "name": "mobile-world-ipa-480.webp",
+    "source": "/Users/larsen/Desktop/Alibis wesbite/incline-demo/source-assets/generated/scene-ipa-wide.png",
+    "crop": {
+      "left": 0,
+      "top": 100,
+      "width": 1536,
+      "height": 747
+    },
+    "width": 480,
+    "height": 233,
+    "bytes": 18788
+  },
+  {
+    "name": "mobile-world-ipa-720.avif",
+    "source": "/Users/larsen/Desktop/Alibis wesbite/incline-demo/source-assets/generated/scene-ipa-wide.png",
+    "crop": {
+      "left": 0,
+      "top": 100,
+      "width": 1536,
+      "height": 747
+    },
+    "width": 720,
+    "height": 350,
+    "bytes": 23057
+  },
+  {
+    "name": "mobile-world-ipa-720.webp",
+    "source": "/Users/larsen/Desktop/Alibis wesbite/incline-demo/source-assets/generated/scene-ipa-wide.png",
+    "crop": {
+      "left": 0,
+      "top": 100,
+      "width": 1536,
+      "height": 747
+    },
+    "width": 720,
+    "height": 350,
+    "bytes": 36208
+  },
+  {
+    "name": "mobile-can-ipa-180.avif",
+    "source": "/Users/larsen/Documents/Codex/2026-10-03/task/alibi-sign-proof/src/assets/img/desktop-can-ipa-360.webp",
+    "width": 180,
+    "height": 446,
+    "bytes": 11130
+  },
+  {
+    "name": "mobile-can-ipa-180.webp",
+    "source": "/Users/larsen/Documents/Codex/2026-10-03/task/alibi-sign-proof/src/assets/img/desktop-can-ipa-360.webp",
+    "width": 180,
+    "height": 446,
+    "bytes": 13316
+  },
+  {
+    "name": "mobile-world-lager-480.avif",
+    "source": "/Users/larsen/Desktop/Alibis wesbite/incline-demo/source-assets/generated/scene-lager-wide2.png",
+    "crop": {
+      "left": 0,
+      "top": 274,
+      "width": 1536,
+      "height": 747
+    },
+    "width": 480,
+    "height": 233,
+    "bytes": 6283
+  },
+  {
+    "name": "mobile-world-lager-480.webp",
+    "source": "/Users/larsen/Desktop/Alibis wesbite/incline-demo/source-assets/generated/scene-lager-wide2.png",
+    "crop": {
+      "left": 0,
+      "top": 274,
+      "width": 1536,
+      "height": 747
+    },
+    "width": 480,
+    "height": 233,
+    "bytes": 8912
+  },
+  {
+    "name": "mobile-world-lager-720.avif",
+    "source": "/Users/larsen/Desktop/Alibis wesbite/incline-demo/source-assets/generated/scene-lager-wide2.png",
+    "crop": {
+      "left": 0,
+      "top": 274,
+      "width": 1536,
+      "height": 747
+    },
+    "width": 720,
+    "height": 350,
+    "bytes": 11060
+  },
+  {
+    "name": "mobile-world-lager-720.webp",
+    "source": "/Users/larsen/Desktop/Alibis wesbite/incline-demo/source-assets/generated/scene-lager-wide2.png",
+    "crop": {
+      "left": 0,
+      "top": 274,
+      "width": 1536,
+      "height": 747
+    },
+    "width": 720,
+    "height": 350,
+    "bytes": 16488
+  },
+  {
+    "name": "mobile-can-lager-180.avif",
+    "source": "/Users/larsen/Documents/Codex/2026-10-03/task/alibi-sign-proof/src/assets/img/desktop-can-lager-360.webp",
+    "width": 180,
+    "height": 446,
+    "bytes": 9871
+  },
+  {
+    "name": "mobile-can-lager-180.webp",
+    "source": "/Users/larsen/Documents/Codex/2026-10-03/task/alibi-sign-proof/src/assets/img/desktop-can-lager-360.webp",
+    "width": 180,
+    "height": 446,
+    "bytes": 10510
+  },
+  {
+    "name": "mobile-world-pale-ale-480.avif",
+    "source": "/Users/larsen/Desktop/Alibis wesbite/incline-demo/source-assets/generated/scene-pale-ale-wide2.png",
+    "crop": {
+      "left": 0,
+      "top": 136,
+      "width": 1536,
+      "height": 747
+    },
+    "width": 480,
+    "height": 233,
+    "bytes": 9921
+  },
+  {
+    "name": "mobile-world-pale-ale-480.webp",
+    "source": "/Users/larsen/Desktop/Alibis wesbite/incline-demo/source-assets/generated/scene-pale-ale-wide2.png",
+    "crop": {
+      "left": 0,
+      "top": 136,
+      "width": 1536,
+      "height": 747
+    },
+    "width": 480,
+    "height": 233,
+    "bytes": 15110
+  },
+  {
+    "name": "mobile-world-pale-ale-720.avif",
+    "source": "/Users/larsen/Desktop/Alibis wesbite/incline-demo/source-assets/generated/scene-pale-ale-wide2.png",
+    "crop": {
+      "left": 0,
+      "top": 136,
+      "width": 1536,
+      "height": 747
+    },
+    "width": 720,
+    "height": 350,
+    "bytes": 18544
+  },
+  {
+    "name": "mobile-world-pale-ale-720.webp",
+    "source": "/Users/larsen/Desktop/Alibis wesbite/incline-demo/source-assets/generated/scene-pale-ale-wide2.png",
+    "crop": {
+      "left": 0,
+      "top": 136,
+      "width": 1536,
+      "height": 747
+    },
+    "width": 720,
+    "height": 350,
+    "bytes": 29152
+  },
+  {
+    "name": "mobile-can-pale-ale-180.avif",
+    "source": "/Users/larsen/Documents/Codex/2026-10-03/task/alibi-sign-proof/src/assets/img/desktop-can-pale-ale-360.webp",
+    "width": 180,
+    "height": 446,
+    "bytes": 10850
+  },
+  {
+    "name": "mobile-can-pale-ale-180.webp",
+    "source": "/Users/larsen/Documents/Codex/2026-10-03/task/alibi-sign-proof/src/assets/img/desktop-can-pale-ale-360.webp",
+    "width": 180,
+    "height": 446,
+    "bytes": 12958
+  },
+  {
+    "name": "mobile-world-contradiction-480.avif",
+    "source": "/Users/larsen/Desktop/Alibis wesbite/incline-demo/source-assets/generated/scene-contradiction-wide3.png",
+    "crop": {
+      "left": 0,
+      "top": 0,
+      "width": 1536,
+      "height": 747
+    },
+    "width": 480,
+    "height": 233,
+    "bytes": 7489
+  },
+  {
+    "name": "mobile-world-contradiction-480.webp",
+    "source": "/Users/larsen/Desktop/Alibis wesbite/incline-demo/source-assets/generated/scene-contradiction-wide3.png",
+    "crop": {
+      "left": 0,
+      "top": 0,
+      "width": 1536,
+      "height": 747
+    },
+    "width": 480,
+    "height": 233,
+    "bytes": 10250
+  },
+  {
+    "name": "mobile-world-contradiction-720.avif",
+    "source": "/Users/larsen/Desktop/Alibis wesbite/incline-demo/source-assets/generated/scene-contradiction-wide3.png",
+    "crop": {
+      "left": 0,
+      "top": 0,
+      "width": 1536,
+      "height": 747
+    },
+    "width": 720,
+    "height": 350,
+    "bytes": 13562
+  },
+  {
+    "name": "mobile-world-contradiction-720.webp",
+    "source": "/Users/larsen/Desktop/Alibis wesbite/incline-demo/source-assets/generated/scene-contradiction-wide3.png",
+    "crop": {
+      "left": 0,
+      "top": 0,
+      "width": 1536,
+      "height": 747
+    },
+    "width": 720,
+    "height": 350,
+    "bytes": 18698
+  },
+  {
+    "name": "mobile-can-contradiction-180.avif",
+    "source": "/Users/larsen/Documents/Codex/2026-10-03/task/alibi-sign-proof/src/assets/img/desktop-can-contradiction-360.webp",
+    "width": 180,
+    "height": 446,
+    "bytes": 12391
+  },
+  {
+    "name": "mobile-can-contradiction-180.webp",
+    "source": "/Users/larsen/Documents/Codex/2026-10-03/task/alibi-sign-proof/src/assets/img/desktop-can-contradiction-360.webp",
+    "width": 180,
+    "height": 446,
+    "bytes": 14782
+  },
+  {
+    "name": "mobile-world-porter-480.avif",
+    "source": "/Users/larsen/Desktop/Alibis wesbite/incline-demo/source-assets/generated/scene-porter-wide2.png",
+    "crop": {
+      "left": 0,
+      "top": 88,
+      "width": 1536,
+      "height": 747
+    },
+    "width": 480,
+    "height": 233,
+    "bytes": 9956
+  },
+  {
+    "name": "mobile-world-porter-480.webp",
+    "source": "/Users/larsen/Desktop/Alibis wesbite/incline-demo/source-assets/generated/scene-porter-wide2.png",
+    "crop": {
+      "left": 0,
+      "top": 88,
+      "width": 1536,
+      "height": 747
+    },
+    "width": 480,
+    "height": 233,
+    "bytes": 14762
+  },
+  {
+    "name": "mobile-world-porter-720.avif",
+    "source": "/Users/larsen/Desktop/Alibis wesbite/incline-demo/source-assets/generated/scene-porter-wide2.png",
+    "crop": {
+      "left": 0,
+      "top": 88,
+      "width": 1536,
+      "height": 747
+    },
+    "width": 720,
+    "height": 350,
+    "bytes": 17610
+  },
+  {
+    "name": "mobile-world-porter-720.webp",
+    "source": "/Users/larsen/Desktop/Alibis wesbite/incline-demo/source-assets/generated/scene-porter-wide2.png",
+    "crop": {
+      "left": 0,
+      "top": 88,
+      "width": 1536,
+      "height": 747
+    },
+    "width": 720,
+    "height": 350,
+    "bytes": 26256
+  },
+  {
+    "name": "mobile-can-porter-180.avif",
+    "source": "/Users/larsen/Documents/Codex/2026-10-03/task/alibi-sign-proof/src/assets/img/desktop-can-porter-360.webp",
+    "width": 180,
+    "height": 446,
+    "bytes": 10926
+  },
+  {
+    "name": "mobile-can-porter-180.webp",
+    "source": "/Users/larsen/Documents/Codex/2026-10-03/task/alibi-sign-proof/src/assets/img/desktop-can-porter-360.webp",
+    "width": 180,
+    "height": 446,
+    "bytes": 14094
+  },
+  {
+    "name": "friends-dining-1200.avif",
+    "source": "/Users/larsen/Desktop/Alibis wesbite/incline-demo/source-assets/official-extra/iph-friends-dining-window.jpg",
+    "width": 1200,
+    "height": 798,
+    "bytes": 108896
+  },
+  {
+    "name": "friends-dining-1200.webp",
+    "source": "/Users/larsen/Desktop/Alibis wesbite/incline-demo/source-assets/official-extra/iph-friends-dining-window.jpg",
+    "width": 1200,
+    "height": 798,
+    "bytes": 150542
+  },
+  {
+    "name": "friends-dining-1200.jpg",
+    "source": "/Users/larsen/Desktop/Alibis wesbite/incline-demo/source-assets/official-extra/iph-friends-dining-window.jpg",
+    "width": 1200,
+    "height": 798,
+    "bytes": 191456
+  },
+  {
+    "name": "friends-dining-1920.avif",
+    "source": "/Users/larsen/Desktop/Alibis wesbite/incline-demo/source-assets/official-extra/iph-friends-dining-window.jpg",
+    "width": 1920,
+    "height": 1277,
+    "bytes": 223183
+  },
+  {
+    "name": "friends-dining-1920.webp",
+    "source": "/Users/larsen/Desktop/Alibis wesbite/incline-demo/source-assets/official-extra/iph-friends-dining-window.jpg",
+    "width": 1920,
+    "height": 1277,
+    "bytes": 290702
+  },
+  {
+    "name": "friends-dining-1920.jpg",
+    "source": "/Users/larsen/Desktop/Alibis wesbite/incline-demo/source-assets/official-extra/iph-friends-dining-window.jpg",
+    "width": 1920,
+    "height": 1277,
+    "bytes": 411747
+  }
+]

@@ -287,6 +287,16 @@
         800,
         "img/friends-dining-800.avif",
         41080
+      ],
+      [
+        1200,
+        "img/friends-dining-1200.avif",
+        108896
+      ],
+      [
+        1920,
+        "img/friends-dining-1920.avif",
+        223183
       ]
     ],
     "webp": [
@@ -299,6 +309,16 @@
         800,
         "img/friends-dining-800.webp",
         61514
+      ],
+      [
+        1200,
+        "img/friends-dining-1200.webp",
+        150542
+      ],
+      [
+        1920,
+        "img/friends-dining-1920.webp",
+        290702
       ]
     ],
     "jpg": [
@@ -311,6 +331,16 @@
         800,
         "img/friends-dining-800.jpg",
         73265
+      ],
+      [
+        1200,
+        "img/friends-dining-1200.jpg",
+        191456
+      ],
+      [
+        1920,
+        "img/friends-dining-1920.jpg",
+        411747
       ]
     ]
   },

@@ -2,6 +2,14 @@ import { readFileSync } from 'node:fs';
 import {closure} from './house-components.mjs';
 import { picture, esc } from './components.mjs';
 import { desktopDrinks, photoRope } from './desktop-experiences.mjs';
+const BLANK='data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7';
+function mobileBeerMedia(id,can=false,name=''){
+ const widths=can?[180]:[480,720],kind=can?'can':'world';
+ const src=(w,fmt)=>`/assets/img/mobile-${kind}-${id}-${w}.${fmt}`;
+ const set=fmt=>widths.map(w=>`${src(w,fmt)} ${w}w`).join(', ');
+ const sizes=can?'70px':'(min-width:700px) 44vw, 88vw';
+ return `<picture><source media="(min-width:1000px)" srcset="${BLANK}"><source type="image/avif" srcset="${set('avif')}" sizes="${sizes}"><source type="image/webp" srcset="${set('webp')}" sizes="${sizes}"><img src="${src(widths[0],'webp')}" width="${can?180:720}" height="${can?446:350}" loading="lazy" decoding="async" alt="${can?esc(name)+' can':''}"></picture>`;
+}
 const copy=JSON.parse(readFileSync(new URL('../data/house-copy.json',import.meta.url),'utf8'));
 const link=(href,text,cls='')=>`<a class="house-link ${cls}" href="${href}">${text}<span aria-hidden="true">↗</span></a>`;
 const image=(key,alt,sizes='100vw',max=1400,eager=false)=>picture(key,{alt,sizes,max,eager,priority:eager});
@@ -12,7 +20,7 @@ export function home({site,today}){
  <section class="house-arrival" aria-labelledby="home-title" data-arrival>
   <h1 class="sr-only" id="home-title">${copy.hero.heading}</h1>
   <div class="arrival-stage"><div class="arrival-intro">
-   <div class="arrival-room">${image('dining-hall','The timber-beamed dining room and shared tables at Alibi Incline Public House.','100vw',1920,true)}</div>
+   <div class="arrival-room">${image('friends-dining','Friends sharing food and pints beside a window at Alibi Incline Public House','100vw',1920,true)}</div>
    <div class="arrival-sign-stage" aria-hidden="true"><div class="sign-frame"><picture class="sign-poster"><source media="(min-width:1000px)" srcset="/assets/art/sign/poster-desktop.webp"><img src="/assets/art/sign/poster-phone.webp" width="1440" height="900" alt="" loading="eager" decoding="async"></picture><canvas class="sign-sequence" data-frames="61" hidden></canvas></div></div>
    <div class="arrival-caption"><p>${copy.hero.descriptor}</p><span>${copy.hero.location}</span><div class="arrival-actions">${link('/menu/',copy.hero.primary,'house-link-filled')}${link('/visit/',copy.hero.secondary)}</div></div>
    </div>
@@ -39,7 +47,7 @@ export function home({site,today}){
  </section>
  <section class="house-evening" aria-labelledby="evening-title"><figure>${image('music-night','Live music at Alibi Incline Public House','(min-width:1000px) 100vw, 190vw',1400)}</figure><div><h2 id="evening-title">What's on<br>at Incline</h2>${link('/whats-on/',copy.events.action)}</div></section>
  ${desktopDrinks({site})}
- <section class="house-mobile-beers" aria-labelledby="mobile-beers-title"><div><h2 id="mobile-beers-title">${copy.beers.heading}</h2><p>${copy.beers.line}</p></div><ol>${copy.beers.items.map(b=>`<li><img src="/assets/img/desktop-can-${b.id}-360.webp" width="360" height="892" loading="lazy" decoding="async" alt="${esc(b.name)} can"><div><h3>${esc(b.name)}</h3><p>${b.style}</p><span>${b.line}</span>${b.id==='contradiction'?'<span class="beer-qualification">Contains lactose.</span>':''}</div></li>`).join('')}</ol>${link('/menu/#drinks',copy.beers.action)}</section>
+ <section class="house-mobile-beers" aria-labelledby="mobile-beers-title"><div><h2 id="mobile-beers-title">${copy.beers.heading}</h2><p>${copy.beers.line}</p><p class="mobile-beers-disclosure">Illustrations inspired by Alibi’s labels.</p></div><ol>${copy.beers.items.map(b=>`<li class="mobile-beer mobile-beer-${b.id}"><div class="mobile-beer-visual"><div class="mobile-beer-landscape" aria-hidden="true">${mobileBeerMedia(b.id)}</div><div class="mobile-beer-can">${mobileBeerMedia(b.id,true,b.name)}</div></div><div class="mobile-beer-copy"><h3>${esc(b.name)}</h3><p>${b.style}</p><span>${b.line}</span>${b.id==='contradiction'?'<span class="beer-qualification">Contains lactose.</span>':''}</div></li>`).join('')}</ol>${link('/menu/#drinks',copy.beers.action)}</section>
  <section class="house-company desktop-experience" aria-labelledby="company-title"><h2 id="company-title">${copy.gallery.heading}</h2>${photoRope({id:'company-rope',label:copy.gallery.heading})}<p class="company-instruction">${copy.gallery.instruction}</p></section>
  <section class="house-mobile-company" aria-labelledby="mobile-company-title"><h2 id="mobile-company-title">${copy.gallery.heading}</h2><figure>${image('friends-dining','Friends sharing food and pints by a window at Alibi.','85vw',800)}</figure><figure>${image('forest-guests','Guests seated among plants and pines in the Beer Forest.','85vw',800)}</figure></section>
  <section class="house-visit" aria-labelledby="visit-title"><div><h2 id="visit-title">931 Tahoe Boulevard</h2><p>${copy.visit.location}</p><div class="visit-actions">${link(site.links.directions,copy.visit.primary,'house-link-filled')}${link('tel:'+site.phone.tel,copy.visit.secondary)}</div><p class="visit-phone">${site.phone.display}</p></div></section>

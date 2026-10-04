@@ -34,33 +34,33 @@ rmSync(OUT, { recursive: true, force: true });
 
 const pages = [
   {
-    out: 'index.html', path: '/', page: 'home', title: 'Home', head: homeHead(),
-    description: 'Alibi Ale Works Incline Public House, a restaurant and pub in Incline Village, Nevada: neo-Neapolitan sourdough pizza, pub plates, our own beer and a Beer Forest under the pines.',
+    out: 'index.html', path: '/', page: 'home', title: 'Alibi Incline Public House | Design preview', head: homeHead(),
+    description: 'A private design preview for Alibi Incline Public House, with venue photographs, beer illustrations, and links to Alibi’s official information.',
     main: home(ctx),
   },
   {
-    out: 'menu/index.html', path: '/menu/', page: 'menu', title: 'Food and drink', head: routesHead(),
-    description: 'The Alibi Incline menu: pizza, snacks, bowls, burgers, sweets, happy hour, Sunday brunch, a rotating Alibi tap list, cocktails, wine and non-alcoholic drinks.',
+    out: 'menu/index.html', path: '/menu/', page: 'menu', title: 'Food and drink | Alibi design preview', head: routesHead(),
+    description: 'A dated food and drink selection for a private Alibi Incline design preview. Follow the official menu link for current choices.',
     main: menuPage(ctx),
   },
   {
-    out: 'whats-on/index.html', path: '/whats-on/', page: 'whats-on', title: "What's on", head: routesHead(),
-    description: 'Upcoming events at Alibi Incline Public House. Open each listing for the latest dates and details.',
+    out: 'whats-on/index.html', path: '/whats-on/', page: 'whats-on', title: 'What’s on at Incline | Alibi design preview' , head: routesHead(),
+    description: 'Dated Incline event listings in a private Alibi design preview, with links to the official event calendar and notices.',
     main: whatsOnPage(ctx),
   },
   {
-    out: 'visit/index.html', path: '/visit/', page: 'visit', title: 'Visit', head: routesHead(),
-    description: 'Directions, hours, family and dog policies, seating and private events at the Alibi Incline Public House, 931 Tahoe Blvd., Incline Village.',
+    out: 'visit/index.html', path: '/visit/', page: 'visit', title: 'Visit Incline Public House | Design preview', head: routesHead(),
+    description: 'Address and sourced visit details for Alibi Incline Public House in a private design preview, with official links for current information.',
     main: visitPage(ctx),
   },
   {
-    out: '404.html', page: 'not-found', title: 'Page not found',
-    description: 'This page could not be found.',
+    out: '404.html', page: 'not-found', title: 'Page not found | Alibi design preview',
+    description: 'This page is not part of the private Alibi Incline Public House design preview.',
     main: `<section class="not-found" aria-labelledby="lost-title">
       ${eyebrow('404')}
       <h1 id="lost-title">Page not found</h1>
-      <p>We couldn’t find that page. Head home, browse the menu, or plan a visit.</p>
-      <div class="actions">${btn('/', 'Back home', { iconName: 'arrow-right' })}${arrowLink('/menu/', 'See the menu')}${arrowLink('/visit/', 'Plan a visit')}</div>
+      <p>This page isn’t in the preview.</p>
+      <div class="actions">${btn('/', 'Back to home', { iconName: 'arrow-right' })}</div>
     </section>`,
   },
 ];
