@@ -66,7 +66,7 @@
     gallery.classList.add('is-live', 'is-offscreen');
     gallery.setAttribute('aria-describedby', hint.id);
     hint.textContent = 'Photos move automatically. Drag, use the arrow keys, or choose Previous or Next to browse. Choose Pause to stop the movement.';
-    toggle.setAttribute('aria-label', 'Pause moving photos');
+    toggle.setAttribute('aria-label', 'Pause photos');
     paths.forEach(path => path.setAttribute('d', 'M0 0 Q500 200 1000 0'));
 
     function place() {
@@ -188,8 +188,8 @@
       paused = !paused;
       if (paused) { targetOffset = null; velocity = 0; }
       toggle.setAttribute('aria-pressed', String(paused));
-      toggle.setAttribute('aria-label', paused ? 'Play moving photos' : 'Pause moving photos');
-      toggle.querySelector('span').textContent = paused ? 'Play' : 'Pause';
+      toggle.setAttribute('aria-label', paused ? 'Play photos' : 'Pause photos');
+      toggle.querySelector('span').textContent = paused ? 'Play photos' : 'Pause photos';
       toggle.querySelector('svg').innerHTML = paused ? '<path d="M8 5.5v13l10-6.5Z"/>' : '<path d="M9 5.5v13M15 5.5v13"/>';
       state();
     });
@@ -251,7 +251,7 @@
       toggle.setAttribute('aria-pressed', 'false');
       if (originalToggleLabel === null) toggle.removeAttribute('aria-label');
       else toggle.setAttribute('aria-label', originalToggleLabel);
-      toggle.querySelector('span').textContent = 'Pause';
+      toggle.querySelector('span').textContent = 'Pause photos';
       toggle.querySelector('svg').innerHTML = '<path d="M9 5.5v13M15 5.5v13"/>';
       hint.textContent = 'Scroll sideways to see photos from the Public House.';
     });

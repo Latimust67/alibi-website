@@ -20,7 +20,7 @@ for(const region of $$('[data-seats]')){
  const buttons=$$('[data-seat]',region),panels=$$('[data-seat-panel]',region);let activeAnimation;
  const choose=i=>{activeAnimation?.cancel();buttons.forEach((b,j)=>b.setAttribute('aria-pressed',String(i===j)));panels.forEach((p,j)=>p.hidden=i!==j);if(!reduce.matches&&panels[i].animate)activeAnimation=panels[i].animate([{opacity:.45},{opacity:1}],{duration:180,easing:'ease-out'});};
  buttons.forEach((button,i)=>button.addEventListener('click',()=>choose(i)));
- region.classList.add('seats-enhanced');choose(0);reduce.addEventListener('change',()=>activeAnimation?.cancel());
+ region.classList.add('seats-enhanced');choose(Number(region.dataset.seatDefault)||0);reduce.addEventListener('change',()=>activeAnimation?.cancel());
 }
 
 // Calendar days use the public house's time zone, never the visitor's zone.
@@ -57,7 +57,7 @@ function refreshDateSensitiveContent(){
   const stale=!fresh(meta.dataset.checked,meta.dataset.staleDays);
   let count=0;
   for(const item of $$('[data-event]',list)){
-   const ended=(item.dataset.end||item.dataset.date)<today,extra=list.dataset.limit&&count>=Number(list.dataset.limit);
+   const ended=(item.dataset.end||item.dataset.date)<today||(item.dataset.endsAt&&Date.now()>=Date.parse(item.dataset.endsAt)),extra=list.dataset.limit&&count>=Number(list.dataset.limit);
    item.hidden=stale||ended||!!extra||!fresh(item.dataset.checked,meta.dataset.staleDays);if(!item.hidden)count++;
   }
   for(const month of $$('[data-month]',list))month.hidden=!$$('[data-event]',month).some(e=>!e.hidden);

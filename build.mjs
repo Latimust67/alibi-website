@@ -3,10 +3,9 @@
 import { readFileSync, writeFileSync, mkdirSync, rmSync, cpSync, existsSync } from 'node:fs';
 import { dirname, join } from 'node:path';
 import { layout } from './src/templates/layout.mjs';
-import { home, homeHead } from './src/templates/home.mjs';
-import { menuPage } from './src/templates/menu.mjs';
-import { whatsOnPage } from './src/templates/whats-on.mjs';
-import { visitPage } from './src/templates/visit.mjs';
+import { home, homeHead } from './src/templates/home-proof.mjs';
+import {menuPage,whatsOnPage,visitPage} from './src/templates/routes-proof.mjs';
+import {routesHead} from './src/templates/house-components.mjs';
 import { btn, arrowLink, eyebrow, picture } from './src/templates/components.mjs';
 
 const read = (p) => JSON.parse(readFileSync(p, 'utf8'));
@@ -40,17 +39,17 @@ const pages = [
     main: home(ctx),
   },
   {
-    out: 'menu/index.html', path: '/menu/', page: 'menu', title: 'Menu',
+    out: 'menu/index.html', path: '/menu/', page: 'menu', title: 'Food and drink', head: routesHead(),
     description: 'The Alibi Incline menu: pizza, snacks, bowls, burgers, sweets, happy hour, Sunday brunch, a rotating Alibi tap list, cocktails, wine and non-alcoholic drinks.',
     main: menuPage(ctx),
   },
   {
-    out: 'whats-on/index.html', path: '/whats-on/', page: 'whats-on', title: "What's On",
+    out: 'whats-on/index.html', path: '/whats-on/', page: 'whats-on', title: "What's on", head: routesHead(),
     description: 'Upcoming events at Alibi Incline Public House. Open each listing for the latest dates and details.',
     main: whatsOnPage(ctx),
   },
   {
-    out: 'visit/index.html', path: '/visit/', page: 'visit', title: 'Visit',
+    out: 'visit/index.html', path: '/visit/', page: 'visit', title: 'Visit', head: routesHead(),
     description: 'Directions, hours, family and dog policies, seating and private events at the Alibi Incline Public House, 931 Tahoe Blvd., Incline Village.',
     main: visitPage(ctx),
   },
@@ -83,10 +82,10 @@ for (const dir of ['fonts', 'img', 'svg', 'art']) cpSync(join('src/assets', dir)
 cpSync('src/assets/favicon.png', join(OUT, 'assets/favicon.png'));
 cpSync('src/styles/site.css', join(OUT, 'assets/site.css'));
 cpSync('src/scripts/site.js', join(OUT, 'assets/site.js'));
-for (const name of ['desktop', 'desktop-experiences', 'scene-composition', 'home-scroll-story']) {
+for (const name of ['desktop', 'desktop-experiences', 'scene-composition', 'home-scroll-story', 'house-story', 'house-shell', 'house-routes']) {
   cpSync(`src/styles/${name}.css`, join(OUT, `assets/${name}.css`));
 }
-for (const name of ['desktop-story', 'desktop-experiences', 'home-scroll-story']) {
+for (const name of ['desktop-story', 'desktop-experiences', 'home-scroll-story', 'house-story', 'sign-sequence']) {
   cpSync(`src/scripts/${name}.js`, join(OUT, `assets/${name}.js`));
 }
 mkdirSync(join(OUT, 'assets/vendor'), { recursive: true });

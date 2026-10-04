@@ -91,7 +91,7 @@
       "id": "pizza",
       "nav": "Pizza",
       "title": "Pizza",
-      "intro": "Thin-crust sourdough pizza, baked in an Italian stone oven.",
+      "intro": "Neo-Neapolitan-style pizza.",
       "image": {
         "key": "pizza",
         "alt": "Close-up of a pepperoni pizza with a blistered sourdough crust"
@@ -240,7 +240,7 @@
         },
         {
           "name": "Wild Game Chili",
-          "desc": "Bison + wild boar chili, pinto beans, smoked mozzarella, crema, serrano, with cornbread"
+          "desc": "Bison + wild boar chili, pinto beans, onions, carrots, celery, smoked mozzarella, crema, serrano, with cornbread."
         }
       ]
     },
@@ -275,7 +275,6 @@
       "id": "sweets",
       "nav": "Sweets",
       "title": "Sweets",
-      "intro": "Save room. Or share a spoon.",
       "items": [
         {
           "name": "Chai Mustache Pretzel",
@@ -357,7 +356,7 @@
       },
       {
         "name": "French Toast",
-        "desc": "Thick-cut griddled sourdough, butter, powdered sugar"
+        "desc": "Thick-cut griddled sourdough with powdered sugar."
       },
       {
         "name": "All American Breakfast",
@@ -489,7 +488,7 @@
           "style": "Golden mocha stout",
           "abv": "6%",
           "notes": "chocolate, coffee, sweet",
-          "qualification": "Contains lactose",
+          "qualification": "Contains lactose.",
           "qualificationChecked": "2026-09-28"
         },
         {
@@ -732,5 +731,6 @@
     "pizza": "Pepperoni Pizza",
     "pizzaDetail": "Sourdough thin crust",
     "beer": "Chance of Clouds"
-  }
+  },
+  "scheduleChecked": "2026-10-04"
 }

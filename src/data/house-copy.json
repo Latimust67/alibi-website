@@ -1,0 +1,11 @@
+{
+  "source": "Exact revised Expressive proposal from the requested gpt-6.1-sol copy lane, October 4 2026. Private concept, not owner approval.",
+  "hero": { "heading": "Alibi Incline Public House", "descriptor": "Incline Public House", "location": "931 Tahoe Blvd. · Incline Village, Nevada", "primary": "See the menu", "secondary": "Plan your visit" },
+  "closure": { "text": "Closed October 5 and 6. Back Wednesday, October 7.", "link": "Closure details", "url": "https://alibialeworks.com/events/alibi-pubs-closed/", "through": "2026-10-06" },
+  "food": { "heading": "From the Incline kitchen", "line": "Pizza, pork belly bao, and salads.", "action": "See the food menu", "labels": ["Pizza", "Pork Belly Bao", "Salad"] },
+  "places": { "heading": "Inside or outside?", "qualification": "Outdoor seating is seasonal and weather-dependent.", "items": [ { "key":"dining-hall", "name":"Inside", "text":"Inside the public house", "accessible":"Show indoor seating" }, { "key":"deck", "name":"Deck", "text":"The heated deck", "accessible":"Show the deck" }, { "key":"forest-guests", "name":"Beer Forest", "text":"The Beer Forest", "accessible":"Show the Beer Forest" } ] },
+  "events": { "heading":"What's on at Incline", "action":"See what's on" },
+  "beers": { "heading":"Six Alibis", "line":"A few from our beer lineup.", "action":"See the beer menu", "items":[ {"id":"kolsch","name":"Kölsch","style":"German blonde ale","line":"Crisp and bright."}, {"id":"ipa","name":"Alibi IPA","style":"West Coast IPA","line":"Pine, citrus, and passionfruit."}, {"id":"lager","name":"Alibi Lager","style":"Helles-style lager","line":"Clean and balanced."}, {"id":"pale-ale","name":"Pale Ale","style":"West Coast pale ale","line":"Citrus with a tropical side."}, {"id":"contradiction","name":"Contradiction","style":"Golden mocha stout","line":"Coffee, cocoa, and vanilla."}, {"id":"porter","name":"Porter","style":"English-style porter","line":"Toasty, chocolaty, and nutty."} ] },
+  "gallery": { "heading":"Around the pub", "instruction":"Drag to look around", "pause":"Pause photos", "play":"Play photos", "previous":"Previous photo", "next":"Next photo" },
+  "visit": { "heading":"931 Tahoe Boulevard", "location":"Incline Village, Nevada 89451", "primary":"Get directions", "secondary":"Call the pub" }
+}
