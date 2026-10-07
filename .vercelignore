@@ -1,0 +1,5 @@
+# Local artwork masters and preparation tools are not build inputs.
+source-assets/
+asset-work/
+tools/
+*.md
