@@ -118,7 +118,7 @@
       last = now;
       let moved = false;
       if (ambient()) {
-        const drift = 26 * dt;
+        const drift = 50 * dt;
         offset += drift;
         if (targetOffset !== null) targetOffset += drift;
         swayTime += dt;

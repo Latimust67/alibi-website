@@ -1,5 +1,115 @@
 # Alibi Incline Public House — The Long Table
 
+## Public deployment
+
+Deploy this repository root to Vercel with the settings in `vercel.json`:
+`npm ci`, `npm run build`, output directory `dist`. Use Node.js 22 or later.
+The site is static; it requires no database, API keys, or runtime secrets.
+
+Production builds allow search indexing and generate canonical URLs and a sitemap
+from Vercel's `VERCEL_PROJECT_PRODUCTION_URL`. Preview and local builds remain
+excluded from indexing. For deployment elsewhere, set `SITE_URL` to the site's
+public HTTPS origin when building. All public pages retain their unofficial
+design-concept disclosure and links to current information from Alibi.
+
+The source and prepared assets in this repository are sufficient to build the
+site. Image-preparation tools and historical research are not build prerequisites.
+Google discovery and indexing are handled separately from website hosting.
+
+## October 5, 2026 — section pass (branch `redesign-2026-10-04`, uncommitted)
+
+Six fixes from the owner's review of the scroll pass. Kept unchanged: the beer
+worlds, phone beer spreads and photo rope.
+
+- **Hero, night:** the night state now fills the left column: the line, a
+  supporting sentence, and a "Tonight at Alibi" card at the foot (today's hours
+  or closure, the next event, See what's on / Order pizza to go).
+- **Dishes:** the turntable opens on a real photo (no illustrated pizza in it;
+  the spot pizza by the heading still rolls in). Each dish is a full 3:2 crop
+  (`tools/prep-dishes.mjs`), shown about 750px wide at 1440 on a turning disc.
+- **Good nights at Incline:** rows slide in tied to scroll (they reverse),
+  date tiles, a climbing moon, and a two-band marquee of the weekly regulars.
+- **Brewed here. Here for each other.** (was "Good beer, good neighbors.") Copy
+  by Codex (gpt-6-sol, ultra; gpt-6.1-sol is not available on a ChatGPT login):
+  `../.copy/2026-10-05/`, picks in `src/data/section-copy.json`. Desktop pins it:
+  the big number rolls 2014 → 11× → 2024 → 94, a pint rises per chapter and the
+  light shifts per milestone; membership card and three perks follow.
+- **Find us:** letterboard hours board on a dark felt ground in a timber frame,
+  and a schematic map (marked not to scale).
+- **Closing scene + footer (every page):** an illustration of Alibi at night from
+  the Beer Forest (ChatGPT via Codex; `source-assets/generated/closing/`,
+  `tools/prep-closing.mjs`; phones get a portrait version), the camera settles
+  and the lights come up as it arrives; then brand, tagline and live status,
+  link columns, the Incline/Est 2014/Truckee lockup and a giant "Alibi" a warm
+  light follows on desktop. `forest.mjs` is no longer used.
+- Checks: `node tools/section-check.mjs <url> <outDir> --part <hero|dishes|events|story|visit|footer|phone|reduced|all>`;
+  frozen criteria in `.verify/section-pass.json`. Research:
+  `../.frontend-research/2026-10-05-alibi-sections/dossier.md`.
+
+## October 4, 2026, night — scroll pass (branch `redesign-2026-10-04`, uncommitted)
+
+The home page was rebuilt around scroll animation. Desktop (1000px+) gets
+pinned scenes; phones get the same moves, smaller and unpinned; reduced
+motion and no-JS keep complete still pages. Kept unchanged: the six beer
+worlds, the phone beer spreads and the photo rope.
+
+- **Hero, sundown:** the painted bulbs were taken out of the art
+  (`tools/prep-lights.mjs`, positions in `src/data/bulbs.json`) and redrawn as
+  SVG. By day they are clear glass; once the sun is below the mountains they
+  light one by one from the bar outward, with halos and warm spill. Night falls
+  on each depth layer separately so the stars show between the pines.
+- **Food, the oven:** a top-down pizza (generated with ChatGPT through Codex in
+  the spot style; `source-assets/generated/oven/`) drops onto a tray, flips into
+  the real pepperoni pie, then a turntable brings round Pork Belly Bao, Wings,
+  Mojo Chicken Sandwich and Garden Salad (square crops: `tools/prep-dishes.mjs`).
+  Three promo tickets follow: happy hour, pizza to go, Sunday brunch.
+- **Come on through** (replaces "Pick your spot"): Inside, the deck and the Beer
+  Forest open through a timber gable, a shade sail and a pine, ending on the
+  Beer Forest at night.
+- **Events after dark** with a festoon that lights up, the weekly rhythm, dated
+  events and a private-events block (200 guests, two stages, 45 spaces).
+- **Good beer, good neighbors:** 2014 / 11× / 2024 EPA award / 2025 community
+  figures, Alibi Anonymous, gift cards, gluten-reduced note, the app.
+- **Good to know** under the hours (kids, dogs, outdoor seating, parking, to go).
+- **Closing forest on every page:** five SVG pine layers generated at build time
+  (`src/templates/forest.mjs`), rising at different speeds, with moon, stars and
+  string lights that switch on.
+- Source: `src/templates/alibi-home.mjs`, `forest.mjs`, `alibi-shell.mjs`;
+  `src/styles/alibi-scenes.css` (new, after `alibi.css`); `src/scripts/alibi-motion.js`
+  (GSAP on all widths via `gsap.matchMedia`), `alibi.js` (light switches).
+  Pre-pass copies: `source-assets/generated/*.before-scroll.*`, `hero-lit-backup/`.
+- Checks: `node tools/scroll-check.mjs <url> <outDir> --part <hero|food|dishes|tour|footer|phone|reduced|content|all>`;
+  frozen criteria in `.verify/scroll-redesign.json`.
+- Research: `../.frontend-research/2026-10-04-alibi-scroll/dossier.md`.
+
+## October 4, 2026 redesign (branch `redesign-2026-10-04`, uncommitted)
+
+Every section except the six beer-can worlds, the phone beer cards and the
+hanging-photo rope was redesigned for phone and desktop. Those three kept
+experiences render from their original, unchanged files
+(`desktop-experiences.*`, plus the phone markup copied verbatim into
+`alibi-home.mjs`) and were pixel-compared against commit `d37ef77`.
+
+- New source: `src/templates/alibi-shell.mjs` (head, header, notice, footer),
+  `alibi-home.mjs`, `alibi-routes.mjs`; `src/styles/alibi.css`;
+  `src/scripts/alibi.js`. `site.js` keeps the date/closure logic. The older
+  `*-proof.mjs`, `layout.mjs` and `house-*` files are no longer used by the build.
+- Art: the arrival and the small food spots are generated in the beer worlds'
+  flat poster style (`tools/prep-flat.mjs`, `tools/prep-spots.mjs`; masters in
+  `source-assets/generated/`). Larger photo sets come from the originals in
+  `../incline-demo/source-assets` via `tools/prep-photos.mjs`.
+- Research behind the direction: `../.frontend-research/2026-10-04-alibi-redo/`.
+- Desktop motion (1000px+, motion allowed): `src/scripts/alibi-motion.js` loads
+  GSAP + ScrollTrigger + SplitText only on wide screens. Home hero = four depth
+  layers (`tools/prep-layers.mjs`) with a scroll-driven sunset into "Stay till the
+  lights come on."; pinned seating story; counters; split-flap dates; rising footer
+  forest; a pint that fills as you scroll. Phones, reduced motion and no-JS stay
+  calm. Acceptance: `node tools/motion-check.mjs <url>`; frames: `tools/motion-frames.mjs`.
+- Review: `tools/shot.mjs <url> <outDir> --audit` captures every page and fails
+  on overflow, broken images, console errors or a missing kept section.
+- Open items: no prices (the menu data has none), photo public-use rights, and
+  the Friday-hours conflict noted in the research.
+
 ## Repository setup
 
 This repository contains the current website source and its artwork. Uploading it

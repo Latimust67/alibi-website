@@ -11,3 +11,4 @@ dist/
 # Local review captures and unused hero explorations.
 review/
 hero-concepts/
+.verify/

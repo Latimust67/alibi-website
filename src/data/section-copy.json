@@ -1,0 +1,89 @@
+{
+ "story": {
+  "kicker": "BEER AND THE PEOPLE HERE",
+  "heading": {
+   "a": "Brewed here. ",
+   "b": "Here for each other."
+  },
+  "lede": "Alibi brews its own beer. In 2025, it supported 94 nonprofits and community groups across 106 events.",
+  "milestones": [
+   {
+    "big": "2014",
+    "unit": "founded in Incline",
+    "title": "Where Alibi began",
+    "line": "Alibi Ale Works was founded in Incline Village."
+   },
+   {
+    "big": "11×",
+    "unit": "Sierra Sun's Best Of",
+    "title": "Best Brewery",
+    "line": "Voted Best Brewery in Truckee & North Lake Tahoe 11 times."
+   },
+   {
+    "big": "2024",
+    "unit": "EPA award",
+    "title": "Less CO₂ from brewing",
+    "line": "The EPA recognized methods that save about 2,600 lbs of CO₂ a year."
+   },
+   {
+    "big": "94",
+    "unit": "groups supported",
+    "title": "106 community events",
+    "line": "In 2025, Alibi supported 94 nonprofits and community groups across 106 events."
+   }
+  ],
+  "member": {
+   "title": "Alibi Anonymous",
+   "line": "$15/mo or $150/yr. $2 off 16oz beers, $1 off 10oz, 10% off food, cans, fills and merch.",
+   "cta": "Join Alibi Anonymous"
+  },
+  "perks": [
+   {
+    "label": "E-GIFT CARDS",
+    "title": "Their pick, your treat",
+    "line": "E-gift cards cover food, beer and merch. No wrapping paper required."
+   },
+   {
+    "label": "BEER NOTE",
+    "title": "Brewed gluten-reduced",
+    "line": "Alibi beer is brewed gluten-reduced. It isn't recommended for anyone with celiac disease."
+   },
+   {
+    "label": "THE APP",
+    "title": "Both pubs, one app",
+    "line": "Find deals and rewards at the Incline and Truckee public houses."
+   }
+  ]
+ },
+ "visit": {
+  "kicker": "FIND US",
+  "heading": {
+   "a": "Right here in ",
+   "b": "Incline Village."
+  },
+  "subline": "931 Tahoe Blvd., across from Raley's. There are 45 parking spaces on site, with more nearby.",
+  "hoursTitle": "PUB HOURS",
+  "hoursNote": "Kitchen until 9pm daily. Last to-go order at 8:45pm.",
+  "knowTitle": "GOOD TO KNOW"
+ },
+ "heroNight": {
+  "line": "Pints at the bar, pizza from the oven and the pines just outside.",
+  "tonightLabel": "TONIGHT AT ALIBI",
+  "cta1": "See what's on",
+  "cta2": "Order pizza to go"
+ },
+ "events": {
+  "intro": "Country Fridays, trivia nights and Sunday brunch in football season. The calendar fills in the rest.",
+  "crewLine": "Room for groups up to 200 and two stages. Larger groups may need to book the whole pub."
+ },
+ "footer": {
+  "closingKicker": "OPEN SEVEN DAYS · KITCHEN UNTIL 9PM",
+  "closingLine": {
+   "a": "Brewing in Incline Village ",
+   "b": "since 2014."
+  },
+  "tagline": "Alibi beer and sourdough pizza in Incline Village.",
+  "signoff": "See you at the bar."
+ },
+ "_source": "Picks from ../.copy/2026-10-05/copy.json, written by Codex (gpt-6-sol, ultra reasoning) from ../.copy/2026-10-05/BRIEF.md on 2026-10-05. Copied verbatim."
+}
