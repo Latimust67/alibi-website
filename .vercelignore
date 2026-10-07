@@ -1,4 +1,15 @@
 # Local artwork masters and preparation tools are not build inputs.
+.git/
+.vercel/
+.netlify/
+.env*
+node_modules/
+dist/
+.verify/
+review/
+hero-concepts/
+.DS_Store
+*.log
 source-assets/
 asset-work/
 tools/
