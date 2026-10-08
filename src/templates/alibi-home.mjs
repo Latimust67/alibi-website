@@ -154,7 +154,7 @@ function food({ site, menu }) {
     <div class="a-head-aside" data-reveal><p>Neo-Neapolitan-style pizza on a sourdough thin crust, pork belly bao, wings, Wagyu burgers and big salads, with Alibi beer pouring at the bar.</p>${textLink('/menu/', 'See the full menu')}</div>
    </div>
   </div>
-  <div class="a-oven" data-oven>
+  <div class="a-oven" id="dishes" data-oven>
    <div class="a-oven-pin">
     <div class="a-oven-glow" aria-hidden="true"></div>
     <div class="a-oven-stage" aria-hidden="true">
