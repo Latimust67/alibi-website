@@ -16,6 +16,34 @@ The source and prepared assets in this repository are sufficient to build the
 site. Image-preparation tools and historical research are not build prerequisites.
 Google discovery and indexing are handled separately from website hosting.
 
+## October 7, 2026 — phone pass (uncommitted)
+
+The owner's phone review: the home page scrolled sideways in places, and several
+sections looked squeezed. Phones and tablets (under 1000px) now only scroll
+straight down; the desktop site is unchanged (pixel-compared against the
+pre-pass build in `.verify/baseline-dist`). Kept as they were: the hero turning
+to night, the rolling pizza, the food heading, the simple fade-ups.
+
+- **Dishes:** the sideways row is a deck of five equal cards. Each sticks under
+  the header and the next slides over it; the covered card eases back and dims.
+  Short screens (under 600px tall) and reduced motion get a plain list.
+- **Six Alibis:** a two-column shelf (three on tablets): each beer's world fills
+  a tile with its can standing in it, name and style below.
+- **Good nights at Incline:** the weekly regulars are a 2×2 grid of tiles;
+  upcoming dates are ticket stubs (the whole ticket is the link). The sliding
+  band of words before "Bring the whole crew" is desktop-only now.
+- **Bring the whole crew:** the hall photo runs full width and carries the
+  heading; figures in a row, the features as a checklist.
+- **Around the pub:** four of the rope's photos as pegged prints with captions.
+- **Brewed here. Here for each other.:** a pint stays beside the milestones and
+  fills as they scroll past, lighting each one as the beer reaches its tick.
+- Source: `src/styles/alibi-phone.css` (new; loaded with `media="(max-width: 999px)"`),
+  phone branch of `src/scripts/alibi-motion.js`, phone-only markup in
+  `src/templates/alibi-home.mjs` (beer shelf, prints).
+- Checks: `node tools/phone-check.mjs <url> <outDir> --part <overflow|sideways|dishes|beers|events|crew|pub|story|kept|reduced|type|overview|all>`
+  and `node tools/desktop-diff.mjs .verify/baseline-dist <outDir>`; frozen
+  criteria in `.verify/mobile-pass.json`.
+
 ## October 5, 2026 — section pass (branch `redesign-2026-10-04`, uncommitted)
 
 Six fixes from the owner's review of the scroll pass. Kept unchanged: the beer

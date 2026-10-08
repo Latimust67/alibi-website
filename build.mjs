@@ -83,7 +83,7 @@ for (const dir of ['fonts', 'img', 'svg', 'art']) cpSync(join('src/assets', dir)
 cpSync('src/assets/favicon.png', join(OUT, 'assets/favicon.png'));
 cpSync('src/styles/site.css', join(OUT, 'assets/site.css'));
 cpSync('src/scripts/site.js', join(OUT, 'assets/site.js'));
-for (const name of ['desktop-experiences', 'house-story', 'alibi', 'alibi-scenes']) {
+for (const name of ['desktop-experiences', 'house-story', 'alibi', 'alibi-scenes', 'alibi-phone']) {
   cpSync(`src/styles/${name}.css`, join(OUT, `assets/${name}.css`));
 }
 for (const name of ['desktop-experiences', 'alibi', 'alibi-motion']) {

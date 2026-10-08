@@ -1,10 +1,12 @@
 // Scroll choreography for the October 2026 redesign.
 // Desktop (1000px+): pinned scenes — sundown in the hero, the turntable of
 // plates, the walk through Inside / the deck / the Beer Forest — plus a forest
-// that rises into the footer. Phones get the same story without pinning:
-// smaller, scroll-linked moves. Reduced motion and no-JS keep the complete
-// still pages. Native scrolling is kept on purpose: the preserved beer worlds
-// rely on position: sticky.
+// that rises into the footer. Phones get their own, simpler story that only
+// ever moves up and down (the rolling pizza excepted): a deck of dish cards,
+// a beer shelf, prints that settle, and a pint that fills beside the
+// milestones. Reduced motion and no-JS keep the complete still pages. Native
+// scrolling is kept on purpose: the beer worlds and the dish deck rely on
+// position: sticky.
 (() => {
   const MOTION = '(prefers-reduced-motion: no-preference)';
   if (!matchMedia(MOTION).matches) return;
@@ -49,6 +51,7 @@
       foodSpot();
       if (desk) ovenDesk(); else ovenPhone();
       tickets();
+      if (!desk) { beersPhone(); printsPhone(); }
       if (desk) tourDesk(); else tourPhone();
       events();
       crew();
@@ -221,18 +224,48 @@
         tl.to({}, { duration: 0.25 }, steps - 1);
       }
       function ovenPhone() {
-        const row = $('.a-courses');
-        if (!row) return;
-        const plates = $$('.a-course-plate', row);
-        // Plates lean a little as they slide through the row.
-        const lean = () => {
-          const mid = row.getBoundingClientRect().left + row.clientWidth / 2;
-          plates.forEach((p) => { const r = p.getBoundingClientRect(); const d = (r.left + r.width / 2 - mid) / row.clientWidth; gsap.set(p, { rotation: d * 6, y: Math.abs(d) * 18 }); });
-        };
-        row.addEventListener('scroll', lean, { passive: true });
-        cleanups.push(() => row.removeEventListener('scroll', lean));
-        lean();
-        gsap.from($$('.a-course', row), { y: 50, opacity: 0, duration: 0.9, ease: 'expo.out', stagger: 0.08, scrollTrigger: { trigger: row, start: 'top 88%', once: true } });
+        // Phones: the dishes are a deck. Each card sticks (CSS) and the next one
+        // slides up over it; the covered card eases back and dims as it lands.
+        const cards = $$('.a-courses .a-course');
+        if (!cards.length) return;
+        if (getComputedStyle(cards[0]).position !== 'sticky') {
+          // Short screens: a plain list that rises in.
+          gsap.from(cards, { y: 50, opacity: 0, duration: 0.9, ease: 'expo.out', stagger: 0.08, scrollTrigger: { trigger: '.a-courses', start: 'top 88%', once: true } });
+          return;
+        }
+        const stuckAt = (el) => parseFloat(getComputedStyle(el).top) || 0;
+        cards.forEach((card, i) => {
+          const next = cards[i + 1];
+          if (!next) return;
+          gsap.fromTo(card, { scale: 1, '--dim': 0 }, { scale: 0.93, '--dim': 0.16, ease: 'none', immediateRender: false, scrollTrigger: { trigger: next, start: 'top bottom', end: () => `top ${stuckAt(next)}px`, scrub: true, invalidateOnRefresh: true } });
+        });
+      }
+
+      // ---- phones: the six beers stand up on their shelf as each row arrives -----------------------
+      function beersPhone() {
+        const tiles = $$('.house-mobile-beers .mobile-beer');
+        if (!tiles.length) return;
+        gsap.set(tiles.filter((t) => t.getBoundingClientRect().top > innerHeight), { y: 46, opacity: 0 });
+        ScrollTrigger.batch(tiles, {
+          start: 'top 92%', once: true,
+          onEnter: (batch) => {
+            gsap.to(batch, { y: 0, opacity: 1, duration: 0.9, ease: 'expo.out', stagger: 0.09, overwrite: true });
+            gsap.fromTo(batch.map((t) => $('.mobile-beer-can', t)), { yPercent: 22 }, { yPercent: 0, duration: 1.2, ease: 'expo.out', stagger: 0.09, delay: 0.12 });
+          },
+        });
+      }
+
+      // ---- phones: the prints drop onto the table and settle ----------------------------------------
+      function printsPhone() {
+        const prints = $$('.mobile-print figure');
+        if (!prints.length) return;
+        // GSAP takes over the CSS tilt (--r), so each print settles back onto its own angle.
+        const tilt = (el) => parseFloat(getComputedStyle(el).getPropertyValue('--r')) || 0;
+        gsap.set(prints.filter((p) => p.getBoundingClientRect().top > innerHeight), { y: 60, rotation: (i, el) => tilt(el) + (tilt(el) < 0 ? -7 : 7), opacity: 0 });
+        ScrollTrigger.batch(prints, {
+          start: 'top 90%', once: true,
+          onEnter: (batch) => gsap.to(batch, { y: 0, rotation: (i, el) => tilt(el), opacity: 1, duration: 1.1, ease: 'back.out(1.4)', stagger: 0.12, overwrite: true }),
+        });
       }
 
       // ---- the three tickets are dealt onto the table ------------------------------------------
@@ -338,9 +371,9 @@
           gsap.from(week, { y: 24, opacity: 0, duration: 0.7, ease: 'expo.out', stagger: 0.06, scrollTrigger: { trigger: $('.a-week', sec), start: 'top 88%', once: true } });
           gsap.from(rows, { y: 24, opacity: 0, duration: 0.7, ease: 'expo.out', stagger: 0.06, scrollTrigger: { trigger: list, start: 'top 88%', once: true } });
         }
-        // The week's regulars drift in two bands, in opposite directions.
+        // The week's regulars drift in two bands, in opposite directions (wide screens; phones hide the band).
         const [a, b] = $$('.a-marquee-row', sec);
-        if (a && b) gsap.timeline({ defaults: { ease: 'none' }, scrollTrigger: { trigger: $('.a-marquee', sec), start: 'top bottom', end: 'bottom top', scrub: 0.6 } })
+        if (desk && a && b) gsap.timeline({ defaults: { ease: 'none' }, scrollTrigger: { trigger: $('.a-marquee', sec), start: 'top bottom', end: 'bottom top', scrub: 0.6 } })
           .fromTo(a, { xPercent: 0 }, { xPercent: -28, duration: 1 }, 0)
           .fromTo(b, { xPercent: -30 }, { xPercent: -4, duration: 1 }, 0);
       }
@@ -372,7 +405,7 @@
             .fromTo($('img', pic), { scale: 1.3 }, { scale: 1, duration: 1 }, 0);
         } else {
           gsap.timeline({ scrollTrigger: { trigger: photo, start: 'top 85%', once: true } })
-            .fromTo(pic, { clipPath: 'inset(10% 10% 10% 10% round 6px)' }, { clipPath: 'inset(0% 0% 0% 0% round 6px)', duration: 1, ease: 'expo.out' }, 0)
+            .fromTo(pic, { clipPath: 'inset(8% 8% 8% 8% round 20px)' }, { clipPath: 'inset(0% 0% 0% 0% round 0px)', duration: 1.1, ease: 'expo.out' }, 0)
             .fromTo($('img', pic), { scale: 1.2 }, { scale: 1, duration: 1.2, ease: 'expo.out' }, 0);
         }
         gsap.from($$('.a-crew-list li'), { x: desk ? 30 : 0, y: desk ? 0 : 16, opacity: 0, duration: 0.7, ease: 'expo.out', stagger: 0.06, scrollTrigger: { trigger: '.a-crew-list', start: 'top 88%', once: true } });
@@ -412,10 +445,30 @@
       function storyPhone() {
         const sec = $('[data-story]');
         if (!sec) return;
-        // Phones: the gold rule fills down the list as you read; the marks rise in once.
-        const list = $('.a-marks', sec);
-        if (list) gsap.fromTo(list, { '--fill': 0 }, { '--fill': 1, ease: 'none', scrollTrigger: { trigger: list, start: 'top 80%', end: 'bottom 60%', scrub: 0.4 } });
-        gsap.from($$('.a-mark', sec), { y: 28, opacity: 0, duration: 0.8, ease: 'expo.out', stagger: 0.1, scrollTrigger: { trigger: list, start: 'top 85%', once: true } });
+        // Phones: the pint stays beside the milestones (CSS sticky) and fills as you read.
+        // Each milestone lights as it passes the glass, just as the beer reaches its tick.
+        const list = $('.a-marks', sec), glassEl = $('.a-glass', sec), marks = $$('.a-mark', sec);
+        if (list && glassEl && marks.length && getComputedStyle(glassEl).display !== 'none') {
+          const AT = marks.map((m) => parseFloat(m.style.getPropertyValue('--at')) || 0);
+          let stops = [];
+          // A milestone lights once a third of it has passed the line beside the glass.
+          const measure = () => { const h = list.offsetHeight || 1; stops = marks.map((m) => Math.min(0.98, (m.offsetTop + m.offsetHeight / 3) / h)); };
+          // Progress through the list -> beer level: near empty at the start, each tick as its mark arrives, full at the end.
+          const levelAt = (p) => {
+            if (p <= 0) return 0.04;
+            const pts = [[0, 0.04], ...stops.map((st, i) => [st, AT[i]]), [1, 1]];
+            for (let k = 1; k < pts.length; k++) if (p <= pts[k][0]) { const [x0, y0] = pts[k - 1], [x1, y1] = pts[k]; return x1 > x0 ? y0 + ((p - x0) / (x1 - x0)) * (y1 - y0) : y1; }
+            return 1;
+          };
+          const state = { v: 0.04 };
+          const paint = () => {
+            glassEl.style.setProperty('--level', state.v.toFixed(4));
+            marks.forEach((m, i) => m.classList.toggle('is-lit', state.v >= AT[i] - 0.002));
+          };
+          const pour = (p) => gsap.to(state, { v: levelAt(p), duration: 0.35, ease: 'power2.out', overwrite: true, onUpdate: paint });
+          ScrollTrigger.create({ trigger: list, start: 'top 58%', end: 'bottom 58%', invalidateOnRefresh: true, onRefresh: (self) => { measure(); pour(self.progress); }, onUpdate: (self) => pour(self.progress) });
+          measure(); paint();
+        }
         gsap.from($$('.a-member, .a-perk', sec), { y: 30, opacity: 0, duration: 0.8, ease: 'expo.out', stagger: 0.06, scrollTrigger: { trigger: $('.a-perks', sec), start: 'top 88%', once: true } });
       }
 
@@ -425,7 +478,7 @@
         if (!sec) return;
         const board = $('.a-board-frame', sec);
         if (board && desk) gsap.fromTo(board, { rotationX: -24, y: 50, transformOrigin: '50% 0%' }, { rotationX: 0, y: 0, ease: 'none', scrollTrigger: { trigger: board, start: 'top bottom', end: 'top 55%', scrub: 0.6 } });
-        if (board) gsap.from($$('tr', board), { x: 18, opacity: 0, stagger: 0.05, duration: 0.6, ease: 'power3.out', scrollTrigger: { trigger: board, start: 'top 75%', once: true } });
+        if (board) gsap.from($$('tr', board), { x: desk ? 18 : 0, y: desk ? 0 : 12, opacity: 0, stagger: 0.05, duration: 0.6, ease: 'power3.out', scrollTrigger: { trigger: board, start: 'top 75%', once: true } });
         const know = $$('.a-know-item', sec);
         if (know.length) {
           calm(know);

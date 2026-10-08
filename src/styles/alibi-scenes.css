@@ -456,9 +456,9 @@
 .a-footer .a-today--foot { min-height: 0; font-size: 15px; color: var(--cream); }
 .a-footer-now-note { font-size: 13px; color: rgb(255 253 247 / .64); }
 /* The big name rises out of the floor: its base is cut by the subfooter's rule (owner's pick, October 7). */
-.a-footer-giant { position: relative; overflow: hidden; pointer-events: none; padding-top: clamp(24px, 4vw, 56px); }
+.a-footer-giant { position: relative; overflow: hidden; pointer-events: none; padding-top: clamp(24px, 4vw, 56px); padding-bottom: clamp(48px, 4vw, 64px); }
 .a-footer-giant-in { display: flex; justify-content: center; }
-.a-giant-word { display: block; margin: 0 0 -.24em; padding: .06em .08em 0; font: italic 400 clamp(150px, 31vw, 500px)/.86 var(--display); letter-spacing: -.055em; color: transparent; background: radial-gradient(clamp(160px, 18vw, 300px) circle at var(--mx, 50%) var(--my, -60%), rgb(255 222 150 / .95), rgb(255 190 100 / .35) 45%, transparent 72%), linear-gradient(180deg, rgb(233 186 99 / .6) 0%, rgb(233 186 99 / .2) 46%, rgb(233 186 99 / 0) 84%); -webkit-background-clip: text; background-clip: text; will-change: transform; }
+.a-giant-word { display: block; margin: 0; padding: .06em .08em 0; font: italic 400 clamp(150px, 31vw, 500px)/.86 var(--display); letter-spacing: -.055em; color: transparent; background: radial-gradient(clamp(160px, 18vw, 300px) circle at var(--mx, 50%) var(--my, -60%), rgb(255 222 150 / .95), rgb(255 190 100 / .35) 45%, transparent 72%), linear-gradient(var(--gold), var(--gold)); -webkit-background-clip: text; background-clip: text; will-change: transform; }
 .a-footer-notes { display: grid; gap: 10px; padding-block: 44px 34px; border-top: 1px solid var(--line-dark); font-size: 13px; color: rgb(255 253 247 / .66); }
 .a-footer-notes p { margin: 0; }
 .a-footer-signoff { font: italic 400 19px/1.2 var(--display); letter-spacing: -.01em; color: var(--gold) !important; }

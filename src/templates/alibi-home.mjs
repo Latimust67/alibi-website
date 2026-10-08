@@ -1,7 +1,8 @@
-// Home, October 2026 scroll redesign. The beer worlds, the phone beer spreads
-// and the photo rope are the preserved experiences; their markup is emitted
-// unchanged. Everything else is written to be complete as static HTML; the
-// scroll choreography in alibi-motion.js only animates what is already here.
+// Home, October 2026 scroll redesign. The desktop beer worlds and the photo
+// rope are the preserved experiences; their markup is emitted unchanged. The
+// phone beer shelf and phone prints were redesigned in the October 7 phone
+// pass. Everything else is written to be complete as static HTML; the scroll
+// choreography in alibi-motion.js only animates what is already here.
 import { readFileSync } from 'node:fs';
 import { esc, dateParts } from './components.mjs';
 import { desktopDrinks, photoRope } from './desktop-experiences.mjs';
@@ -17,19 +18,30 @@ const NEW_TAB = '<span class="sr-only"> (opens in a new tab)</span>';
 const nextEvents = (events, today, n) => (isFresh(events.checked, today, events.staleAfterDays) ? upcoming(events.events, today).filter((e) => e.status !== 'closure' && e.status !== 'cancelled').slice(0, n) : []);
 const eventAttrs = (e) => `data-event data-date="${e.date}" data-end="${e.date}" data-checked="${e.checked}"${e.endsAt ? ` data-ends-at="${e.endsAt}"` : ''}`;
 
-// ---- preserved phone beer spreads and phone gallery (identical output to the accepted build) ----
+// ---- phone beer shelf and phone prints (phones only; desktop hides both sections) ----
 function mobileBeerMedia(id, can = false, name = '') {
   const widths = can ? [180] : [480, 720], kind = can ? 'can' : 'world';
   const src = (w, fmt) => `/assets/img/mobile-${kind}-${id}-${w}.${fmt}`;
   const set = (fmt) => widths.map((w) => `${src(w, fmt)} ${w}w`).join(', ');
-  const sizes = can ? '70px' : '(min-width:700px) 44vw, 88vw';
+  // A half-width shelf tile crops the wide world to its own height, so the world is drawn about a screen wide.
+  const sizes = can ? '76px' : '(min-width:700px) 60vw, 100vw';
   return `<picture><source media="(min-width:1000px)" srcset="${BLANK}"><source type="image/avif" srcset="${set('avif')}" sizes="${sizes}"><source type="image/webp" srcset="${set('webp')}" sizes="${sizes}"><img src="${src(widths[0], 'webp')}" width="${can ? 180 : 720}" height="${can ? 446 : 350}" loading="lazy" decoding="async" alt="${can ? esc(name) + ' can' : ''}"></picture>`;
 }
 const keptLink = (href, text) => `<a class="house-link " href="${href}">${text}<span aria-hidden="true">↗</span></a>`;
-const keptImage = (key, alt, sizes, max) => image(key, alt, sizes, { max });
 const mobileBeers = () => `<section class="house-mobile-beers" aria-labelledby="mobile-beers-title"><div><h2 id="mobile-beers-title">${copy.beers.heading}</h2><p>${copy.beers.line}</p><p class="mobile-beers-disclosure">Illustrations inspired by Alibi’s labels.</p></div><ol>${copy.beers.items.map((b) => `<li class="mobile-beer mobile-beer-${b.id}"><div class="mobile-beer-visual"><div class="mobile-beer-landscape" aria-hidden="true">${mobileBeerMedia(b.id)}</div><div class="mobile-beer-can">${mobileBeerMedia(b.id, true, b.name)}</div></div><div class="mobile-beer-copy"><h3>${esc(b.name)}</h3><p>${b.style}</p><span>${b.line}</span>${b.id === 'contradiction' ? '<span class="beer-qualification">Contains lactose.</span>' : ''}</div></li>`).join('')}</ol>${keptLink('/menu/#drinks', copy.beers.action)}</section>`;
+// Phones: the rope's photos as prints laid on the table, each with its caption.
+const PRINTS = [
+  { key: 'patio-cheers', caption: 'Cheers on the patio', r: -2.4, widths: [640, 960], alt: 'Four friends raising Alibi pint glasses on the patio.' },
+  { key: 'deck-crowd', caption: 'A full deck', r: 1.8, alt: 'Groups at long high-top tables on a sunny deck beneath the pines.' },
+  { key: 'friends-dining', caption: 'By the window', r: 1.4, alt: 'Four friends sharing food and pints at a wooden table by the window.' },
+  { key: 'tap-pour', caption: 'At the bar', r: -1.8, alt: 'A bartender pulling an Alibi pint from a stainless tap.' },
+];
+const printPicture = ({ key, alt, widths = [480, 800] }) => {
+  const set = (fmt) => widths.map((w) => `/assets/img/desktop-${key}-${w}.${fmt} ${w}w`).join(', ');
+  return `<picture><source media="(min-width:1000px)" srcset="${BLANK}"><source type="image/avif" srcset="${set('avif')}" sizes="(min-width:700px) 22vw, 46vw"><source type="image/webp" srcset="${set('webp')}" sizes="(min-width:700px) 22vw, 46vw"><img src="/assets/img/desktop-${key}-${widths[0]}.webp" width="800" height="1000" loading="lazy" decoding="async" alt="${esc(alt)}"></picture>`;
+};
 const ropeSection = () => `<section class="house-company desktop-experience" aria-labelledby="company-title"><h2 id="company-title">${copy.gallery.heading}</h2>${photoRope({ id: 'company-rope', label: copy.gallery.heading })}<p class="company-instruction">${copy.gallery.instruction}</p></section>
- <section class="house-mobile-company" aria-labelledby="mobile-company-title"><h2 id="mobile-company-title">${copy.gallery.heading}</h2><figure>${keptImage('friends-dining', 'Friends sharing food and pints by a window at Alibi.', '85vw', 800)}</figure><figure>${keptImage('forest-guests', 'Guests seated among plants and pines in the Beer Forest.', '85vw', 800)}</figure></section>`;
+ <section class="house-mobile-company" aria-labelledby="mobile-company-title"><p class="mobile-company-k">Photos from the Public House</p><h2 id="mobile-company-title">${copy.gallery.heading}</h2><ul class="mobile-prints">${PRINTS.map((p) => `<li class="mobile-print" style="--r:${p.r}deg"><figure>${printPicture(p)}<figcaption>${p.caption}</figcaption></figure></li>`).join('')}</ul></section>`;
 
 const dish = (menu, name) => {
   for (const c of menu.food) { const d = c.items.find((i) => i.name === name); if (d) return d; }

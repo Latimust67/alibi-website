@@ -1,0 +1,174 @@
+/* Alibi Incline — the phone pass (October 7, 2026).
+   Loads last, and only below the 1000px breakpoint: every rule here is phone
+   and tablet only, so the desktop site is untouched. Everything scrolls
+   straight down; motion is vertical, scale or opacity (see alibi-motion.js). */
+
+@media (max-width: 999px) {
+
+  /* ---------- food: the five dishes as a deck of cards ---------- */
+  .a-food .a-head { margin-bottom: 34px; }
+  .a-courses { display: grid; grid-auto-rows: 1fr; gap: 20px; width: min(var(--wrap), 540px); margin: 0 auto; padding: 0; overflow: visible; scroll-snap-type: none; }
+  .a-course { position: relative; display: flex; flex-direction: column; padding: 7px 7px 24px; border-radius: 22px; background: var(--cream); box-shadow: 0 0 0 1px var(--line), inset 0 1px 0 #fff, 0 30px 60px -40px rgb(21 44 35 / .55); transform-origin: 50% 0; }
+  /* A covered card dims a little as the next one lands on it (motion sets --dim). */
+  .a-course::after { content: ""; position: absolute; inset: 0; border-radius: inherit; background: var(--ink); opacity: var(--dim, 0); pointer-events: none; }
+  /* Cards share one height (the longest text sets it); a shorter card's photo grows into the spare room. */
+  .a-course-plate { display: flex; flex: 1 0 auto; flex-direction: column; margin: 0 0 20px; padding: 0; border-radius: 16px; background: none; box-shadow: none; }
+  .a-plate-in { position: relative; flex: 1 0 auto; border-radius: 16px; }
+  .a-plate-in picture { position: absolute; inset: 0; }
+  .a-course-copy { padding: 0 15px; }
+  .a-course-meta { margin-bottom: 10px; }
+  .a-course-name { font-size: clamp(28px, 7.6vw, 34px); margin-bottom: 10px; }
+  .a-course-desc { font-size: 15px; line-height: 1.55; }
+  .a-course:nth-child(2) { --k: 1; } .a-course:nth-child(3) { --k: 2; } .a-course:nth-child(4) { --k: 3; } .a-course:nth-child(5) { --k: 4; }
+
+  .a-tickets { margin-top: 64px; gap: 14px; }
+  .a-ticket-in { padding: 24px 22px 26px; border-radius: 18px; }
+  .a-ticket-big { font-size: 58px; }
+
+  /* ---------- six Alibis: a two-column shelf ---------- */
+  .a-kept .house-mobile-beers { padding: 76px var(--margin) 72px; background: var(--paper); }
+  .a-kept .house-mobile-beers h2 { margin: 0 0 12px; font-size: clamp(46px, 12.4vw, 56px); }
+  .a-kept .house-mobile-beers > div > p { margin: 0; font-size: 17px; color: var(--muted); }
+  .a-kept .house-mobile-beers > div > .mobile-beers-disclosure { margin-top: 8px; font-size: 13px; }
+  .a-kept .house-mobile-beers ol { display: grid; grid-template-columns: 1fr 1fr; gap: 14px 12px; margin: 30px 0 22px; padding: 0; list-style: none; }
+  .a-kept .house-mobile-beers li.mobile-beer { display: flex; flex-direction: column; align-items: stretch; min-height: 0; padding: 5px 5px 16px; border: 0; border-radius: 18px; background: var(--cream); box-shadow: 0 0 0 1px var(--line), inset 0 1px 0 #fff, 0 22px 44px -32px rgb(21 44 35 / .6); }
+  .a-kept .mobile-beer-visual { position: relative; height: auto; aspect-ratio: 4 / 5; overflow: hidden; border-radius: 13px; background: var(--paper-3); }
+  .a-kept .mobile-beer-landscape, .a-kept .mobile-beer-landscape picture { position: absolute; inset: 0; display: block; }
+  .a-kept .house-mobile-beers .mobile-beer-landscape img { width: 100%; height: 100%; object-fit: cover; object-position: var(--fx, 50%) 50%; }
+  /* A soft floor under the can, so it stands in the scene rather than floating on it. */
+  .a-kept .mobile-beer-visual::after { content: ""; position: absolute; right: 9%; bottom: 6%; width: 46%; height: 9%; border-radius: 50%; background: radial-gradient(closest-side, rgb(16 28 24 / .38), transparent); }
+  .a-kept .mobile-beer-can { position: absolute; z-index: 1; right: 13%; bottom: 8%; width: auto; height: 72%; aspect-ratio: 180 / 446; transform: none; }
+  .a-kept .mobile-beer-can picture { display: block; height: 100%; }
+  .a-kept .house-mobile-beers .mobile-beer-can img { width: 100%; height: 100%; object-fit: contain; filter: drop-shadow(0 6px 6px rgb(16 28 24 / .28)); }
+  .a-kept .mobile-beer-copy { padding: 14px 9px 0; }
+  .a-kept .house-mobile-beers li h3 { margin: 0 0 4px; font-family: var(--display); font-weight: 400; font-size: clamp(19px, 5.3vw, 23px); line-height: 1.08; letter-spacing: -.02em; }
+  .a-kept .house-mobile-beers li p { margin: 0 0 8px; font-size: 13px; font-weight: 650; letter-spacing: .04em; color: var(--ember-ink); }
+  .a-kept .house-mobile-beers li span { display: block; font-size: 14px; line-height: 1.45; color: var(--muted); }
+  .a-kept .house-mobile-beers li .beer-qualification { margin-top: 4px; font-size: 13px; }
+  /* Each world's own subject sits clear of the can. */
+  .mobile-beer-kolsch { --fx: 66%; } .mobile-beer-ipa { --fx: 78%; } .mobile-beer-lager { --fx: 60%; }
+  .mobile-beer-pale-ale { --fx: 52%; } .mobile-beer-contradiction { --fx: 44%; } .mobile-beer-porter { --fx: 66%; }
+
+  /* ---------- good nights at Incline ---------- */
+  .a-events--night { padding-top: 132px; }
+  .a-events-moon { top: 84px; right: var(--margin); width: 46px; height: 46px; }
+  .a-events--night .a-events-intro { margin-bottom: 8px; font-size: 17px; }
+  .a-events--night .a-mini-h { margin: 38px 0 14px; }
+  .a-events-list-wrap .a-mini-h { margin-top: 6px; }
+  /* Every week: four small tiles, two by two. */
+  .a-events--night .a-week { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin: 0; border-top: 0; }
+  .a-events--night .a-week li { display: flex; flex-direction: column; gap: 8px; padding: 16px 14px 15px; border: 0; border-radius: 14px; background: linear-gradient(180deg, rgb(255 253 247 / .075), rgb(255 253 247 / .03)); box-shadow: inset 0 0 0 1px rgb(255 253 247 / .12), inset 0 1px 0 rgb(255 253 247 / .08); }
+  .a-events--night .a-week-day { font-size: 13px; letter-spacing: .14em; }
+  .a-events--night .a-week-body { flex: 1; }
+  .a-events--night .a-week-title { font-size: clamp(18px, 5vw, 21px); line-height: 1.12; }
+  .a-events--night .a-week-detail { display: none; }
+  .a-events--night .a-week-time { font-size: 14px; }
+  /* Coming up: each date is one ticket — the stub, a perforation, the night. */
+  .a-events--night .a-event-list { display: grid; gap: 10px; border-top: 0; margin-bottom: 30px; }
+  .a-events--night .a-event { border-bottom: 0; }
+  .a-events--night .a-event-link { --stub: 76px; grid-template-columns: var(--stub) 1fr; gap: 0; align-items: stretch; min-height: 98px; padding: 0; border-radius: 14px; background: linear-gradient(90deg, rgb(233 186 99 / .13) 0 var(--stub), rgb(255 253 247 / .045) var(--stub)); box-shadow: inset 0 0 0 1px rgb(255 253 247 / .12); outline-offset: -3px;
+    -webkit-mask: radial-gradient(circle 7px at var(--stub) 0, transparent 96%, #000) top / 100% 51% no-repeat, radial-gradient(circle 7px at var(--stub) 100%, transparent 96%, #000) bottom / 100% 51% no-repeat;
+    mask: radial-gradient(circle 7px at var(--stub) 0, transparent 96%, #000) top / 100% 51% no-repeat, radial-gradient(circle 7px at var(--stub) 100%, transparent 96%, #000) bottom / 100% 51% no-repeat; }
+  .a-events--night .a-event-date { width: auto; align-self: stretch; align-content: center; padding: 12px 0; border-radius: 0; background: none; box-shadow: none; border-right: 1.5px dashed rgb(255 253 247 / .22); }
+  .a-events--night .a-event-date strong { font-size: 40px; }
+  .a-events--night .a-event-body { align-self: center; padding: 15px 16px 15px 18px; }
+  .a-events--night .a-event-title { font-size: 21px; line-height: 1.15; }
+  .a-events--night .a-event-time { font-size: 14px; }
+  .a-events--night .a-event-chip { display: none; }
+  .a-events--night .a-event-link:active { background: linear-gradient(90deg, rgb(233 186 99 / .2) 0 var(--stub), rgb(255 253 247 / .08) var(--stub)); }
+  /* The sliding band of words is a wide-screen flourish. */
+  .a-marquee { display: none; }
+
+  /* ---------- bring the whole crew: the hall carries the heading ---------- */
+  .a-crew { margin-top: 72px; gap: 0; }
+  .a-crew-photo { position: relative; margin: 0 calc(var(--margin) * -1); }
+  .a-crew-photo picture { aspect-ratio: 4 / 5; border-radius: 0; }
+  /* The hall comes up out of the night above it and sinks back into it under the heading. */
+  .a-crew-photo picture::after { content: ""; position: absolute; inset: 0; pointer-events: none; background: linear-gradient(180deg, var(--night) 0%, rgb(14 33 25 / .55) 11%, transparent 26%, transparent 44%, rgb(14 33 25 / .84) 77%, var(--night) 100%); }
+  .a-crew-photo picture { position: relative; }
+  .a-crew-photo figcaption { position: absolute; z-index: 1; left: var(--margin); top: 30px; margin: 0; font-size: 13px; letter-spacing: .02em; color: rgb(255 253 247 / .82); }
+  .a-crew-copy { position: relative; z-index: 1; margin-top: -136px; }
+  .a-crew-title { font-size: clamp(46px, 12.6vw, 56px); margin-bottom: 18px; text-shadow: 0 2px 24px rgb(8 20 14 / .55); }
+  .a-crew-lede { font-size: 17px; }
+  .a-crew-stats { gap: 0; margin: 26px 0 24px; padding: 20px 0; }
+  .a-crew-stats li { padding-left: 14px; border-left: 1px solid var(--line-dark); }
+  .a-crew-stats li:first-child { padding-left: 0; border-left: 0; }
+  .a-crew-stats strong { font-size: clamp(38px, 10.4vw, 48px); }
+  .a-crew-stats span { font-size: 13px; }
+  .a-crew-list { gap: 12px; margin-bottom: 30px; }
+  .a-crew-list li { grid-template-columns: 18px 1fr; gap: 12px; }
+  .a-crew-list li::before { width: 11px; height: 6px; margin-top: .48em; border-radius: 0; background: none; border: solid var(--gold); border-width: 0 0 1.75px 1.75px; rotate: -45deg; }
+
+  /* ---------- around the pub: prints on the table ---------- */
+  .a-kept .house-mobile-company { padding: 80px var(--margin) 92px; background: var(--paper-2); color: var(--ink); }
+  .mobile-company-k { display: flex; align-items: center; gap: 12px; margin: 0 0 16px; font-size: 13px; font-weight: 650; letter-spacing: .16em; text-transform: uppercase; color: var(--ember-ink); }
+  .mobile-company-k::before { content: ""; width: 26px; height: 1.5px; background: currentColor; }
+  .a-kept .house-mobile-company h2 { margin: 0; font-size: clamp(44px, 12vw, 54px); color: var(--ink); }
+  .mobile-prints { list-style: none; display: grid; grid-template-columns: 1fr 1fr; gap: 30px 16px; margin: 40px 0 0; padding: 0; }
+  .mobile-print:nth-child(even) { margin-top: 46px; }
+  .a-kept .house-mobile-company .mobile-print figure { position: relative; width: auto; margin: 0; padding: 7px 7px 0; border-radius: 3px; background: #fffdf8; rotate: var(--r); box-shadow: 0 1px 1px rgb(21 44 35 / .08), 0 26px 40px -24px rgb(21 44 35 / .6); }
+  /* A wooden peg holds each print. */
+  .a-kept .house-mobile-company .mobile-print figure::before { content: ""; position: absolute; z-index: 1; left: 50%; top: -11px; width: 12px; height: 26px; translate: -50% 0; border-radius: 3px; background: linear-gradient(90deg, #b88c5c, #d8b383 45%, #a87b4c); box-shadow: 0 2px 4px rgb(60 40 20 / .3); }
+  .mobile-print picture { display: block; aspect-ratio: 4 / 5; overflow: hidden; background: var(--paper-3); }
+  .a-kept .house-mobile-company .mobile-print img { display: block; width: 100%; height: 100%; aspect-ratio: auto; object-fit: cover; }
+  .mobile-print figcaption { padding: 11px 4px 13px; font: italic 400 17px/1.15 var(--display); letter-spacing: -.01em; text-align: center; color: var(--ink); }
+
+  /* ---------- brewed here: a pint beside the milestones ---------- */
+  .a-story-pin { padding-block: 92px 8px; }
+  .a-story-grid { grid-template-columns: 74px minmax(0, 1fr); column-gap: 20px; row-gap: 44px; }
+  .a-story-copy { grid-column: 1 / -1; }
+  .a-story-title { font-size: clamp(44px, 12vw, 54px); }
+  .a-story-lede { font-size: 17px; }
+  .a-pints { display: none; }
+  .a-story .a-glass { --gh: 122px; display: block; grid-column: 1; grid-row: 2; position: sticky; top: calc(50svh - 61px); align-self: start; width: 74px; height: var(--gh); margin-top: 6px; }
+  .a-glass-in { position: absolute; inset: 0; clip-path: polygon(1% -14%, 99% -14%, 97.4% 1.6%, 98.8% 14%, 86.5% 96%, 13.5% 96%, 1.2% 14%, 2.6% 1.6%); }
+  .a-story-beer { position: absolute; left: 0; right: 0; bottom: 3.4%; height: 92%; transform-origin: 50% 100%; transform: scaleY(var(--level)); background: linear-gradient(90deg, #b8691c 0%, #e39b33 14%, #f6c25a 42%, #fbd47a 52%, #eaa83f 74%, #c0711f 100%); }
+  .a-story-beer::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgb(255 236 180 / .25), transparent 30%, rgb(120 60 10 / .25)); }
+  .a-glass-bubbles { position: absolute; left: 0; right: 0; bottom: 3.4%; height: 92%; clip-path: inset(calc((1 - var(--level)) * 100%) 0 0 0); }
+  .a-glass-bubbles i { position: absolute; left: var(--x); bottom: 0; width: calc(var(--s) * .6); height: calc(var(--s) * .6); border-radius: 50%; background: rgb(255 246 214 / .7); opacity: 0; }
+  .a-foam-track { position: absolute; left: 0; right: 0; bottom: 3.4%; height: 92%; transform: translateY(calc((1 - var(--level)) * 100%)); }
+  .a-story-foam { position: absolute; left: -2%; right: -2%; top: -3%; height: calc(5% + var(--level) * 6%); border-radius: 0 0 2px 2px; background: linear-gradient(180deg, #fffdf8 0%, #fbf2de 60%, #ecd29e 100%); box-shadow: inset 0 -2px 4px rgb(214 160 70 / .3); }
+  .a-pour { display: none; }
+  .a-glass-line { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; pointer-events: none; }
+  .a-glass-body { fill: rgb(255 253 247 / .05); stroke: rgb(255 253 247 / .6); stroke-width: 1.5; vector-effect: non-scaling-stroke; }
+  .a-glass-shine { fill: none; stroke: rgb(255 255 255 / .22); stroke-width: 3; stroke-linecap: round; vector-effect: non-scaling-stroke; }
+  .a-glass-base { fill: none; stroke: rgb(255 253 247 / .3); stroke-width: 1; vector-effect: non-scaling-stroke; }
+  .a-glass-ticks path { fill: none; stroke: rgb(255 253 247 / .55); stroke-width: 1; vector-effect: non-scaling-stroke; }
+  .a-glass-logo { position: absolute; left: 28%; top: 38%; width: 44%; height: auto; opacity: calc(.18 + .5 * clamp(0, (var(--level) - .38) * 3.2, 1)); mix-blend-mode: screen; pointer-events: none; }
+  .a-story .a-marks { grid-column: 2; grid-row: 2; padding: 0; gap: 40px; }
+  .a-story .a-marks::before, .a-story .a-marks::after, .a-story .a-mark::before { display: none; }
+  .a-mark-big { gap: 2px 10px; margin-bottom: 4px; }
+  .a-mark-num { font-size: clamp(48px, 13.4vw, 60px); }
+  .a-mark-unit { flex-basis: 100%; font-size: 13px; letter-spacing: .12em; }
+  .a-mark-t { font-size: 22px; }
+  .a-mark-d { font-size: 15px; }
+  .a-motion .a-story .a-glass { --level: .04; }
+  .a-motion .a-mark { opacity: .42; transition: opacity .5s var(--ease); }
+  .a-motion .a-mark .a-mark-num { color: rgb(255 253 247 / .7); transition: color .5s var(--ease), text-shadow .5s var(--ease); }
+  .a-motion .a-mark.is-lit { opacity: 1; }
+  .a-motion .a-mark.is-lit .a-mark-num { color: var(--gold); text-shadow: 0 0 26px rgb(242 181 74 / .35); }
+  /* Membership: the card sits on the panel's top edge. */
+  .a-perks { gap: 14px; padding-top: 84px; }
+  .a-member { gap: 22px; padding: 0 22px 26px; border-radius: 20px; }
+  .a-member-card { order: -1; justify-self: center; width: min(88%, 300px); margin-top: -46px; rotate: -4deg; }
+  .a-member-h { font-size: clamp(32px, 9vw, 40px); }
+  .a-member-line { font-size: 16px; }
+  .a-perk { border-radius: 16px; }
+}
+
+/* The deck stacks only when it fits: tall enough screens, motion allowed. */
+@media (max-width: 999px) and (min-height: 600px) and (prefers-reduced-motion: no-preference) {
+  .a-motion .a-course { position: sticky; top: calc(var(--header) + 14px + var(--k, 0) * 10px); will-change: transform; }
+}
+@media (max-width: 999px) and (prefers-reduced-motion: no-preference) {
+  .a-motion .a-story .a-glass-bubbles i { animation: a-rise var(--d) linear infinite; animation-delay: var(--w); }
+}
+@media (min-width: 700px) and (max-width: 999px) {
+  .a-kept .house-mobile-beers ol { grid-template-columns: repeat(3, 1fr); gap: 18px 16px; }
+  .mobile-prints { grid-template-columns: repeat(4, 1fr); }
+  .mobile-print:nth-child(even) { margin-top: 30px; }
+  .a-events--night .a-week { grid-template-columns: repeat(4, 1fr); }
+  .a-crew-photo picture { aspect-ratio: 16 / 11; }
+  .a-story-grid { grid-template-columns: 96px minmax(0, 1fr); column-gap: 32px; }
+  .a-story .a-glass { --gh: 160px; width: 96px; top: calc(50svh - 80px); }
+}
