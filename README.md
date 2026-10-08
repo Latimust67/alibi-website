@@ -16,6 +16,31 @@ The source and prepared assets in this repository are sufficient to build the
 site. Image-preparation tools and historical research are not build prerequisites.
 Google discovery and indexing are handled separately from website hosting.
 
+## October 8, 2026 — phone follow-up (uncommitted)
+
+From the owner's test on an iPhone 15 Pro. Desktop unchanged.
+
+- **Dish cards in Safari:** the cards ran past the right edge. Safari turned the
+  grown photo height back into width through `aspect-ratio`; the photo now has a
+  3:2 minimum height instead, and the column is `minmax(0, 1fr)`. The covered
+  card's step back is a class with a CSS transition, no longer a scroll-scrubbed
+  tween (per-frame transforms on sticky cards shook in iOS Safari).
+- **Brewed here:** the pint now holds still mid-screen and pours. The milestones
+  are sticky in one spot under it and swap one at a time (with four progress
+  dots); a stream falls from the header while it fills and stops when full; the
+  glass and the last milestone leave together.
+- **Footer:** Find us and Hours as cards (gold Call, outlined Directions), the
+  pub and Follow links as rows, the giant "Alibi" across the width.
+- **The shake, found:** Safari only keeps a sticky element in step with the scroll
+  when no positioned ancestor clips overflow. `.a-food` and `.a-story` had
+  `overflow-x: clip`, so the dish deck and the pint were repositioned a frame late
+  and shook (recorded in the iOS Simulator: 55 frames jumped and snapped back, 0
+  after). Phones now clip neither (nor `main`); the page still can't scroll
+  sideways because the body's clip applies to the viewport. Guarded by
+  `phone-check.mjs --part sticky`.
+- Checks: `node tools/sim-check.mjs <url> <outDir>` opens pages in Mobile Safari on
+  the "iPhone 17" iOS Simulator; `phone-check.mjs --part steady|pour|footer`.
+
 ## October 7, 2026 — phone pass (uncommitted)
 
 The owner's phone review: the home page scrolled sideways in places, and several
