@@ -1,5 +1,5 @@
 // Phone probe for the October 7 mobile pass. Usage:
-//   node tools/phone-check.mjs <baseUrl> <outDir> --part <overflow|sideways|dishes|beers|events|crew|pub|story|kept|reduced|type|overview|all>
+//   node tools/phone-check.mjs <baseUrl> <outDir> --part <overflow|sideways|dishes|beers|events|crew|pub|story|kept|reduced|type|overview|steady|pour|footer|sticky|all>
 // Writes contact sheets (PNG) into <outDir> and exits non-zero, listing each
 // failure, when the measured behaviour does not hold.
 import { createRequire } from 'node:module';
@@ -26,6 +26,7 @@ const check = (ok, msg) => { if (!ok) fails.push(msg); };
 const note = (msg) => notes.push(msg);
 const browser = await chromium.launch();
 const PHONE = { width: 390, height: 844 }, SMALL = { width: 375, height: 667 }, TABLET = { width: 768, height: 1024 };
+const IPHONE15 = { width: 393, height: 852 };
 
 async function open(path, { vp = PHONE, reduced = false, js = true } = {}) {
   const ctx = await browser.newContext({ viewport: vp, deviceScaleFactor: 1, isMobile: true, hasTouch: true, reducedMotion: reduced ? 'reduce' : 'no-preference', javaScriptEnabled: js });
@@ -283,6 +284,112 @@ if (want('overview')) {
     const small = await Promise.all(shots.map((b) => sharp(b).resize(Math.round(vp.width / 2)).toBuffer()));
     for (let s = 0; s * 12 < small.length; s++) await sheet(`${tag}-${s + 1}.png`, small.slice(s * 12, s * 12 + 12), Math.round(vp.width / 2));
     note(`${tag}: ${shots.length} frames`);
+    await ctx.close();
+  }
+}
+
+// ---- October 8 follow-up ------------------------------------------------------------------------
+// The dish deck holds still: nothing re-transforms the stuck cards on every scroll frame (that is
+// what shook on iPhone), and every card and photo stays inside the screen at iPhone 15 Pro size.
+if (want('steady')) {
+  const { ctx, page } = await open('/', { vp: IPHONE15 });
+  const t = await topOf(page, '.a-courses', -120);
+  const span = await page.evaluate(() => document.querySelector('.a-courses').getBoundingClientRect().height);
+  await scrollTo(page, t + span * 0.6, 900);
+  const scrubbed = await page.evaluate(() => {
+    if (!window.ScrollTrigger) return -1;
+    const targetsOf = (a) => (a.getChildren ? a.getChildren(true, true, false).flatMap(targetsOf) : a.targets ? a.targets() : []);
+    return ScrollTrigger.getAll().filter((st) => st.vars.scrub && st.animation && targetsOf(st.animation).some((el) => el.classList && el.classList.contains('a-course'))).length;
+  });
+  check(scrubbed === 0, `steady: ${scrubbed} scroll-scrubbed animation(s) still move the stuck dish cards`);
+  const fit = await page.evaluate(() => [...document.querySelectorAll('.a-course')].map((c) => { const r = c.getBoundingClientRect(), p = c.querySelector('.a-plate-in').getBoundingClientRect(); return { l: r.left, r: r.right, inner: c.scrollWidth - c.clientWidth, pr: p.right }; }));
+  fit.forEach((f, i) => check(f.l >= 12 && f.r <= IPHONE15.width - 12 && f.inner <= 0 && f.pr <= f.r, `steady: dish card ${i + 1} or its photo runs past the screen (${Math.round(f.l)}–${Math.round(f.r)}, photo to ${Math.round(f.pr)})`));
+  const covered = await page.evaluate(() => [...document.querySelectorAll('.a-course')].map((c) => c.classList.contains('is-covered')));
+  check(covered[0] && !covered[4], `steady: covered cards are not marked as covered (${covered.join(',')})`);
+  await ctx.close();
+}
+
+// ---- brewed here: the pint stays put mid-screen and pours; one milestone at a time ------------
+if (want('pour')) {
+  const { ctx, page } = await open('/', { vp: IPHONE15 });
+  const listTop = await topOf(page, '.a-marks', 0), listH = await page.evaluate(() => document.querySelector('.a-marks').getBoundingClientRect().height);
+  const read = () => page.evaluate(() => {
+    const gl = document.querySelector('.a-story .a-glass'), r = gl.getBoundingClientRect();
+    const shown = [...document.querySelectorAll('.a-story .a-mark')].filter((m) => +getComputedStyle(m).opacity > 0.5 && m.getBoundingClientRect().bottom > 0 && m.getBoundingClientRect().top < innerHeight);
+    const stream = document.querySelector('.a-story .a-pour--above');
+    return { top: r.top, bottom: r.bottom, cx: r.left + r.width / 2, level: parseFloat(getComputedStyle(gl).getPropertyValue('--level')), shown: shown.map((m) => m.dataset.mark), stream: stream ? +getComputedStyle(stream).opacity * (getComputedStyle(stream).display === 'none' ? 0 : 1) : 0, sh: stream ? stream.getBoundingClientRect().height : 0 };
+  });
+  // The scene runs while the milestones are held in place: from the first one reaching its spot
+  // to the last one leaving it. Sample evenly inside that stretch.
+  const geo = await page.evaluate(() => { const lis = [...document.querySelectorAll('.a-story .a-mark')]; return { T: parseFloat(getComputedStyle(lis[0]).top), lastH: lis.at(-1).offsetHeight }; });
+  check(Number.isFinite(geo.T), 'pour: the milestones are not held in place while the pint pours');
+  const from = listTop - (geo.T || 0), to = listTop + listH - (geo.T || 0) - geo.lastH;
+  const ys = [0.1, 0.3, 0.5, 0.7, 0.9].map((f) => Math.round(from + (to - from) * f));
+  const s = [], shots = [];
+  for (const y of ys) { await scrollTo(page, y, 1000); s.push(await read()); shots.push(await page.screenshot()); }
+  await scrollTo(page, Math.round(to + 200), 1000); const end = await read();
+  note(`pour: glass top ${s.map((x) => Math.round(x.top)).join(', ')}; level ${s.map((x) => x.level.toFixed(2)).join(' → ')} → ${end.level.toFixed(2)}; shown ${s.map((x) => x.shown.join('+') || '-').join(' | ')}; stream ${s.map((x) => x.stream.toFixed(1)).join(', ')} → ${end.stream.toFixed(1)}`);
+  const tops = s.map((x) => x.top);
+  check(Math.max(...tops) - Math.min(...tops) <= 2, `pour: the pint moves on screen while it pours (top ${tops.map(Math.round).join(', ')})`);
+  check(s.every((x) => x.top >= 64 && x.bottom <= IPHONE15.height - 40 && Math.abs(x.cx - IPHONE15.width / 2) <= 4), 'pour: the pint is not centred and fully on screen during the pour');
+  check(s.every((x, i) => !i || x.level > s[i - 1].level), `pour: the level does not rise steadily (${s.map((x) => x.level.toFixed(2)).join(', ')})`);
+  check(s.every((x) => x.shown.length === 1), `pour: not exactly one milestone on screen at a time (${s.map((x) => x.shown.length).join(', ')})`);
+  check(new Set(s.map((x) => x.shown[0])).size >= 3, 'pour: the milestone shown does not change as the pint fills');
+  check(s.slice(0, 4).every((x) => x.stream > 0.5 && x.sh > 20), 'pour: no stream of beer pours into the glass while it fills');
+  check(end.level >= 0.99 && end.stream < 0.1, `pour: at the end the glass is not full with the pour stopped (${end.level}, stream ${end.stream})`);
+  await sheet('pour.png', shots, IPHONE15.width);
+  await ctx.close();
+}
+
+// ---- footer: composed for a phone ------------------------------------------------------------
+if (want('footer')) {
+  const { ctx, page, errors } = await open('/', { vp: IPHONE15 });
+  const t = await topOf(page, '.a-footer-body', -64);
+  const h = await page.evaluate(() => document.querySelector('.a-footer-body').getBoundingClientRect().height);
+  const shots = await frames(page, [t, t + Math.max(0, h - IPHONE15.height + 64)].map(Math.round), 900);
+  const m = await page.evaluate(() => {
+    const body = document.querySelector('.a-footer-body');
+    // Standalone links and controls; links inside the credits' prose are inline text (exempt).
+    const taps = [...body.querySelectorAll('a, summary')].filter((a) => a.getClientRects().length && !a.closest('.a-credits div')).map((a) => ({ t: a.textContent.trim().slice(0, 22), h: a.getBoundingClientRect().height, r: a.getBoundingClientRect().right })).filter((a) => a.h < 44 || a.r > innerWidth);
+    // Text under 13px; the logo lockup's sub-line is exempt, as it is elsewhere on the site.
+    const small = [];
+    const walker = document.createTreeWalker(body, NodeFilter.SHOW_TEXT);
+    for (let n = walker.nextNode(); n; n = walker.nextNode()) { const el = n.parentElement; if (!n.textContent.trim() || !el.getClientRects().length || el.closest('[aria-hidden="true"], .sr-only, details:not([open]) > div, .a-footer-sub')) continue; const fs = parseFloat(getComputedStyle(el).fontSize); if (fs < 13) small.push(`${n.textContent.trim().slice(0, 20)} (${fs}px)`); }
+    const word = document.querySelector('.a-giant-word').getBoundingClientRect();
+    return { taps, small, wordW: word.width, sw: document.documentElement.scrollWidth - innerWidth };
+  });
+  check(!m.taps.length, `footer: links under 44px tall or off screen: ${m.taps.map((a) => `${a.t} ${Math.round(a.h)}`).join('; ')}`);
+  check(!m.small.length, `footer: text under 13px: ${m.small.slice(0, 5).join('; ')}`);
+  check(m.wordW >= IPHONE15.width * 0.8, `footer: the giant Alibi does not span the phone (${Math.round(m.wordW)}px)`);
+  check(m.sw <= 0 && !errors.length, 'footer: sideways scroll or console errors');
+  await sheet('footer.png', shots, IPHONE15.width);
+  await ctx.close();
+}
+
+// ---- sticky elements must not sit inside a clipping container -----------------------------------
+// iPhone Safari only moves a sticky element in step with the scroll when no ancestor clips overflow
+// (overflow hidden/clip/auto/scroll on either axis). Otherwise it repositions it from the main
+// thread a frame late, and it shakes while scrolling (October 8: the dish deck and the pint).
+if (want('sticky')) {
+  for (const [vp, path] of [IPHONE15, SMALL, TABLET].flatMap((v) => ['/', '/menu/', '/whats-on/', '/visit/'].map((p) => [v, p]))) {
+    const { ctx, page } = await open(path, { vp });
+    const bad = await page.evaluate(() => {
+      const found = [];
+      // The body's overflow moves to the viewport when <html> has none of its own, so it clips nothing.
+      const root = getComputedStyle(document.documentElement), bodyToViewport = root.overflowX === 'visible' && root.overflowY === 'visible';
+      document.querySelectorAll('body *').forEach((el) => {
+        if (getComputedStyle(el).position !== 'sticky' || !el.getClientRects().length) return;
+        for (let a = el.parentElement; a && a !== document.documentElement; a = a.parentElement) {
+          if (a === document.body && bodyToViewport) continue;
+          const cs = getComputedStyle(a);
+          if (cs.overflowX !== 'visible' || cs.overflowY !== 'visible') { found.push(`.${String(el.className).split(' ')[0]} inside ${a.tagName.toLowerCase()}.${String(a.className).split(' ').join('.')} (overflow ${cs.overflowX} / ${cs.overflowY})`); break; }
+        }
+      });
+      return [...new Set(found)];
+    });
+    const n = await page.evaluate(() => [...document.querySelectorAll('body *')].filter((el) => getComputedStyle(el).position === 'sticky' && el.getClientRects().length).length);
+    note(`sticky ${vp.width}x${vp.height} ${path}: ${n} sticky elements checked`);
+    check(!bad.length, `sticky ${vp.width} ${path}: sticky elements inside a clipping container (iPhone Safari shakes them while scrolling): ${bad.slice(0, 6).join('; ')}`);
     await ctx.close();
   }
 }
