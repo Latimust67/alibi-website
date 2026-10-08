@@ -5,15 +5,28 @@
 
 @media (max-width: 999px) {
 
+  /* iPhone Safari only moves a sticky element in step with the scroll when no positioned ancestor
+     clips overflow; inside one it repositions it from the main thread a frame late, and the dish
+     deck and the pint shook while scrolling. So nothing around them clips. The page still cannot
+     scroll sideways: the body's overflow-x: clip applies to the viewport. */
+  main, .a-food, .a-story { overflow-x: visible; }
+  .a-story-glow { inset: -20% 0; }
+
   /* ---------- food: the five dishes as a deck of cards ---------- */
   .a-food .a-head { margin-bottom: 34px; }
-  .a-courses { display: grid; grid-auto-rows: 1fr; gap: 20px; width: min(var(--wrap), 540px); margin: 0 auto; padding: 0; overflow: visible; scroll-snap-type: none; }
-  .a-course { position: relative; display: flex; flex-direction: column; padding: 7px 7px 24px; border-radius: 22px; background: var(--cream); box-shadow: 0 0 0 1px var(--line), inset 0 1px 0 #fff, 0 30px 60px -40px rgb(21 44 35 / .55); transform-origin: 50% 0; }
-  /* A covered card dims a little as the next one lands on it (motion sets --dim). */
-  .a-course::after { content: ""; position: absolute; inset: 0; border-radius: inherit; background: var(--ink); opacity: var(--dim, 0); pointer-events: none; }
-  /* Cards share one height (the longest text sets it); a shorter card's photo grows into the spare room. */
-  .a-course-plate { display: flex; flex: 1 0 auto; flex-direction: column; margin: 0 0 20px; padding: 0; border-radius: 16px; background: none; box-shadow: none; }
-  .a-plate-in { position: relative; flex: 1 0 auto; border-radius: 16px; }
+  /* One column that can never grow past the screen (minmax(0, 1fr) and min-width: 0 stop a
+     wide child from widening the card). */
+  .a-courses { --card-w: min(100vw - 2 * var(--margin), 540px); display: grid; grid-template-columns: minmax(0, 1fr); grid-auto-rows: 1fr; gap: 20px; width: var(--card-w); margin: 0 auto; padding: 0; overflow: visible; scroll-snap-type: none; }
+  .a-course { position: relative; min-width: 0; display: flex; flex-direction: column; padding: 7px 7px 24px; border-radius: 22px; background: var(--cream); box-shadow: 0 0 0 1px var(--line), inset 0 1px 0 #fff, 0 30px 60px -40px rgb(21 44 35 / .55); transform-origin: 50% 0; transition: transform .7s var(--ease); }
+  /* A covered card steps back and dims once the next one lands on it (motion adds .is-covered). */
+  .a-course::after { content: ""; position: absolute; inset: 0; border-radius: inherit; background: var(--ink); opacity: 0; pointer-events: none; transition: opacity .7s var(--ease); }
+  .a-course.is-covered { transform: scale(.94); }
+  .a-course.is-covered::after { opacity: .16; }
+  /* Cards share one height (the longest text sets it); a shorter card's photo grows into the spare
+     room. The photo gets a 3:2 minimum height rather than aspect-ratio: Safari would turn the grown
+     height back into extra width and push the card off the screen. */
+  .a-course-plate { display: flex; flex: 1 0 auto; flex-direction: column; min-width: 0; margin: 0 0 20px; padding: 0; border-radius: 16px; background: none; box-shadow: none; }
+  .a-plate-in { position: relative; flex: 1 0 auto; width: 100%; min-height: calc((var(--card-w) - 14px) / 1.5); aspect-ratio: auto; border-radius: 16px; }
   .a-plate-in picture { position: absolute; inset: 0; }
   .a-course-copy { padding: 0 15px; }
   .a-course-meta { margin-bottom: 10px; }
@@ -113,40 +126,41 @@
   .a-kept .house-mobile-company .mobile-print img { display: block; width: 100%; height: 100%; aspect-ratio: auto; object-fit: cover; }
   .mobile-print figcaption { padding: 11px 4px 13px; font: italic 400 17px/1.15 var(--display); letter-spacing: -.01em; text-align: center; color: var(--ink); }
 
-  /* ---------- brewed here: a pint beside the milestones ---------- */
+  /* ---------- brewed here: a pint that pours as you read ---------- */
+  .a-story { --gh: clamp(150px, 24svh, 210px); }
   .a-story-pin { padding-block: 92px 8px; }
-  .a-story-grid { grid-template-columns: 74px minmax(0, 1fr); column-gap: 20px; row-gap: 44px; }
-  .a-story-copy { grid-column: 1 / -1; }
+  .a-story-grid { display: block; }
+  .a-story-copy { margin-bottom: 48px; }
   .a-story-title { font-size: clamp(44px, 12vw, 54px); }
   .a-story-lede { font-size: 17px; }
   .a-pints { display: none; }
-  .a-story .a-glass { --gh: 122px; display: block; grid-column: 1; grid-row: 2; position: sticky; top: calc(50svh - 61px); align-self: start; width: 74px; height: var(--gh); margin-top: 6px; }
+  .a-story .a-glass { display: block; position: relative; width: calc(var(--gh) * .6); height: var(--gh); margin: 0 auto 26px; }
   .a-glass-in { position: absolute; inset: 0; clip-path: polygon(1% -14%, 99% -14%, 97.4% 1.6%, 98.8% 14%, 86.5% 96%, 13.5% 96%, 1.2% 14%, 2.6% 1.6%); }
   .a-story-beer { position: absolute; left: 0; right: 0; bottom: 3.4%; height: 92%; transform-origin: 50% 100%; transform: scaleY(var(--level)); background: linear-gradient(90deg, #b8691c 0%, #e39b33 14%, #f6c25a 42%, #fbd47a 52%, #eaa83f 74%, #c0711f 100%); }
   .a-story-beer::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgb(255 236 180 / .25), transparent 30%, rgb(120 60 10 / .25)); }
   .a-glass-bubbles { position: absolute; left: 0; right: 0; bottom: 3.4%; height: 92%; clip-path: inset(calc((1 - var(--level)) * 100%) 0 0 0); }
-  .a-glass-bubbles i { position: absolute; left: var(--x); bottom: 0; width: calc(var(--s) * .6); height: calc(var(--s) * .6); border-radius: 50%; background: rgb(255 246 214 / .7); opacity: 0; }
+  .a-glass-bubbles i { position: absolute; left: var(--x); bottom: 0; width: calc(var(--s) * .8); height: calc(var(--s) * .8); border-radius: 50%; background: rgb(255 246 214 / .7); opacity: 0; }
   .a-foam-track { position: absolute; left: 0; right: 0; bottom: 3.4%; height: 92%; transform: translateY(calc((1 - var(--level)) * 100%)); }
-  .a-story-foam { position: absolute; left: -2%; right: -2%; top: -3%; height: calc(5% + var(--level) * 6%); border-radius: 0 0 2px 2px; background: linear-gradient(180deg, #fffdf8 0%, #fbf2de 60%, #ecd29e 100%); box-shadow: inset 0 -2px 4px rgb(214 160 70 / .3); }
-  .a-pour { display: none; }
+  .a-story-foam { position: absolute; left: -2%; right: -2%; top: -3%; height: calc(4% + var(--level) * 5%); border-radius: 0 0 2px 2px; transform-origin: 50% 100%; background: linear-gradient(180deg, #fffdf8 0%, #fbf2de 60%, #ecd29e 100%); box-shadow: inset 0 -2px 4px rgb(214 160 70 / .3); transition: transform .7s var(--spring); }
   .a-glass-line { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; pointer-events: none; }
   .a-glass-body { fill: rgb(255 253 247 / .05); stroke: rgb(255 253 247 / .6); stroke-width: 1.5; vector-effect: non-scaling-stroke; }
-  .a-glass-shine { fill: none; stroke: rgb(255 255 255 / .22); stroke-width: 3; stroke-linecap: round; vector-effect: non-scaling-stroke; }
+  .a-glass-shine { fill: none; stroke: rgb(255 255 255 / .22); stroke-width: 4; stroke-linecap: round; vector-effect: non-scaling-stroke; }
   .a-glass-base { fill: none; stroke: rgb(255 253 247 / .3); stroke-width: 1; vector-effect: non-scaling-stroke; }
-  .a-glass-ticks path { fill: none; stroke: rgb(255 253 247 / .55); stroke-width: 1; vector-effect: non-scaling-stroke; }
-  .a-glass-logo { position: absolute; left: 28%; top: 38%; width: 44%; height: auto; opacity: calc(.18 + .5 * clamp(0, (var(--level) - .38) * 3.2, 1)); mix-blend-mode: screen; pointer-events: none; }
-  .a-story .a-marks { grid-column: 2; grid-row: 2; padding: 0; gap: 40px; }
+  .a-glass-ticks path { fill: none; stroke: rgb(255 253 247 / .55); stroke-width: 1.5; vector-effect: non-scaling-stroke; transition: stroke .4s var(--ease); }
+  .a-glass-logo { position: absolute; left: 30%; top: 38%; width: 40%; height: auto; opacity: calc(.18 + .5 * clamp(0, (var(--level) - .38) * 3.2, 1)); mix-blend-mode: screen; pointer-events: none; }
+  /* The stream: from the top of the screen into the glass (shown only while it pours). */
+  .a-story .a-pour { display: block; position: absolute; left: 50%; width: 6px; translate: -50% 0; overflow: hidden; border-radius: 3px; background: linear-gradient(90deg, #d88f2c, #f8cc6c 50%, #d88f2c); opacity: 0; transition: opacity .35s var(--ease); }
+  /* Its length (--pour-len, set by motion) runs from the header, or from just under the text while the text is still on screen. */
+  .a-story .a-pour--above { top: calc(-1 * var(--pour-len, 0px)); height: calc(var(--pour-len, 0px) + 6%); background: linear-gradient(180deg, rgb(242 181 74 / 0), #f2b54a 24px, #e9a33c); }
+  .a-story .a-pour--in { top: 0; bottom: 3.4%; }
+  .a-story .a-pour::after { content: ""; position: absolute; left: 0; right: 0; top: -28px; bottom: 0; background: repeating-linear-gradient(180deg, transparent 0 12px, rgb(255 246 214 / .5) 12px 15px, transparent 15px 28px); }
+  .a-story .a-marks { display: grid; gap: 34px; padding: 0; text-align: center; }
   .a-story .a-marks::before, .a-story .a-marks::after, .a-story .a-mark::before { display: none; }
-  .a-mark-big { gap: 2px 10px; margin-bottom: 4px; }
-  .a-mark-num { font-size: clamp(48px, 13.4vw, 60px); }
+  .a-mark-big { justify-content: center; gap: 2px 10px; margin-bottom: 6px; }
+  .a-mark-num { font-size: clamp(52px, 14vw, 64px); }
   .a-mark-unit { flex-basis: 100%; font-size: 13px; letter-spacing: .12em; }
-  .a-mark-t { font-size: 22px; }
-  .a-mark-d { font-size: 15px; }
-  .a-motion .a-story .a-glass { --level: .04; }
-  .a-motion .a-mark { opacity: .42; transition: opacity .5s var(--ease); }
-  .a-motion .a-mark .a-mark-num { color: rgb(255 253 247 / .7); transition: color .5s var(--ease), text-shadow .5s var(--ease); }
-  .a-motion .a-mark.is-lit { opacity: 1; }
-  .a-motion .a-mark.is-lit .a-mark-num { color: var(--gold); text-shadow: 0 0 26px rgb(242 181 74 / .35); }
+  .a-mark-t { font-size: 23px; }
+  .a-mark-d { margin-inline: auto; max-width: 30ch; font-size: 15.5px; }
   /* Membership: the card sits on the panel's top edge. */
   .a-perks { gap: 14px; padding-top: 84px; }
   .a-member { gap: 22px; padding: 0 22px 26px; border-radius: 20px; }
@@ -156,19 +170,78 @@
   .a-perk { border-radius: 16px; }
 }
 
-/* The deck stacks only when it fits: tall enough screens, motion allowed. */
+/* The scenes hold still only where they fit: tall enough screens, motion allowed. */
 @media (max-width: 999px) and (min-height: 600px) and (prefers-reduced-motion: no-preference) {
-  .a-motion .a-course { position: sticky; top: calc(var(--header) + 14px + var(--k, 0) * 10px); will-change: transform; }
+  /* The dish deck. */
+  .a-motion .a-course { position: sticky; top: calc(var(--header) + 14px + var(--k, 0) * 10px); }
+
+  /* The pour: the glass and the current milestone stay put, centred on the screen, while the
+     milestones scroll through underneath; motion fills the glass and swaps the milestone. */
+  .a-motion .a-story { --stage-top: calc(var(--header) + max(16px, (100svh - var(--header) - var(--gh) - 230px) / 2)); }
+  .a-motion .a-story .a-glass { --level: .04; position: sticky; top: var(--stage-top); z-index: 1; }
+  .a-motion .a-story .a-glass::before { content: ""; position: absolute; z-index: -1; left: -80%; right: -80%; top: -24%; bottom: -12%; border-radius: 50%; background: radial-gradient(closest-side, rgb(242 181 74 / .3), transparent); opacity: calc(.12 + .88 * var(--level)); pointer-events: none; }
+  .a-motion .a-story .a-glass.is-pouring .a-pour { opacity: 1; }
+  .a-motion .a-story .a-glass.is-full .a-story-foam { transform: scaleY(1.5); }
+  .a-motion .a-story .a-glass[data-lit="1"] .a-glass-ticks path:nth-child(-n+1),
+  .a-motion .a-story .a-glass[data-lit="2"] .a-glass-ticks path:nth-child(-n+2),
+  .a-motion .a-story .a-glass[data-lit="3"] .a-glass-ticks path:nth-child(-n+3),
+  .a-motion .a-story .a-glass[data-lit="4"] .a-glass-ticks path { stroke: var(--gold); }
+  /* The glass lets go together with the last milestone: pulling the grid's end up by one
+     milestone's height ends the glass's hold at the same moment. */
+  .a-motion .a-story .a-story-grid { display: flow-root; }
+  /* ...and the membership card waits below the last milestone until both have gone. */
+  .a-motion .a-story-pin { padding-bottom: max(34svh, 250px); }
+  .a-motion .a-story .a-marks { display: block; margin-bottom: -46svh; }
+  /* Room for the last milestone to stay a while once the glass is full. */
+  .a-motion .a-story .a-marks::after { content: ""; display: block; position: static; height: 30svh; width: auto; background: none; box-shadow: none; transform: none; }
+  /* The outgoing milestone fades quickly; the next one rises in just after, so the two never overlap. */
+  .a-motion .a-story .a-mark { position: sticky; top: calc(var(--stage-top) + var(--gh) + 26px); min-height: 46svh; opacity: 0; translate: 0 14px; transition: opacity .18s ease-out, translate .6s var(--ease); }
+  .a-motion .a-story .a-mark.is-current { opacity: 1; translate: 0 0; transition: opacity .45s var(--ease) .16s, translate .6s var(--ease) .16s; }
+  .a-motion .a-story .a-mark .a-mark-num { color: rgb(255 253 247 / .72); transition: color .5s var(--ease), text-shadow .5s var(--ease); }
+  .a-motion .a-story .a-mark.is-lit .a-mark-num { color: var(--gold); text-shadow: 0 0 26px rgb(242 181 74 / .35); }
+  /* Four dots under the milestone: which of the four you are on. */
+  .a-motion .a-story .a-mark::after { --off: rgb(255 253 247 / .26); content: ""; display: block; width: 58px; height: 6px; margin: 22px auto 0; background: radial-gradient(circle at 3px 3px, var(--c1, var(--off)) 2.6px, transparent 3.2px), radial-gradient(circle at 20.3px 3px, var(--c2, var(--off)) 2.6px, transparent 3.2px), radial-gradient(circle at 37.7px 3px, var(--c3, var(--off)) 2.6px, transparent 3.2px), radial-gradient(circle at 55px 3px, var(--c4, var(--off)) 2.6px, transparent 3.2px); }
+  .a-motion .a-story .a-mark:nth-child(1) { --c1: var(--gold); } .a-motion .a-story .a-mark:nth-child(2) { --c2: var(--gold); }
+  .a-motion .a-story .a-mark:nth-child(3) { --c3: var(--gold); } .a-motion .a-story .a-mark:nth-child(4) { --c4: var(--gold); }
 }
 @media (max-width: 999px) and (prefers-reduced-motion: no-preference) {
   .a-motion .a-story .a-glass-bubbles i { animation: a-rise var(--d) linear infinite; animation-delay: var(--w); }
+  .a-motion .a-story .a-glass.is-pouring .a-pour::after { animation: a-flow .42s linear infinite; }
 }
+@keyframes a-flow { to { transform: translateY(28px); } }
 @media (min-width: 700px) and (max-width: 999px) {
   .a-kept .house-mobile-beers ol { grid-template-columns: repeat(3, 1fr); gap: 18px 16px; }
   .mobile-prints { grid-template-columns: repeat(4, 1fr); }
   .mobile-print:nth-child(even) { margin-top: 30px; }
   .a-events--night .a-week { grid-template-columns: repeat(4, 1fr); }
   .a-crew-photo picture { aspect-ratio: 16 / 11; }
-  .a-story-grid { grid-template-columns: 96px minmax(0, 1fr); column-gap: 32px; }
-  .a-story .a-glass { --gh: 160px; width: 96px; top: calc(50svh - 80px); }
+  .a-story { --gh: clamp(180px, 22svh, 230px); }
+}
+
+/* ---------- the footer, laid out for a phone ---------- */
+@media (max-width: 999px) {
+  .a-footer-body { padding: 36px 0 34px; }
+  .a-footer-top { gap: 18px; padding-bottom: 28px; }
+  .a-footer-tag { max-width: 17ch; font-size: clamp(25px, 6.8vw, 30px); line-height: 1.12; }
+  .a-footer-now { justify-self: stretch; padding: 14px 16px; border-radius: 14px; }
+  .a-footer-cols { grid-template-columns: 1fr 1fr; gap: 12px 18px; padding-block: 28px 8px; font-size: 16px; }
+  /* Find us and Hours: two full-width cards. */
+  .a-footer-cols > div:nth-child(-n+2) { grid-column: 1 / -1; padding: 20px 20px 18px; border-radius: 16px; background: rgb(255 253 247 / .045); box-shadow: inset 0 0 0 1px rgb(255 253 247 / .1); }
+  .a-footer-cols > div:nth-child(1) { flex-direction: row; flex-wrap: wrap; align-items: center; gap: 10px; }
+  .a-footer-cols > div:nth-child(1) > :is(h2, address) { flex-basis: 100%; }
+  .a-footer-cols > div:nth-child(1) h2 { margin-bottom: 2px; }
+  .a-footer-cols > div:nth-child(1) address { margin: 0 0 8px; font-size: 17px; line-height: 1.5; }
+  .a-footer-cols > div:nth-child(1) a { flex: 1 1 auto; justify-content: center; min-height: 48px; padding: 0 18px; border-radius: 999px; box-shadow: inset 0 0 0 1px rgb(255 253 247 / .28); font-weight: 600; }
+  .a-footer-cols > div:nth-child(1) a.a-footer-strong { background: var(--gold); color: var(--ink); box-shadow: none; }
+  .a-footer-cols > div:nth-child(2) p { margin-bottom: 2px; font-size: 17px; line-height: 1.7; color: var(--cream); }
+  .a-footer-cols > div:nth-child(2) a { color: var(--gold); font-weight: 600; }
+  /* The pub and Follow: rows to tap. */
+  .a-footer-cols > :is(nav, div:nth-child(4)) { margin-top: 20px; }
+  .a-footer-cols .a-footer-h { margin-bottom: 4px; }
+  .a-footer-cols > :is(nav, div:nth-child(4)) a { width: 100%; min-height: 50px; border-bottom: 1px solid var(--line-dark); }
+  /* The sign-off spans the phone. */
+  .a-footer-giant { padding-top: 30px; padding-bottom: 30px; }
+  .a-giant-word { font-size: 50vw; }
+  .a-footer-notes { gap: 10px; padding-block: 26px 10px; }
+  .a-footer-signoff { font-size: 22px; }
 }
