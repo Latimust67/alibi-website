@@ -225,7 +225,9 @@
       }
       function ovenPhone() {
         // Phones: the dishes are a deck. Each card sticks (CSS) and the next one
-        // slides up over it; the covered card eases back and dims as it lands.
+        // slides up over it; once it has nearly landed, the card beneath steps back
+        // and dims. That is a class with a CSS transition, never a scroll-linked
+        // tween: re-transforming stuck cards on every scroll frame shakes in iOS Safari.
         const cards = $$('.a-courses .a-course');
         if (!cards.length) return;
         if (getComputedStyle(cards[0]).position !== 'sticky') {
@@ -237,7 +239,10 @@
         cards.forEach((card, i) => {
           const next = cards[i + 1];
           if (!next) return;
-          gsap.fromTo(card, { scale: 1, '--dim': 0 }, { scale: 0.93, '--dim': 0.16, ease: 'none', immediateRender: false, scrollTrigger: { trigger: next, start: 'top bottom', end: () => `top ${stuckAt(next)}px`, scrub: true, invalidateOnRefresh: true } });
+          ScrollTrigger.create({
+            trigger: next, start: () => `top ${stuckAt(next) + next.offsetHeight * 0.3}px`, invalidateOnRefresh: true,
+            onEnter: () => card.classList.add('is-covered'), onLeaveBack: () => card.classList.remove('is-covered'),
+          });
         });
       }
 
@@ -445,29 +450,54 @@
       function storyPhone() {
         const sec = $('[data-story]');
         if (!sec) return;
-        // Phones: the pint stays beside the milestones (CSS sticky) and fills as you read.
-        // Each milestone lights as it passes the glass, just as the beer reaches its tick.
+        // Phones: the glass and the current milestone hold still mid-screen (CSS sticky) while
+        // the milestones scroll through underneath. A stream pours as you scroll; the beer reaches
+        // each tick on the glass just as its milestone settles into place, and the stream stops
+        // when the glass is full. Short screens keep the plain list beside a full glass.
         const list = $('.a-marks', sec), glassEl = $('.a-glass', sec), marks = $$('.a-mark', sec);
-        if (list && glassEl && marks.length && getComputedStyle(glassEl).display !== 'none') {
+        if (list && glassEl && marks.length && getComputedStyle(marks[0]).position === 'sticky') {
           const AT = marks.map((m) => parseFloat(m.style.getPropertyValue('--at')) || 0);
-          let stops = [];
-          // A milestone lights once a third of it has passed the line beside the glass.
-          const measure = () => { const h = list.offsetHeight || 1; stops = marks.map((m) => Math.min(0.98, (m.offsetTop + m.offsetHeight / 3) / h)); };
-          // Progress through the list -> beer level: near empty at the start, each tick as its mark arrives, full at the end.
+          const held = () => parseFloat(getComputedStyle(marks[0]).top) || 0;
+          const preroll = () => innerHeight * 0.3;
+          let settle = [];
+          // Progress (0-1) at which each milestone settles into its place under the glass.
+          const measure = (self) => {
+            const range = self.end - self.start || 1;
+            let y = 0;
+            settle = marks.map((m) => { const p = (preroll() + y) / range; y += m.offsetHeight; return Math.min(0.98, p); });
+          };
+          // The pour starts once the glass is in place (the first milestone settling), reaches the
+          // first tick a little later, then each later tick as its milestone settles.
           const levelAt = (p) => {
-            if (p <= 0) return 0.04;
-            const pts = [[0, 0.04], ...stops.map((st, i) => [st, AT[i]]), [1, 1]];
+            if (p <= settle[0]) return 0.04;
+            const pts = [[settle[0], 0.04], [settle[0] + (settle[1] - settle[0]) * 0.35, AT[0]], ...settle.slice(1).map((st, i) => [st, AT[i + 1]]), [1, 1]];
             for (let k = 1; k < pts.length; k++) if (p <= pts[k][0]) { const [x0, y0] = pts[k - 1], [x1, y1] = pts[k]; return x1 > x0 ? y0 + ((p - x0) / (x1 - x0)) * (y1 - y0) : y1; }
             return 1;
           };
           const state = { v: 0.04 };
           const paint = () => {
             glassEl.style.setProperty('--level', state.v.toFixed(4));
-            marks.forEach((m, i) => m.classList.toggle('is-lit', state.v >= AT[i] - 0.002));
+            const lit = AT.filter((a) => state.v >= a - 0.002).length;
+            glassEl.dataset.lit = lit;
+            glassEl.classList.toggle('is-full', state.v >= 0.995);
+            marks.forEach((m, i) => { m.classList.toggle('is-lit', i < lit); m.classList.toggle('is-current', i === Math.max(0, lit - 1)); });
           };
-          const pour = (p) => gsap.to(state, { v: levelAt(p), duration: 0.35, ease: 'power2.out', overwrite: true, onUpdate: paint });
-          ScrollTrigger.create({ trigger: list, start: 'top 58%', end: 'bottom 58%', invalidateOnRefresh: true, onRefresh: (self) => { measure(); pour(self.progress); }, onUpdate: (self) => pour(self.progress) });
-          measure(); paint();
+          const copy = $('.a-story-copy', sec);
+          const pour = (p) => {
+            glassEl.classList.toggle('is-pouring', p >= settle[0] && p < 1);
+            // The stream falls from the header, or from just under the text while it is still in view.
+            const g = glassEl.getBoundingClientRect().top, from = Math.max(headerH(), copy ? copy.getBoundingClientRect().bottom + 14 : 0);
+            glassEl.style.setProperty('--pour-len', `${Math.max(0, Math.round(g - from))}px`);
+            gsap.to(state, { v: levelAt(p), duration: 0.35, ease: 'power2.out', overwrite: true, onUpdate: paint });
+          };
+          ScrollTrigger.create({
+            trigger: list, invalidateOnRefresh: true,
+            start: () => `top ${held() + preroll()}px`,
+            end: () => `bottom ${held() + marks[marks.length - 1].offsetHeight}px`,
+            onRefresh: (self) => { measure(self); pour(self.progress); },
+            onUpdate: (self) => pour(self.progress),
+          });
+          paint();
         }
         gsap.from($$('.a-member, .a-perk', sec), { y: 30, opacity: 0, duration: 0.8, ease: 'expo.out', stagger: 0.06, scrollTrigger: { trigger: $('.a-perks', sec), start: 'top 88%', once: true } });
       }
