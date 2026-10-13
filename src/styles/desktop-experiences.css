@@ -44,7 +44,7 @@
   .desktop-world-can::after { content: ''; position: absolute; z-index: -1; left: -10%; right: -10%; bottom: -3%; height: 7%; border-radius: 50%; background: radial-gradient(ellipse, rgb(20 23 26 / .55), transparent 67%); }
   .desktop-world-can img { width: 100%; filter: drop-shadow(18px 28px 20px rgb(20 23 26 / .33)); }
   .desktop-world.is-inview .desktop-world-can { animation: desktop-can-arrive 1.6s cubic-bezier(.2,.7,.2,1) both; }
-  @keyframes desktop-can-arrive { from { transform: translateY(32px) rotate(1deg); } to { transform: translateY(0) rotate(-4deg); } }
+  @keyframes desktop-can-arrive { from { transform: translateY(32px) rotate(-4deg); } to { transform: translateY(0) rotate(-4deg); } }
   .desktop-world-footnote { position: absolute; bottom: 20px; left: var(--gutter); margin: 0; font-size: 9px; font-weight: 650; letter-spacing: .16em; background: var(--world-paper); padding: 5px 8px; }
   .desktop-drinks-outro { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px 30px; padding-block: 39px; }
   .desktop-drinks-outro p { flex: 1 1 330px; font-family: var(--font); font-size: 24px; line-height: 1.35; margin: 0; }

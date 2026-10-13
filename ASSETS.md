@@ -1,5 +1,14 @@
 # Asset provenance — The Long Table
 
+## Wider dish photographs — October 13, 2026
+
+At the user's request, the built-in OpenAI image tool recreated the bao, wings,
+chicken sandwich and garden salad images with wider framing, retaining each
+dish and its wooden-table setting. These four home-showcase images are AI-edited
+recreations of the prior food photographs. The pizza photograph is unchanged.
+Masters and exact prompts are in `source-assets/generated/dishes-wide/`.
+`tools/prep-wide-dishes.mjs` exports the responsive AVIF, WebP and JPEG versions.
+
 Created September 28, 2026 for a private Alibi Incline Public House owner demo. The user authorized use of public Alibi imagery for this private pitch. This record does **not** claim public licensing clearance or photographer permission beyond that authorization. Source photography remains photography; the new hero is explicitly an artistic interpretation of the venue.
 
 ## Restored desktop material — September 28, 2026

@@ -127,7 +127,8 @@ function proof() {
 }
 
 // ---- 2. food: the rolling pizza by the heading, then real plates on a turntable -----------------
-// Each dish is a full 3:2 photo (tools/prep-dishes.mjs) so the whole plate shows.
+// Full 3:2 frames: original pizza photo and wider AI-edited dish photographs
+// (tools/prep-wide-dishes.mjs), with the complete plates visible.
 const PLATES = [
   { key: 'dish-pizza', course: 'Pizza', alt: 'Two Alibi pizzas on a timber table with a dark and a golden pint behind them.' },
   { key: 'dish-bao', name: 'Pork Belly Bao', course: 'To share', alt: 'Three pork belly bao with pickled onion and peppers on a dark plate.' },

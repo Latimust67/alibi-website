@@ -4,6 +4,7 @@
 // transparent Alibi pint cutouts. Registered in images.json in the shape
 // picture() reads.
 // Run: node tools/prep-dishes.mjs
+// Then run node tools/prep-wide-dishes.mjs to restore the October 13 wider edits.
 import sharp from 'sharp';
 import { readFileSync, writeFileSync, statSync } from 'node:fs';
 
